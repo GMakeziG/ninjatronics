@@ -70,3 +70,16 @@ Learning Paths
 ---
 
 *"The mountain does not hurry."*
+
+---
+| Label                | Meaning                     |
+| -------------------- | --------------------------- |
+| 🏯 Dojo              | Core architecture           |
+| 🌲 Git Forest        | GitHub integration          |
+| ☁️ Floating Citadel  | Kubernetes & GitOps         |
+| 🏛 Hall of Knowledge | Obsidian integration        |
+| 🔮 Oracle            | AI & RAG                    |
+| ⚙️ World Engine      | Compiler & schema           |
+| ✨ Evolution          | New gameplay/world features |
+| 🐛 Bug               | Fixes                       |
+| 🚀 Release           | Milestones                  |
