@@ -1,0 +1,7 @@
+// content/districts/dojo-gate.json
+{
+  "id": "dojo-gate",
+  "name": "Dojo Gate",
+  "slug": "dojo-gate",
+  "status": "locked"
+}

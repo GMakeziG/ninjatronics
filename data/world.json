@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "generatedAt": "2026-07-08T04:47:57.536Z",
+    "sourceFileCount": 6,
+    "entityCount": 6
+  },
+  "districts": [
+    {
+      "id": "dojo-gate",
+      "name": "Dojo Gate",
+      "slug": "dojo-gate",
+      "status": "locked",
+      "type": "district"
+    },
+    {
+      "id": "floating-citadel",
+      "name": "Floating Citadel",
+      "slug": "floating-citadel",
+      "status": "locked",
+      "type": "district"
+    },
+    {
+      "id": "git-forest",
+      "name": "Git Forest",
+      "slug": "git-forest",
+      "status": "open",
+      "type": "district",
+      "guardianId": "archivist",
+      "subtitle": "Where every repository becomes a living tree.",
+      "description": "The Git Forest is a living archive of every project. Trees grow from repositories. Their rings record commits. Lanterns celebrate releases. Fireflies gather around active development.",
+      "dataSources": [
+        {
+          "type": "github",
+          "owner": "GMakeziG"
+        }
+      ],
+      "connections": [
+        "dojo-gate",
+        "floating-citadel",
+        "hall-of-knowledge"
+      ]
+    },
+    {
+      "id": "hall-of-knowledge",
+      "name": "Hall of Knowledge",
+      "slug": "hall-of-knowledge",
+      "status": "locked",
+      "type": "district"
+    }
+  ],
+  "guardians": [
+    {
+      "id": "archivist",
+      "name": "The Archivist",
+      "title": "Keeper of Every Commit",
+      "districtId": "git-forest",
+      "quote": "Nothing is ever truly lost. Every commit leaves a ring within the forest.",
+      "knowledge": [
+        "repositories",
+        "commits",
+        "branches",
+        "releases",
+        "projects"
+      ],
+      "type": "guardian"
+    }
+  ],
+  "repositories": [
+    {
+      "id": "lab",
+      "githubRepository": "GMakeziG/lab",
+      "treeName": "The Ancient Oak",
+      "districtId": "git-forest",
+      "story": "The Ancient Oak represents the evolution of my Kubernetes GitOps homelab.",
+      "technologies": [
+        "Kubernetes",
+        "FluxCD",
+        "Traefik",
+        "MetalLB",
+        "Cloudflare",
+        "OpenBao"
+      ],
+      "type": "repository"
+    }
+  ],
+  "projects": [],
+  "quests": [],
+  "notes": [],
+  "skills": [],
+  "certifications": []
+}

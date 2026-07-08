@@ -1,0 +1,9 @@
+// content/guardians/archivist.json
+{
+  "id": "archivist",
+  "name": "The Archivist",
+  "title": "Keeper of Every Commit",
+  "districtId": "git-forest",
+  "quote": "Nothing is ever truly lost. Every commit leaves a ring within the forest.",
+  "knowledge": ["repositories", "commits", "branches", "releases", "projects"]
+}

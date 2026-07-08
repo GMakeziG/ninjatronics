@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Grep",
+      "Glob",
+      "Bash(ls*)",
+      "Bash(find *)",
+      "Bash(tree*)",
+      "Bash(cat *)",
+      "Bash(wc *)",
+      "Bash(grep *)",
+      "Bash(rg *)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git show*)",
+      "Bash(npx tsc*)",
+      "Bash(tsc*)",
+      "Bash(npm run build*)",
+      "Bash(npm run lint*)",
+      "Bash(npm test*)",
+      "Bash(npm run test*)",
+      "Bash(npm run compile:world:check*)"
+    ],
+    "ask": [
+      "Edit",
+      "Write",
+      "Bash(npm install*)",
+      "Bash(npm uninstall*)",
+      "Bash(npm update*)",
+      "Bash(npm run compile:world)",
+      "Bash(git commit*)",
+      "Bash(git push*)",
+      "Bash(git rebase*)",
+      "Bash(git reset*)",
+      "Bash(sudo *)"
+    ]
+  }
+}

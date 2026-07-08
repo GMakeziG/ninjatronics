@@ -1,0 +1,7 @@
+// content/districts/hall-of-knowledge.json
+{
+  "id": "hall-of-knowledge",
+  "name": "Hall of Knowledge",
+  "slug": "hall-of-knowledge",
+  "status": "locked"
+}

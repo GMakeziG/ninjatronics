@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xxd /home/gerso/src/ninjatronics/schemas/world.schema.json)",
+      "Bash(xxd /home/gerso/src/ninjatronics/data/world.json)",
+      "Bash(xxd /home/gerso/src/ninjatronics/src/lib/world.ts)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('content/districts/git-forest.json','utf8'\\)\\); console.log\\('VALID JSON'\\)\")",
+      "Bash(npm ping *)",
+      "Bash(npx tsc *)",
+      "Skill(update-config)",
+      "Bash(grep -v \"^Only in /home/gerso/src/ninjatronics: ninjatronics$\")"
+    ]
+  }
+}

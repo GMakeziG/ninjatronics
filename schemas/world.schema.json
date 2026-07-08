@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "world.schema.json",
+  "title": "World",
+  "description": "The final assembled world, produced by scripts/compile-world.ts from content/. Each collection is an array of entities defined by their schema under schemas/entities/.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "meta",
+    "districts",
+    "guardians",
+    "repositories",
+    "projects",
+    "quests",
+    "notes",
+    "skills",
+    "certifications"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generatedAt", "sourceFileCount", "entityCount"],
+      "properties": {
+        "generatedAt": { "type": "string", "format": "date-time" },
+        "sourceFileCount": { "type": "integer", "minimum": 0 },
+        "entityCount": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "districts": { "type": "array", "items": { "$ref": "district.schema.json" } },
+    "guardians": { "type": "array", "items": { "$ref": "guardian.schema.json" } },
+    "repositories": { "type": "array", "items": { "$ref": "repository.schema.json" } },
+    "projects": { "type": "array", "items": { "$ref": "project.schema.json" } },
+    "quests": { "type": "array", "items": { "$ref": "quest.schema.json" } },
+    "notes": { "type": "array", "items": { "$ref": "note.schema.json" } },
+    "skills": { "type": "array", "items": { "$ref": "skill.schema.json" } },
+    "certifications": { "type": "array", "items": { "$ref": "certification.schema.json" } }
+  }
+}

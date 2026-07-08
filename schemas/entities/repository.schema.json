@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "repository.schema.json",
+  "title": "Repository",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "githubRepository", "treeName", "districtId"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "type": { "const": "repository" },
+    "githubRepository": { "type": "string", "pattern": "^[\\w.-]+/[\\w.-]+$" },
+    "treeName": { "type": "string", "minLength": 1 },
+    "districtId": { "type": "string", "x-ref": "district" },
+    "story": { "type": "string" },
+    "technologies": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

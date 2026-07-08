@@ -1,0 +1,16 @@
+{
+  "name": "ninjatronics",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "compile:world": "tsx scripts/compile-world.ts",
+    "compile:world:check": "tsx scripts/compile-world.ts --check"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "tsx": "^4.23.0",
+    "typescript": "^6.0.3"
+  }
+}

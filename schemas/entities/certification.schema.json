@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "certification.schema.json",
+  "title": "Certification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "issuer"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "type": { "const": "certification" },
+    "name": { "type": "string", "minLength": 1 },
+    "issuer": { "type": "string", "minLength": 1 },
+    "dateEarned": { "type": "string", "format": "date" },
+    "credentialUrl": { "type": "string", "format": "uri" },
+    "districtId": { "type": "string", "x-ref": "district" }
+  }
+}

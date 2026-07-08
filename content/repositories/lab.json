@@ -1,0 +1,9 @@
+// content/repositories/lab.json
+{
+  "id": "lab",
+  "githubRepository": "GMakeziG/lab",
+  "treeName": "The Ancient Oak",
+  "districtId": "git-forest",
+  "story": "The Ancient Oak represents the evolution of my Kubernetes GitOps homelab.",
+  "technologies": ["Kubernetes", "FluxCD", "Traefik", "MetalLB", "Cloudflare", "OpenBao"]
+}

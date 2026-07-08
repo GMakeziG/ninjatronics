@@ -1,0 +1,7 @@
+// content/districts/floating-citadel.json
+{
+  "id": "floating-citadel",
+  "name": "Floating Citadel",
+  "slug": "floating-citadel",
+  "status": "locked"
+}

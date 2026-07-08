@@ -1,0 +1,13 @@
+// content/districts/git-forest.json
+{
+  "id": "git-forest",
+  "name": "Git Forest",
+  "slug": "git-forest",
+  "status": "open",
+  "type": "district",
+  "guardianId": "archivist",
+  "subtitle": "Where every repository becomes a living tree.",
+  "description": "The Git Forest is a living archive of every project. Trees grow from repositories. Their rings record commits. Lanterns celebrate releases. Fireflies gather around active development.",
+  "dataSources": [{ "type": "github", "owner": "GMakeziG" }],
+  "connections": ["dojo-gate", "floating-citadel", "hall-of-knowledge"]
+}
