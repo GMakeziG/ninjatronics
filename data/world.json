@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generatedAt": "2026-07-08T04:47:57.536Z",
-    "sourceFileCount": 6,
-    "entityCount": 6
+    "generatedAt": "2026-07-09T02:47:43.185Z",
+    "sourceFileCount": 13,
+    "entityCount": 13
   },
   "districts": [
     {
@@ -67,6 +67,54 @@
   ],
   "repositories": [
     {
+      "id": "cpp-practice",
+      "githubRepository": "GMakeziG/cpp-practice",
+      "treeName": "cpp-practice",
+      "districtId": "git-forest",
+      "story": "Personal C++ learning repository focused on computer science fundamentals, algorithms, systems programming, and performance optimization.",
+      "type": "repository"
+    },
+    {
+      "id": "devops-devpod",
+      "githubRepository": "GMakeziG/devops-devpod",
+      "treeName": "devops-devpod",
+      "districtId": "git-forest",
+      "technologies": [
+        "Shell"
+      ],
+      "type": "repository"
+    },
+    {
+      "id": "devpod-dotfiles",
+      "githubRepository": "GMakeziG/devpod-dotfiles",
+      "treeName": "devpod-dotfiles",
+      "districtId": "git-forest",
+      "story": "DevPod dotfiles for reproducible DevOps environments (nvim, tmux, pnpm, fd, ripgrep, lazygit)",
+      "technologies": [
+        "Shell"
+      ],
+      "type": "repository"
+    },
+    {
+      "id": "go-practice",
+      "githubRepository": "GMakeziG/go-practice",
+      "treeName": "go-practice",
+      "districtId": "git-forest",
+      "story": "Learning Go through exercises, projects, DevOps automation, and coding challenges.",
+      "technologies": [
+        "Go"
+      ],
+      "type": "repository"
+    },
+    {
+      "id": "javascript-practice",
+      "githubRepository": "GMakeziG/javascript-practice",
+      "treeName": "javascript-practice",
+      "districtId": "git-forest",
+      "story": "Personal JavaScript learning repository focused on full-stack development, web automation, internal tools, and DevOps dashboards.",
+      "type": "repository"
+    },
+    {
       "id": "lab",
       "githubRepository": "GMakeziG/lab",
       "treeName": "The Ancient Oak",
@@ -79,6 +127,28 @@
         "MetalLB",
         "Cloudflare",
         "OpenBao"
+      ],
+      "type": "repository"
+    },
+    {
+      "id": "signalnode",
+      "githubRepository": "GMakeziG/signalnode",
+      "treeName": "signalnode",
+      "districtId": "git-forest",
+      "story": "Rust-powered uptime and infrastructure monitoring platform for websites, APIs, SSL certificates, and WordPress integration.",
+      "technologies": [
+        "Rust"
+      ],
+      "type": "repository"
+    },
+    {
+      "id": "skills-introduction-to-git",
+      "githubRepository": "GMakeziG/skills-introduction-to-git",
+      "treeName": "skills-introduction-to-git",
+      "districtId": "git-forest",
+      "story": "Exercise: Introduction to Git",
+      "technologies": [
+        "Shell"
       ],
       "type": "repository"
     }

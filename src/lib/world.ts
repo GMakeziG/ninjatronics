@@ -3,6 +3,8 @@
 // after editing content/ to regenerate it before this module picks up changes.
 
 import worldData from "../../data/world.json" with { type: "json" };
+import { buildWorldGraph, getRecommendedPath } from "./world-graph.js";
+import type { DistrictNode, GraphEdge, GraphWarning, GraphWarningKind, WorldGraph } from "./world-graph.js";
 
 export interface District {
   id: string;
@@ -135,3 +137,8 @@ export const getRepositoriesForDistrict = (districtId: string): Repository[] =>
 
 export const getConnectedDistricts = (districtId: string): District[] =>
   (getDistrict(districtId)?.connections ?? []).map(getDistrict).filter((d): d is District => d !== undefined);
+
+export { buildWorldGraph, getRecommendedPath };
+export type { DistrictNode, GraphEdge, GraphWarning, GraphWarningKind, WorldGraph };
+
+export const worldGraph: WorldGraph = buildWorldGraph(world);
