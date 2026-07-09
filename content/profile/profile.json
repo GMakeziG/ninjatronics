@@ -1,0 +1,11 @@
+// content/profile/profile.json
+{
+  "id": "gerso",
+  "name": "Gerso Robayo-Guillen",
+  "title": "Senior Systems Administrator",
+  "tagline": "Building secure infrastructure, automation, and cloud-native systems that scale.",
+  "location": "Ridgecrest, California, USA",
+  "links": [
+    { "label": "GitHub", "url": "https://github.com/GMakeziG" }
+  ]
+}

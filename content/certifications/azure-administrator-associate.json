@@ -1,0 +1,6 @@
+// content/certifications/azure-administrator-associate.json
+{
+  "id": "azure-administrator-associate",
+  "name": "Microsoft Certified: Azure Administrator Associate (AZ-104)",
+  "issuer": "Microsoft"
+}

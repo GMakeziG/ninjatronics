@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generatedAt": "2026-07-09T04:43:05.217Z",
-    "sourceFileCount": 13,
-    "entityCount": 13
+    "generatedAt": "2026-07-09T05:18:22.548Z",
+    "sourceFileCount": 16,
+    "entityCount": 16
   },
   "districts": [
     {
@@ -157,6 +157,34 @@
   "quests": [],
   "notes": [],
   "skills": [],
-  "certifications": [],
-  "profiles": []
+  "certifications": [
+    {
+      "id": "azure-administrator-associate",
+      "name": "Microsoft Certified: Azure Administrator Associate (AZ-104)",
+      "issuer": "Microsoft",
+      "type": "certification"
+    },
+    {
+      "id": "comptia-security-plus",
+      "name": "CompTIA Security+",
+      "issuer": "CompTIA",
+      "type": "certification"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "gerso",
+      "name": "Gerso Robayo-Guillen",
+      "title": "Senior Systems Administrator",
+      "tagline": "Building secure infrastructure, automation, and cloud-native systems that scale.",
+      "location": "Ridgecrest, California, USA",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/GMakeziG"
+        }
+      ],
+      "type": "profile"
+    }
+  ]
 }

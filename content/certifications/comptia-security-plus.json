@@ -1,0 +1,6 @@
+// content/certifications/comptia-security-plus.json
+{
+  "id": "comptia-security-plus",
+  "name": "CompTIA Security+",
+  "issuer": "CompTIA"
+}
