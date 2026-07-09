@@ -15,6 +15,7 @@ import { JsonParseError, loadJsonFile } from "./world-compiler/load.js";
 import { ENTITY_REGISTRY, findRegistryEntry } from "./world-compiler/registry.js";
 import { loadSchemas, formatAjvErrors } from "./world-compiler/validate.js";
 import { findRefFields, resolveReferences } from "./world-compiler/resolve.js";
+import { checkSingletonCollections, isSingletonSchema } from "./world-compiler/singleton.js";
 import { assembleWorld } from "./world-compiler/assemble.js";
 import { reportErrors, reportSuccess } from "./world-compiler/report.js";
 import type { CompilerError, EntityType, RawEntity, ValidatedEntity } from "./world-compiler/types.js";
@@ -106,12 +107,16 @@ function compile(options: CliOptions): { errors: CompilerError[]; world?: Return
   }
 
   const refFieldsByType = new Map<EntityType, ReturnType<typeof findRefFields>>();
+  const singletonTypes = new Set<EntityType>();
   for (const entry of ENTITY_REGISTRY) {
     const rawSchema = schemas.rawSchemas.get(entry.schemaFile);
-    if (rawSchema) refFieldsByType.set(entry.type, findRefFields(rawSchema));
+    if (!rawSchema) continue;
+    refFieldsByType.set(entry.type, findRefFields(rawSchema));
+    if (isSingletonSchema(rawSchema)) singletonTypes.add(entry.type);
   }
 
   errors.push(...resolveReferences(validated, refFieldsByType));
+  errors.push(...checkSingletonCollections(validated, singletonTypes));
 
   if (errors.length > 0) {
     return { errors };

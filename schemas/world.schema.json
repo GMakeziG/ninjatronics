@@ -14,7 +14,8 @@
     "quests",
     "notes",
     "skills",
-    "certifications"
+    "certifications",
+    "profiles"
   ],
   "properties": {
     "meta": {
@@ -34,6 +35,7 @@
     "quests": { "type": "array", "items": { "$ref": "quest.schema.json" } },
     "notes": { "type": "array", "items": { "$ref": "note.schema.json" } },
     "skills": { "type": "array", "items": { "$ref": "skill.schema.json" } },
-    "certifications": { "type": "array", "items": { "$ref": "certification.schema.json" } }
+    "certifications": { "type": "array", "items": { "$ref": "certification.schema.json" } },
+    "profiles": { "type": "array", "maxItems": 1, "items": { "$ref": "profile.schema.json" } }
   }
 }

@@ -2,28 +2,25 @@
 // persisted or written back to content/ or data/world.json — it's a pure,
 // computed projection over world.ts (the already-validated World shape) and
 // git-forest.ts's already-computed featured-repository curation. Mission
-// Brief invents no new data: every field is either a direct passthrough of
-// an existing world.ts collection, a value derived from a field that
-// already exists on District (dataSources), or a genuinely-empty
-// placeholder for content that has no source yet (profile/contact — see
-// note below). Deliberately does NOT import worldGraph or world-graph.ts
-// directly: every field this module needs is already reachable from
-// world.ts directly (skills, quests, projects, certifications, districts)
-// or transitively through git-forest.ts's getFeaturedTrees(), which is
-// itself the thing that reads worldGraph. An unused direct worldGraph
-// import would also fail this repo's noUnusedLocals check. Deliberately
-// NOT re-exported from world.ts, for the same circular-import (TDZ)
-// reasons documented in git-forest.ts's header.
+// Brief invents no new data: profile/contact are read from the Profile
+// domain (content/profile/profile.json, via world.ts's getProfile()); every
+// other field is a direct passthrough of an existing world.ts collection or
+// derived from a field that already exists on District (dataSources).
+// Deliberately does NOT import worldGraph or world-graph.ts directly: every
+// field this module needs is already reachable from world.ts directly
+// (skills, quests, projects, certifications, districts) or transitively
+// through git-forest.ts's getFeaturedTrees(), which is itself the thing
+// that reads worldGraph. An unused direct worldGraph import would also fail
+// this repo's noUnusedLocals check. Deliberately NOT re-exported from
+// world.ts, for the same circular-import (TDZ) reasons documented in
+// git-forest.ts's header.
 //
-// profile/contact are typed but intentionally empty today: there is no
-// content source for personal identity data anywhere in the repo (no
-// `profile` entity type, nothing in package.json/README.md). Hand-filling
-// them here would violate "never invent content." They stay {} until a
-// future content/profile/profile.json + profile schema + registry entry
-// exists — deliberately out of scope for this module.
+// buildMissionBrief takes an optional profile override (default:
+// getProfile(), the real compiled data) so it can be unit-verified against
+// a fabricated Profile without ever writing into content/.
 
-import { world } from "./world.js";
-import type { Certification, Project, Quest, Skill } from "./world.js";
+import { world, getProfile } from "./world.js";
+import type { Certification, Profile, Project, Quest, Skill } from "./world.js";
 import { getFeaturedTrees } from "./git-forest.js";
 import type { RepositoryTree } from "./git-forest.js";
 
@@ -38,6 +35,8 @@ export interface MissionBriefContact {
   linkedin?: string;
   website?: string;
   location?: string;
+  /** Normalized to always-array; the schema leaves `links` optional. */
+  links: Array<{ label: string; url: string }>;
 }
 
 export interface MissionBrief {
@@ -72,11 +71,21 @@ function deriveGithubUrl(): string | undefined {
   return undefined;
 }
 
-function buildMissionBrief(): MissionBrief {
+export function buildMissionBrief(profile: Profile | undefined = getProfile()): MissionBrief {
   return {
     generatedAt: world.meta.generatedAt,
-    profile: {},
-    contact: {},
+    profile: profile
+      ? { name: profile.name, title: profile.title, tagline: profile.tagline }
+      : {},
+    contact: profile
+      ? {
+          email: profile.email,
+          linkedin: profile.linkedin,
+          website: profile.website,
+          location: profile.location,
+          links: profile.links ?? [],
+        }
+      : { links: [] },
     githubUrl: deriveGithubUrl(),
     skills: world.skills,
     learningPaths: world.quests,

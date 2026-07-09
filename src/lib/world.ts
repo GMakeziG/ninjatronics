@@ -91,6 +91,19 @@ export interface Certification {
   districtId?: string;
 }
 
+export interface Profile {
+  id: string;
+  type: "profile";
+  name: string;
+  title?: string;
+  tagline?: string;
+  email?: string;
+  linkedin?: string;
+  website?: string;
+  location?: string;
+  links?: Array<{ label: string; url: string }>;
+}
+
 export interface World {
   meta: { generatedAt: string; sourceFileCount: number; entityCount: number };
   districts: District[];
@@ -101,6 +114,7 @@ export interface World {
   notes: Note[];
   skills: Skill[];
   certifications: Certification[];
+  profiles: Profile[];
 }
 
 export const world = worldData as unknown as World;
@@ -137,6 +151,8 @@ export const getRepositoriesForDistrict = (districtId: string): Repository[] =>
 
 export const getConnectedDistricts = (districtId: string): District[] =>
   (getDistrict(districtId)?.connections ?? []).map(getDistrict).filter((d): d is District => d !== undefined);
+
+export const getProfile = (): Profile | undefined => world.profiles[0];
 
 export { buildWorldGraph, getRecommendedPath };
 export type { DistrictNode, GraphEdge, GraphWarning, GraphWarningKind, WorldGraph };

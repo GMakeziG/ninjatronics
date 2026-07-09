@@ -8,7 +8,8 @@ export type EntityType =
   | "quest"
   | "note"
   | "skill"
-  | "certification";
+  | "certification"
+  | "profile";
 
 /** A single loosely-typed JSON entity as read from content/. */
 export type RawEntity = Record<string, unknown> & { id?: unknown };
@@ -35,7 +36,8 @@ export type CompilerErrorKind =
   | "parse"
   | "schema"
   | "duplicate-id"
-  | "unresolved-reference";
+  | "unresolved-reference"
+  | "singleton-violation";
 
 export interface CompilerError {
   kind: CompilerErrorKind;
