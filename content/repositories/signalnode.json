@@ -1,0 +1,11 @@
+// content/repositories/signalnode.json
+{
+  "id": "signalnode",
+  "githubRepository": "GMakeziG/signalnode",
+  "treeName": "signalnode",
+  "districtId": "git-forest",
+  "story": "Rust-powered uptime and infrastructure monitoring platform for websites, APIs, SSL certificates, and WordPress integration.",
+  "technologies": [
+    "Rust"
+  ]
+}

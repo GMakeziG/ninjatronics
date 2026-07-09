@@ -1,0 +1,11 @@
+// content/repositories/go-practice.json
+{
+  "id": "go-practice",
+  "githubRepository": "GMakeziG/go-practice",
+  "treeName": "go-practice",
+  "districtId": "git-forest",
+  "story": "Learning Go through exercises, projects, DevOps automation, and coding challenges.",
+  "technologies": [
+    "Go"
+  ]
+}

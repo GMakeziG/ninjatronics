@@ -1,0 +1,7 @@
+// content-overrides/repositories/lab.json
+{
+  "districtId": "git-forest",
+  "treeName": "The Ancient Oak",
+  "story": "The Ancient Oak represents the evolution of my Kubernetes GitOps homelab.",
+  "technologies": ["Kubernetes", "FluxCD", "Traefik", "MetalLB", "Cloudflare", "OpenBao"]
+}

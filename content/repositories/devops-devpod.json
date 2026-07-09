@@ -1,0 +1,10 @@
+// content/repositories/devops-devpod.json
+{
+  "id": "devops-devpod",
+  "githubRepository": "GMakeziG/devops-devpod",
+  "treeName": "devops-devpod",
+  "districtId": "git-forest",
+  "technologies": [
+    "Shell"
+  ]
+}

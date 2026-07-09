@@ -1,0 +1,8 @@
+// content/repositories/cpp-practice.json
+{
+  "id": "cpp-practice",
+  "githubRepository": "GMakeziG/cpp-practice",
+  "treeName": "cpp-practice",
+  "districtId": "git-forest",
+  "story": "Personal C++ learning repository focused on computer science fundamentals, algorithms, systems programming, and performance optimization."
+}

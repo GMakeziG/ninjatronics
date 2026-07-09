@@ -1,0 +1,4 @@
+// content-overrides/repositories/devpod-dotfiles.json
+{
+  "districtId": "git-forest"
+}

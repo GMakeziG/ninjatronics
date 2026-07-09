@@ -1,0 +1,11 @@
+// content/repositories/devpod-dotfiles.json
+{
+  "id": "devpod-dotfiles",
+  "githubRepository": "GMakeziG/devpod-dotfiles",
+  "treeName": "devpod-dotfiles",
+  "districtId": "git-forest",
+  "story": "DevPod dotfiles for reproducible DevOps environments (nvim, tmux, pnpm, fd, ripgrep, lazygit)",
+  "technologies": [
+    "Shell"
+  ]
+}

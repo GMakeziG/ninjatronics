@@ -1,0 +1,6 @@
+// content-overrides/repositories/ninjatronics.json
+{
+  "skip": true,
+  "reason": "self-referential-source",
+  "note": "TODO: Ninjatronics may later become a special \"World Core\" or \"Dojo Engine\" artifact instead of a regular Git Forest repository tree. Not rendered as a normal repository entity for now."
+}

@@ -1,0 +1,11 @@
+// content/repositories/skills-introduction-to-git.json
+{
+  "id": "skills-introduction-to-git",
+  "githubRepository": "GMakeziG/skills-introduction-to-git",
+  "treeName": "skills-introduction-to-git",
+  "districtId": "git-forest",
+  "story": "Exercise: Introduction to Git",
+  "technologies": [
+    "Shell"
+  ]
+}

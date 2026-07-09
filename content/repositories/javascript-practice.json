@@ -1,0 +1,8 @@
+// content/repositories/javascript-practice.json
+{
+  "id": "javascript-practice",
+  "githubRepository": "GMakeziG/javascript-practice",
+  "treeName": "javascript-practice",
+  "districtId": "git-forest",
+  "story": "Personal JavaScript learning repository focused on full-stack development, web automation, internal tools, and DevOps dashboards."
+}
