@@ -33,7 +33,24 @@ than existing as separate disconnected pages.
   schema before it is trusted anywhere downstream.
 - Add new domains through a schema + registry entry
   (`scripts/world-compiler/registry.ts`), not by special-casing code in
-  the compiler pipeline.
+  the compiler pipeline. Precisely, a new domain requires: (1) a new
+  `schemas/entities/<type>.schema.json`, (2) one entry in
+  `ENTITY_REGISTRY` (`scripts/world-compiler/registry.ts`), (3) the type
+  name added to the `EntityType` union in
+  `scripts/world-compiler/types.ts`, and (4) the collection added to
+  `schemas/world.schema.json`'s `required` array and `properties`. (3)
+  and (4) are enumeration points the type system and top-level schema
+  require, not conditional branches — they don't count as
+  "special-casing" — but they are real edits every new domain needs;
+  don't assume the registry entry alone is sufficient. `discover.ts`,
+  `validate.ts`, `resolve.ts`, `singleton.ts`, and `assemble.ts` stay
+  fully generic and should never need a per-type change (verified when
+  the Experience domain was added in v0.9.0).
+- Domain naming convention: entity `type` is singular (e.g.
+  `certification`, `experience`); the `content/` folder and the output
+  collection key are the plural form (e.g. `certifications`,
+  `experiences`) — except `x-singleton` domains (e.g. `profile`), which
+  stay singular throughout (folder `profile`, collection `profiles`).
 - Use IDs for relationships between entities — never embed a copy of one
   entity's data inside another.
 - Fail closed when references are missing. A broken reference, schema
