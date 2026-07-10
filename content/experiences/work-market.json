@@ -1,0 +1,18 @@
+{
+  "id": "work-market",
+  "employer": "Work Market",
+  "role": "Freelance IT Consultant",
+  "startDate": "2008-08-01",
+  "endDate": "2013-09-01",
+  "location": "Los Angeles & Orange County, CA",
+  "summary": "Work Market was a parallel consulting track, not a traditional job — between August 2008 and September 2013, I took on freelance and consulting IT assignments through their platform, fitting them around my other jobs, school, and internships. The platform connected businesses with independent IT professionals, and I was brought in for a wide range of work: computer hardware, software, networking, and general technical troubleshooting. Every engagement was different, which meant quickly assessing an unfamiliar environment, diagnosing the problem, and delivering a solution with very little context or support. One day I might be troubleshooting a workstation, the next resolving a networking issue, installing equipment, or getting a small business back up and running. Because I was working independently, I owned the entire customer experience — communicating with the client, diagnosing the issue, completing the work, and making sure they were satisfied — with no larger organization or support team to fall back on. That built real accountability and professionalism, and taught me that trust is earned through results. Looking back, Work Market was an important bridge between my education and my later enterprise IT roles: it let me apply classroom knowledge in real environments, exposed me to a wide range of technologies, and built the confidence that I could solve technical problems independently.",
+  "highlights": [
+    "Took on freelance and consulting IT assignments through Work Market's platform from August 2008 to September 2013, in parallel with school, internships, and other jobs — an ongoing independent consulting track, not a traditional full-time position.",
+    "Handled a wide variety of engagements — workstation troubleshooting, networking issues, equipment installation, and getting small businesses back up and running — each requiring a fast read of an unfamiliar environment with little context or support.",
+    "Owned the entire customer experience independently: communicating with the client, diagnosing the issue, completing the work, and ensuring satisfaction, with no larger organization or support team to fall back on.",
+    "Applied classroom knowledge from my IT and programming studies directly in real-world environments, turning theory into hands-on troubleshooting experience.",
+    "Built the confidence to solve technical problems independently, and the accountability that comes from earning trust through results — a bridge between my education and the enterprise IT roles that followed."
+  ],
+  "technologies": ["Computer Hardware", "Networking", "Software Troubleshooting"],
+  "districtId": "dojo-gate"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "raices",
+  "employer": "RAICES",
+  "role": "IT Specialist",
+  "startDate": "2019-10-01",
+  "endDate": "2021-06-01",
+  "location": "San Antonio, TX",
+  "summary": "Joined RAICES in October 2019 after relocating to San Antonio, Texas. It became one of the most meaningful roles of my career — every technical problem I solved ultimately helped people serving vulnerable families and children, which gave the work a deeper sense of purpose than infrastructure alone. As an IT Specialist, I provided infrastructure and end-user support across multiple Texas offices, including San Antonio, Dallas, and Corpus Christi, working with attorneys, administrative staff, software developers, and infrastructure projects for a genuinely distributed workforce. I helped modernize the organization's identity infrastructure, participating in the transition from traditional Active Directory toward Azure AD for Windows devices and JumpCloud for macOS, building a more flexible and secure environment. I administered Google Workspace and built automation tools that simplified moving data between Google Workspace and Microsoft OneDrive, cutting down the manual effort required by staff. I also invested heavily in user education — creating documentation and recorded training videos so staff could use their tools confidently instead of repeatedly depending on IT for the same questions. Beyond that, I strengthened my infrastructure skills troubleshooting complex networking and file server issues, supporting secure remote access as the organization adapted to remote work, implementing security improvements, and learning automation with Ansible to bring more consistency across systems. Looking back, RAICES reinforced that technology is ultimately about serving people — whether I was supporting developers, attorneys, or remote staff across Texas, every technical solution contributed to a larger mission. That perspective still shapes how I approach systems administration today: infrastructure isn't an end in itself, it's a way to enable people to do meaningful work.",
+  "highlights": [
+    "Provided infrastructure and end-user support across multiple Texas offices — San Antonio, Dallas, and Corpus Christi — for a genuinely distributed workforce of attorneys, administrative staff, and software developers.",
+    "Helped modernize identity infrastructure, participating in the shift from traditional Active Directory toward Azure AD for Windows devices and JumpCloud for macOS systems.",
+    "Administered Google Workspace and built automation tools to simplify moving data between Google Workspace and Microsoft OneDrive, reducing manual effort for staff.",
+    "Invested in user education — creating documentation and recorded training videos so staff could use their tools confidently, rather than repeatedly relying on IT for the same questions.",
+    "Strengthened infrastructure skills troubleshooting networking and file server issues, supporting secure remote access during the shift to remote work, implementing security improvements, and learning automation with Ansible.",
+    "Found this to be one of the most meaningful roles of my career: every technical solution ultimately helped people serving vulnerable families and children, reinforcing that technology exists to serve people, not the other way around."
+  ],
+  "technologies": ["Azure AD", "JumpCloud", "Google Workspace", "Microsoft OneDrive", "Ansible", "Active Directory", "Networking"],
+  "districtId": "floating-citadel"
+}

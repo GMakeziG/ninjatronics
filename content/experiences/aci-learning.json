@@ -1,0 +1,19 @@
+{
+  "id": "aci-learning",
+  "employer": "ACI Learning",
+  "role": "Computer User Networking Specialist Intern",
+  "startDate": "2021-06-01",
+  "endDate": "2022-01-01",
+  "location": "San Antonio, TX",
+  "summary": "Enrolled in ACI Learning in June 2021 while living in San Antonio, deliberately investing in professional growth to move beyond technical support into true systems administration — studying Cisco networking, Security+, and other enterprise infrastructure topics. Partway through the program I earned an internship, which turned out to be the perfect environment: I could immediately apply what I was learning in the classroom to real production environments. As a Computer User Networking Specialist intern, I provided Tier 2 and Tier 3 support for Windows Server, Active Directory, deployment processes, Cisco switching, and enterprise networking — handling user provisioning, Group Policy, OS deployments, hardware lifecycle management, and troubleshooting complex infrastructure issues for both local and remote users. This experience strengthened my understanding of enterprise networking and security specifically, and shifted my thinking from fixing individual problems toward how infrastructure should be designed, secured, and standardized. It also reinforced something that has stayed with me throughout my career: continuous learning — combining formal training, industry certifications, and real-world experience — is one of the most valuable skills an IT professional can have. Looking back, ACI Learning was less about the title itself and more about deliberately preparing for the next stage of my career, building the confidence, technical foundation, and certifications that opened the door to larger enterprise environments and more advanced infrastructure responsibilities.",
+  "highlights": [
+    "Enrolled in ACI Learning while living in San Antonio to deliberately move beyond technical support into true systems administration, studying Cisco networking, Security+, and enterprise infrastructure topics.",
+    "Earned an internship partway through the program, letting me apply classroom learning directly to real production environments.",
+    "Provided Tier 2 and Tier 3 support for Windows Server, Active Directory, deployment processes, Cisco switching, and enterprise networking.",
+    "Handled user provisioning, Group Policy, operating system deployments, and hardware lifecycle management, troubleshooting complex infrastructure issues for both local and remote users.",
+    "Shifted my thinking from fixing individual problems to how infrastructure should be designed, secured, and standardized — a foundation that shaped every systems administration role that followed.",
+    "Reinforced that continuous learning — combining formal training, certifications, and real-world experience — is one of the most valuable skills an IT professional can have, accelerating my transition from desktop support into infrastructure engineering."
+  ],
+  "technologies": ["Cisco Networking", "Windows Server", "Active Directory", "Group Policy"],
+  "districtId": "floating-citadel"
+}

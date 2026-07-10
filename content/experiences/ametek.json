@@ -1,0 +1,25 @@
+{
+  "id": "ametek",
+  "employer": "AMETEK",
+  "role": "Systems Administrator",
+  "startDate": "2015-02-01",
+  "endDate": "2018-10-01",
+  "location": "Rosemead, CA",
+  "summary": "Joined AMETEK in February 2015 on the encouragement of someone from my church who believed my passion for technology, troubleshooting skills, and eagerness to learn would fit an enterprise systems administration role — my first one, and a major turning point. Coming from customer support and hardware diagnostics, stepping into an enterprise environment was both exciting and humbling: for the first time I wasn't repairing individual computers, I was responsible for the infrastructure engineers and manufacturing teams relied on every day. My goal shifted from keeping systems running to removing technical obstacles so engineers could focus on innovation, which pushed me to keep expanding my own knowledge. As my confidence grew, I started using PowerShell, Python, and Bash to automate repetitive administrative tasks — the point where automation stopped being a hobby and became core to how I approach systems administration. Several projects stand out: leading the migration from Lotus Notes to Microsoft Office; modernizing a legacy measurement database from an aging proprietary system into Microsoft Access and later SQL Server; developing a software update that let a manufacturing device originally locked to Windows XP run on Windows 10, avoiding a costly replacement; maintaining Windows Server 2012 R2 on Cisco blade servers with monthly patching; standardizing workstation deployment with Microsoft Deployment Toolkit and custom thin images; and hardening security across printers, CNC machines, and network devices while providing executive-level support. Working in manufacturing also introduced disciplines beyond traditional IT — disaster recovery planning, coordinating infrastructure testing with logistics partners, and evaluating vendors for critical data center systems — which taught me that enterprise IT is ultimately about enabling the business to operate reliably. I left in October 2018 having fundamentally changed how I saw my own role: no longer someone who fixed computers, but a systems administrator who designs, automates, secures, and continuously improves enterprise infrastructure. Automation, process improvement, proactive problem solving, and close collaboration with engineers — habits formed here still define my work today.",
+  "highlights": [
+    "Landed my first enterprise systems administration role in February 2015 on a referral from someone at my church — the major turning point from fixing individual computers to owning infrastructure that engineers and manufacturing teams relied on daily.",
+    "Focused on removing technical obstacles for engineers rather than just keeping systems running, which pushed me to continually expand my own technical depth to support highly technical users.",
+    "Automated repetitive administrative tasks with PowerShell, Python, and Bash — the point where automation stopped being a hobby and became core to how I approach systems administration.",
+    "Led the migration from Lotus Notes to Microsoft Office, and modernized a legacy measurement database from an aging proprietary system into Microsoft Access and later SQL Server.",
+    "Extended the life of a manufacturing device originally locked to Windows XP by developing a software update that let it run on Windows 10 — avoiding a costly equipment replacement.",
+    "Maintained Windows Server 2012 R2 on Cisco blade servers with monthly patching and maintenance, and standardized workstation deployment with Microsoft Deployment Toolkit (MDT) and custom thin images.",
+    "Hardened security across printers, CNC machines, and network devices; supported disaster recovery planning, infrastructure testing with logistics partners, and vendor evaluation for critical data center systems, while providing executive-level technical support.",
+    "Left having fundamentally changed how I saw my own role — from someone who fixed computers to a systems administrator who designs, automates, secures, and continuously improves infrastructure; the habits formed here still define my work today."
+  ],
+  "technologies": [
+    "PowerShell", "Python", "Bash", "Microsoft Office 365", "Lotus Notes",
+    "Microsoft Access", "Microsoft SQL Server", "Windows Server 2012 R2",
+    "Cisco Blade Servers", "Microsoft Deployment Toolkit (MDT)", "Windows 10"
+  ],
+  "districtId": "floating-citadel"
+}

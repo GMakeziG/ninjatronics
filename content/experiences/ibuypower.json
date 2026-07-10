@@ -1,0 +1,19 @@
+{
+  "id": "ibuypower",
+  "employer": "iBUYPOWER",
+  "role": "Technical Support Specialist",
+  "startDate": "2013-05-01",
+  "endDate": "2015-01-01",
+  "location": "Baldwin Park, CA",
+  "summary": "Joined iBUYPOWER in May 2013 on a referral from a friend at Newegg, who knew about my passion for computer hardware and the experience I'd built at Fry's Electronics. By then, friends and coworkers had started jokingly calling me the 'PC Whisperer' because I could often identify the source of a computer problem just from hearing someone describe the symptoms — Fry's had taught me to ask the right troubleshooting questions and recognize common failure patterns before ever touching the machine. I demonstrated that skill in the interview and was hired almost immediately. As a Technical Support Specialist, I repaired desktops and laptops returned under warranty (RMA): diagnosing hardware failures, replacing defective components, running burn-in testing, and verifying systems were stable before returning them to customers. At the same time, I supported customers over phone and live chat — jokingly nicknamed 'AI,' though it was really a small team of technicians — often juggling multiple conversations while still working repairs at the bench. One of the best parts of the job was direct exposure to Intel, AMD, and NVIDIA representatives who regularly visited to preview upcoming hardware and explain where PC gaming and performance computing were headed — a depth of insight into computer architecture no book could match. I also helped prepare network infrastructure for gaming events, adding hands-on experience beyond desktop repair. I genuinely loved the job, but when I received an offer for my first enterprise systems administration role, I checked with management first to see if they could match it — they were honest that they couldn't, so I accepted, knowing it would fundamentally change the direction of my career. Looking back, iBUYPOWER was the culmination of everything I'd learned in the previous several years: it turned a passion for PC hardware into professional expertise and prepared me for the shift from hardware-focused support into managing the infrastructure behind entire organizations.",
+  "highlights": [
+    "Joined in May 2013 on a referral from a friend at Newegg who knew my hardware passion and Fry's Electronics experience — hired almost immediately after demonstrating troubleshooting skill in the interview.",
+    "Earned the nickname 'PC Whisperer' from friends and coworkers for often identifying the root cause of a computer problem just from hearing someone describe the symptoms.",
+    "Repaired desktops and laptops returned under warranty (RMA): diagnosing hardware failures, replacing defective components, running burn-in testing, and verifying stability before returning systems to customers.",
+    "Juggled phone and live-chat customer support (jokingly nicknamed 'AI,' though it was really a small team of technicians) simultaneously with hands-on bench repair work.",
+    "Got direct exposure to Intel, AMD, and NVIDIA representatives previewing upcoming hardware, plus hands-on experience preparing network infrastructure for gaming events.",
+    "Left in January 2015 for my first enterprise systems administration role after management confirmed they couldn't match the offer — a deliberate transition that turned years of hardware passion into the foundation for enterprise infrastructure work."
+  ],
+  "technologies": ["Hardware Diagnostics", "RMA Repair", "Burn-in Testing"],
+  "districtId": "dojo-gate"
+}

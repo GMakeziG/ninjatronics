@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generatedAt": "2026-07-10T00:05:37.317Z",
-    "sourceFileCount": 19,
-    "entityCount": 19
+    "generatedAt": "2026-07-10T07:21:25.944Z",
+    "sourceFileCount": 37,
+    "entityCount": 37
   },
   "districts": [
     {
@@ -244,6 +244,440 @@
         }
       ],
       "type": "profile"
+    }
+  ],
+  "experiences": [
+    {
+      "id": "aci-learning",
+      "employer": "ACI Learning",
+      "role": "Computer User Networking Specialist Intern",
+      "startDate": "2021-06-01",
+      "endDate": "2022-01-01",
+      "location": "San Antonio, TX",
+      "summary": "Enrolled in ACI Learning in June 2021 while living in San Antonio, deliberately investing in professional growth to move beyond technical support into true systems administration — studying Cisco networking, Security+, and other enterprise infrastructure topics. Partway through the program I earned an internship, which turned out to be the perfect environment: I could immediately apply what I was learning in the classroom to real production environments. As a Computer User Networking Specialist intern, I provided Tier 2 and Tier 3 support for Windows Server, Active Directory, deployment processes, Cisco switching, and enterprise networking — handling user provisioning, Group Policy, OS deployments, hardware lifecycle management, and troubleshooting complex infrastructure issues for both local and remote users. This experience strengthened my understanding of enterprise networking and security specifically, and shifted my thinking from fixing individual problems toward how infrastructure should be designed, secured, and standardized. It also reinforced something that has stayed with me throughout my career: continuous learning — combining formal training, industry certifications, and real-world experience — is one of the most valuable skills an IT professional can have. Looking back, ACI Learning was less about the title itself and more about deliberately preparing for the next stage of my career, building the confidence, technical foundation, and certifications that opened the door to larger enterprise environments and more advanced infrastructure responsibilities.",
+      "highlights": [
+        "Enrolled in ACI Learning while living in San Antonio to deliberately move beyond technical support into true systems administration, studying Cisco networking, Security+, and enterprise infrastructure topics.",
+        "Earned an internship partway through the program, letting me apply classroom learning directly to real production environments.",
+        "Provided Tier 2 and Tier 3 support for Windows Server, Active Directory, deployment processes, Cisco switching, and enterprise networking.",
+        "Handled user provisioning, Group Policy, operating system deployments, and hardware lifecycle management, troubleshooting complex infrastructure issues for both local and remote users.",
+        "Shifted my thinking from fixing individual problems to how infrastructure should be designed, secured, and standardized — a foundation that shaped every systems administration role that followed.",
+        "Reinforced that continuous learning — combining formal training, certifications, and real-world experience — is one of the most valuable skills an IT professional can have, accelerating my transition from desktop support into infrastructure engineering."
+      ],
+      "technologies": [
+        "Cisco Networking",
+        "Windows Server",
+        "Active Directory",
+        "Group Policy"
+      ],
+      "districtId": "floating-citadel",
+      "type": "experience"
+    },
+    {
+      "id": "alternativedvd-com",
+      "employer": "AlternativeDVD.com",
+      "role": "Web Support and E-Commerce Representative",
+      "startDate": "2009-04-01",
+      "endDate": "2010-07-01",
+      "location": "Chula Vista, CA",
+      "summary": "Joined AlternativeDVD.com in April 2009 after moving to the San Diego area for a relationship — not the outcome I'd hoped for, but it opened the door to one of the most unique roles of my early career. The company sold video games, consoles, accessories, and gaming merchandise, products I was already passionate about personally, and as a small business everyone wore multiple hats. As the Web Support and E-Commerce Representative, I maintained the online storefront (pricing, product images, catalog changes), managed eBay listings, handled phone-based customer support, and provided technical support for consoles and accessories. This was my first real exposure to the operational side of e-commerce — how online catalogs are maintained, how pricing decisions are managed, and how content changes ripple through to the customer experience. I also worked fully remote from home, years before remote work was common, which demanded real self-discipline, time management, and accountability without day-to-day supervision. Looking back, this role expanded my perspective beyond customer support into web operations and digital content management, and taught me that understanding the business side of technology matters just as much as the technology itself — a lesson that carried directly into enterprise IT. I left in July 2010 to move back to Los Angeles, where my family lives.",
+      "highlights": [
+        "Maintained the AlternativeDVD.com online storefront — updating pricing, product images, and catalog listings to reflect daily market changes — and managed eBay listings alongside phone-based customer support.",
+        "Provided technical support for video game consoles and accessories, combining genuine product passion with hands-on troubleshooting.",
+        "Got a first real look at the operational side of e-commerce: how online catalogs are maintained, how pricing ripples through to customer experience, and how many moving pieces a small business has to coordinate.",
+        "Worked fully remote from home years before remote work was common, building the self-discipline, time management, and accountability needed to manage a workload without direct day-to-day supervision.",
+        "Left in July 2010 to move back to Los Angeles for family, carrying forward a new appreciation for how technology, business, and customer experience intersect."
+      ],
+      "districtId": "dojo-gate",
+      "type": "experience"
+    },
+    {
+      "id": "ametek",
+      "employer": "AMETEK",
+      "role": "Systems Administrator",
+      "startDate": "2015-02-01",
+      "endDate": "2018-10-01",
+      "location": "Rosemead, CA",
+      "summary": "Joined AMETEK in February 2015 on the encouragement of someone from my church who believed my passion for technology, troubleshooting skills, and eagerness to learn would fit an enterprise systems administration role — my first one, and a major turning point. Coming from customer support and hardware diagnostics, stepping into an enterprise environment was both exciting and humbling: for the first time I wasn't repairing individual computers, I was responsible for the infrastructure engineers and manufacturing teams relied on every day. My goal shifted from keeping systems running to removing technical obstacles so engineers could focus on innovation, which pushed me to keep expanding my own knowledge. As my confidence grew, I started using PowerShell, Python, and Bash to automate repetitive administrative tasks — the point where automation stopped being a hobby and became core to how I approach systems administration. Several projects stand out: leading the migration from Lotus Notes to Microsoft Office; modernizing a legacy measurement database from an aging proprietary system into Microsoft Access and later SQL Server; developing a software update that let a manufacturing device originally locked to Windows XP run on Windows 10, avoiding a costly replacement; maintaining Windows Server 2012 R2 on Cisco blade servers with monthly patching; standardizing workstation deployment with Microsoft Deployment Toolkit and custom thin images; and hardening security across printers, CNC machines, and network devices while providing executive-level support. Working in manufacturing also introduced disciplines beyond traditional IT — disaster recovery planning, coordinating infrastructure testing with logistics partners, and evaluating vendors for critical data center systems — which taught me that enterprise IT is ultimately about enabling the business to operate reliably. I left in October 2018 having fundamentally changed how I saw my own role: no longer someone who fixed computers, but a systems administrator who designs, automates, secures, and continuously improves enterprise infrastructure. Automation, process improvement, proactive problem solving, and close collaboration with engineers — habits formed here still define my work today.",
+      "highlights": [
+        "Landed my first enterprise systems administration role in February 2015 on a referral from someone at my church — the major turning point from fixing individual computers to owning infrastructure that engineers and manufacturing teams relied on daily.",
+        "Focused on removing technical obstacles for engineers rather than just keeping systems running, which pushed me to continually expand my own technical depth to support highly technical users.",
+        "Automated repetitive administrative tasks with PowerShell, Python, and Bash — the point where automation stopped being a hobby and became core to how I approach systems administration.",
+        "Led the migration from Lotus Notes to Microsoft Office, and modernized a legacy measurement database from an aging proprietary system into Microsoft Access and later SQL Server.",
+        "Extended the life of a manufacturing device originally locked to Windows XP by developing a software update that let it run on Windows 10 — avoiding a costly equipment replacement.",
+        "Maintained Windows Server 2012 R2 on Cisco blade servers with monthly patching and maintenance, and standardized workstation deployment with Microsoft Deployment Toolkit (MDT) and custom thin images.",
+        "Hardened security across printers, CNC machines, and network devices; supported disaster recovery planning, infrastructure testing with logistics partners, and vendor evaluation for critical data center systems, while providing executive-level technical support.",
+        "Left having fundamentally changed how I saw my own role — from someone who fixed computers to a systems administrator who designs, automates, secures, and continuously improves infrastructure; the habits formed here still define my work today."
+      ],
+      "technologies": [
+        "PowerShell",
+        "Python",
+        "Bash",
+        "Microsoft Office 365",
+        "Lotus Notes",
+        "Microsoft Access",
+        "Microsoft SQL Server",
+        "Windows Server 2012 R2",
+        "Cisco Blade Servers",
+        "Microsoft Deployment Toolkit (MDT)",
+        "Windows 10"
+      ],
+      "districtId": "floating-citadel",
+      "type": "experience"
+    },
+    {
+      "id": "bank-of-america",
+      "employer": "Bank of America",
+      "role": "Credit Card Specialist",
+      "startDate": "2007-08-01",
+      "endDate": "2008-09-01",
+      "location": "Pasadena, CA",
+      "summary": "Joined Bank of America in August 2007 after a friend on the team encouraged me to apply, believing my bilingual skills and reputation for customer service and technical problem-solving would be a strong fit. As a Credit Card Specialist, I helped customers understand credit card products, interest, payments, and responsible credit management — my goal wasn't just to answer the question in front of me, but to educate customers so they could make informed financial decisions going forward. I cross-sold additional products only when they genuinely fit a customer's needs, and worked with both English- and Spanish-speaking customers to explain complex financial concepts clearly regardless of their financial background. The biggest lesson from this role was that education beats simply solving the immediate problem — customers who understood *why* something worked, not just what to do, came away more confident and better equipped for the future. Looking back, this was part of a recurring theme in my early career: I genuinely enjoyed teaching people, whether the subject was banking products, Internet service, or technical issues — a passion that carried directly into IT, where I still enjoy mentoring users and coworkers, documenting solutions, and simplifying complex technical concepts. I left Bank of America in September 2008.",
+      "highlights": [
+        "Joined after a referral from a friend at BofA who saw a fit given my bilingual skills and track record in customer service and technical troubleshooting.",
+        "Guided customers through credit card products, interest, payments, and responsible credit management — prioritizing education over simply answering the immediate question.",
+        "Cross-sold additional banking products only when they genuinely fit a customer's needs, and explained complex financial concepts clearly to both English- and Spanish-speaking customers.",
+        "Learned that customers who understood why something worked, not just what to do, came away more confident and better equipped to manage their finances — a principle that still shapes how I explain cybersecurity concepts and document technical solutions today.",
+        "Recognized a recurring theme running through my early career: a genuine enjoyment of teaching people, whether the subject was banking products, Internet service, or IT — a passion that carried directly into mentoring users and coworkers and simplifying complex technical concepts."
+      ],
+      "districtId": "dojo-gate",
+      "type": "experience"
+    },
+    {
+      "id": "charter-communications",
+      "employer": "Charter Communications",
+      "role": "Retention Specialist",
+      "startDate": "2004-03-01",
+      "endDate": "2006-03-01",
+      "location": "Irwindale, CA",
+      "summary": "Joined Charter Communications in March 2004 after a job fair at EarthLink — I'd hoped to become a field installer, but my customer service and technical support background at EarthLink landed me in the call center instead. Over the next two years I grew from customer service representative into technical support and eventually Retention Specialist, combining Internet/cable troubleshooting with the business side of keeping customers on service. Being fluently bilingual let me support Spanish-speaking customers who often struggled to find technical help in their own language. The retention role taught me that solving the technical problem wasn't always enough — I had to understand why a customer was frustrated and balance troubleshooting with business objectives like retention and upgrades. The role ended in March 2006 when Charter offered severance packages to cut costs amid merger talks and a weakening economy. This was the first job where I realized technical knowledge alone wasn't enough — communicating clearly and earning someone's trust mattered just as much as fixing the problem.",
+      "highlights": [
+        "Grew from customer service representative into technical support and eventually Retention Specialist over two years, combining troubleshooting, sales, and customer communication in a single role.",
+        "Supported Spanish-speaking customers as a bilingual representative, resolving Internet and cable issues and providing service in their own language when few others could.",
+        "Balanced technical problem-solving with business retention goals, learning to listen for the real source of a customer's frustration before proposing a solution.",
+        "Navigated Charter's industry consolidation and a 2006 cost-cutting workforce reduction, leaving with a severance package — an early lesson in staying adaptable through organizational change.",
+        "Realized here, for the first time, that technical knowledge alone wasn't enough — clear communication and earned trust mattered just as much as fixing the problem, a principle that still shapes how I support users, executives, and technical teams today."
+      ],
+      "districtId": "dojo-gate",
+      "type": "experience"
+    },
+    {
+      "id": "earthlink-business",
+      "employer": "EarthLink Business",
+      "role": "Broadband Customer Service Representative",
+      "startDate": "2001-08-01",
+      "endDate": "2004-01-01",
+      "location": "Pasadena, CA",
+      "summary": "Joined EarthLink in August 2001 to be part of the shift from dial-up to always-on broadband DSL, helping customers through service eligibility, coordination with local phone providers, and installation. As my technical depth grew I added Outlook and connectivity troubleshooting to the role — and, on my own time, taught myself scripting and automation with DOS batch files and QBASIC, building personal tools to speed up password resets, account cancellations, and Outlook fixes. This is where my interest in automation and scripting first emerged, a thread that runs through the rest of my career. The role ended when EarthLink's Pasadena HQ call center was outsourced and I was let go with severance.",
+      "highlights": [
+        "Helped customers transition from dial-up to always-on broadband DSL, determining service eligibility by coordinating with local phone providers (ILECs) and guiding them through installation and upgrades.",
+        "Provided technical support for Microsoft Outlook and common connectivity issues as my technical depth grew beyond basic account support.",
+        "Self-taught scripting and automation using DOS batch files and QBASIC, building personal tools to streamline password resets, account cancellations, and Outlook troubleshooting — the first spark of the automation mindset that would define the rest of my career.",
+        "Carried one of the highest call volumes on the team while maintaining service quality, thanks in large part to those self-built efficiency tools.",
+        "Worked out of EarthLink's HQ call center in Pasadena — a notably tight-knit, high-morale environment (arcade, pool table, ping pong, an on-site gym) — until the center was outsourced and the role ended in a severance layoff."
+      ],
+      "technologies": [
+        "DOS Batch Scripting",
+        "QBASIC"
+      ],
+      "districtId": "dojo-gate",
+      "type": "experience"
+    },
+    {
+      "id": "express-employment-professionals",
+      "employer": "Express Employment Professionals",
+      "role": "Temporary Associate",
+      "startDate": "2011-01-01",
+      "endDate": "2013-09-01",
+      "location": "Los Angeles & Orange County, CA",
+      "summary": "Not a traditional full-time job — between January 2011 and September 2013, I worked with Express Employment Professionals as a temporary associate while actively working toward a career in Information Technology. They called on me regularly for short-term assignments because I was dependable, adaptable, and quick to learn. The work varied widely: data entry, general office administration, customer service (including work supporting the Department of Veterans Affairs), and frequent bilingual Spanish translation and interpretation, from interviewing Spanish-speaking individuals to translating documents between English and Spanish. Every assignment meant learning new processes and business operations with very little onboarding — an adaptability that later became one of my greatest strengths in IT consulting and systems administration. This period overlapped with my studies at the University of Phoenix, where I was pursuing Information Technology and computer programming; evenings and weekends went to learning networking, operating systems, and programming concepts. The flexibility of temp work gave me the room to keep studying while gaining professional experience across a range of business environments. Looking back, this wasn't just a collection of temporary jobs — it was a period of preparation that strengthened my communication, professionalism, and adaptability while my education built the technical foundation for the IT career that followed.",
+      "highlights": [
+        "Worked as a temporary associate through Express from January 2011 to September 2013, taking on short-term assignments across Los Angeles and Orange County whenever they needed someone dependable and quick to ramp up.",
+        "Rotated across data entry, general office administration, and customer service assignments, including work supporting the Department of Veterans Affairs.",
+        "Called on frequently for Spanish translation and interpretation work — interviewing Spanish-speaking individuals and translating documents between English and Spanish.",
+        "Learned to become productive in a new environment with minimal onboarding, assignment after assignment — adaptability that became one of my greatest strengths in later IT consulting and systems administration work.",
+        "Used the flexibility of temp work to attend the University of Phoenix, studying Information Technology and computer programming — building the technical foundation for my IT career on evenings and weekends."
+      ],
+      "districtId": "dojo-gate",
+      "type": "experience"
+    },
+    {
+      "id": "frys-electronics",
+      "employer": "Fry's Electronics",
+      "role": "Components Sales Associate",
+      "startDate": "2011-09-01",
+      "endDate": "2013-03-01",
+      "location": "City of Industry, CA",
+      "summary": "Fry's Electronics felt like my happy place — aisles packed end to end with the latest technology, and I'd naturally wander the networking and computer components sections on any free moment just to see what new hardware had shipped. I loved helping customers work through decisions in the networking aisle, like explaining why a dual-band router was worth considering over single-band: the 2.4GHz band was crowded with microwaves, cordless phones, and other wireless devices, while 5GHz offered faster speeds and less interference. I wasn't trying to sell anything — I just enjoyed helping people understand the technology well enough to make the right call. One day a department manager noticed me doing this, asked what I did for a living, and pulled me into the break room for an impromptu interview. He hired me on the spot — not because of my résumé, but because of genuine enthusiasm and willingness to help. As a Components Sales Associate, I recommended networking equipment, computer components, security products, tools, and complete computer systems, and helped customers select parts for custom-built gaming PCs, explaining how the pieces worked together to form a balanced system. Every interaction was a chance to teach rather than just sell. Looking back, Fry's was where my passion for technology truly came alive — it turned technology from a hobby into something I wanted to build a career around, strengthened my hardware knowledge, taught me to explain complex concepts in plain language, and reinforced that the best solution starts with understanding what the customer actually needs.",
+      "highlights": [
+        "Hired on the spot after a department manager noticed me informally helping customers in the networking aisle and pulled me into a break-room interview — enthusiasm and genuine technical curiosity earned the job, not a résumé.",
+        "Helped customers navigate networking and computer component decisions — like explaining why a dual-band router was worth the upgrade over single-band — by teaching, not selling.",
+        "Recommended networking equipment, computer components, security products, tools, and complete computer systems, including helping customers select parts for custom-built gaming PCs.",
+        "Explained how different hardware components worked together to build a balanced system, translating technical tradeoffs into plain language.",
+        "Realized here that helping people through technology was what I wanted to do professionally — Fry's turned technology from a personal hobby into a career I was building toward."
+      ],
+      "technologies": [
+        "Networking Hardware",
+        "PC Hardware",
+        "Custom PC Building"
+      ],
+      "districtId": "dojo-gate",
+      "type": "experience"
+    },
+    {
+      "id": "ibuypower",
+      "employer": "iBUYPOWER",
+      "role": "Technical Support Specialist",
+      "startDate": "2013-05-01",
+      "endDate": "2015-01-01",
+      "location": "Baldwin Park, CA",
+      "summary": "Joined iBUYPOWER in May 2013 on a referral from a friend at Newegg, who knew about my passion for computer hardware and the experience I'd built at Fry's Electronics. By then, friends and coworkers had started jokingly calling me the 'PC Whisperer' because I could often identify the source of a computer problem just from hearing someone describe the symptoms — Fry's had taught me to ask the right troubleshooting questions and recognize common failure patterns before ever touching the machine. I demonstrated that skill in the interview and was hired almost immediately. As a Technical Support Specialist, I repaired desktops and laptops returned under warranty (RMA): diagnosing hardware failures, replacing defective components, running burn-in testing, and verifying systems were stable before returning them to customers. At the same time, I supported customers over phone and live chat — jokingly nicknamed 'AI,' though it was really a small team of technicians — often juggling multiple conversations while still working repairs at the bench. One of the best parts of the job was direct exposure to Intel, AMD, and NVIDIA representatives who regularly visited to preview upcoming hardware and explain where PC gaming and performance computing were headed — a depth of insight into computer architecture no book could match. I also helped prepare network infrastructure for gaming events, adding hands-on experience beyond desktop repair. I genuinely loved the job, but when I received an offer for my first enterprise systems administration role, I checked with management first to see if they could match it — they were honest that they couldn't, so I accepted, knowing it would fundamentally change the direction of my career. Looking back, iBUYPOWER was the culmination of everything I'd learned in the previous several years: it turned a passion for PC hardware into professional expertise and prepared me for the shift from hardware-focused support into managing the infrastructure behind entire organizations.",
+      "highlights": [
+        "Joined in May 2013 on a referral from a friend at Newegg who knew my hardware passion and Fry's Electronics experience — hired almost immediately after demonstrating troubleshooting skill in the interview.",
+        "Earned the nickname 'PC Whisperer' from friends and coworkers for often identifying the root cause of a computer problem just from hearing someone describe the symptoms.",
+        "Repaired desktops and laptops returned under warranty (RMA): diagnosing hardware failures, replacing defective components, running burn-in testing, and verifying stability before returning systems to customers.",
+        "Juggled phone and live-chat customer support (jokingly nicknamed 'AI,' though it was really a small team of technicians) simultaneously with hands-on bench repair work.",
+        "Got direct exposure to Intel, AMD, and NVIDIA representatives previewing upcoming hardware, plus hands-on experience preparing network infrastructure for gaming events.",
+        "Left in January 2015 for my first enterprise systems administration role after management confirmed they couldn't match the offer — a deliberate transition that turned years of hardware passion into the foundation for enterprise infrastructure work."
+      ],
+      "technologies": [
+        "Hardware Diagnostics",
+        "RMA Repair",
+        "Burn-in Testing"
+      ],
+      "districtId": "dojo-gate",
+      "type": "experience"
+    },
+    {
+      "id": "made-goods",
+      "employer": "Made Goods",
+      "role": "Technology Experience Specialist",
+      "startDate": "2018-10-01",
+      "endDate": "2019-07-01",
+      "location": "City of Industry, CA",
+      "summary": "Joined Made Goods in October 2018 for more than a salary increase — it was a chance to broaden beyond the Windows-heavy enterprise foundation I'd built at AMETEK, with hands-on exposure to Apple and Linux environments. As a Technology Experience Specialist, I supported a genuinely heterogeneous environment: Windows, macOS, Active Directory, Linux-based warehouse systems, networking infrastructure, and the company's ERP platform — my first extensive experience making multiple operating systems work together seamlessly. One of the more interesting challenges was integrating Apple devices into a Windows-centric infrastructure while maintaining Active Directory compatibility and the organization's security policies, which taught me to think beyond a single platform. I also worked closely with the warehouse and logistics teams, troubleshooting Linux-based microcontrollers and barcode scanning systems that were critical to the supply chain and ERP workflow — issues there had direct business impact. The organization was transitioning from a legacy Sage ERP environment to a newer version during this time, giving me exposure to enterprise application support and business process modernization. Working alongside the organization's SQL developer stands out too — that mentorship deepened my understanding of SQL Server, database design, and how enterprise applications depend on reliable data, and it still shapes how I approach troubleshooting today. Beyond daily support, I developed technical documentation, standardized Windows and macOS deployments, managed server patching, supported networking equipment, and configured warehouse scanning devices. Looking back, Made Goods broadened my perspective as a systems administrator — reinforcing that modern enterprise environments rarely revolve around a single technology stack, and that success comes from understanding how Windows, Linux, macOS, networking, databases, ERP systems, and business processes all work together. That systems-thinking mindset has stayed with me ever since. I left in July 2019 to move to San Antonio, Texas.",
+      "highlights": [
+        "Joined in October 2018 specifically to broaden beyond the Windows-heavy foundation built at AMETEK, seeking hands-on exposure to Apple and Linux environments.",
+        "Supported a genuinely heterogeneous environment — Windows, macOS, Active Directory, Linux-based warehouse systems, networking, and the company's ERP platform — my first extensive experience making multiple operating systems work together.",
+        "Integrated Apple devices into a Windows-centric Active Directory infrastructure while maintaining the organization's security policies, learning to think beyond a single platform.",
+        "Troubleshot Linux-based microcontrollers and barcode scanning systems for the warehouse and logistics teams — systems critical to the supply chain and ERP workflow, where fast resolution had direct business impact.",
+        "Supported the organization's migration from a legacy Sage ERP environment to a newer version, gaining exposure to enterprise application support and business process modernization.",
+        "Learned SQL Server, database design, and data reliability principles directly from the organization's SQL developer — a mentorship that reshaped how I approach troubleshooting to this day.",
+        "Rounded out the role with documentation, standardized Windows/macOS deployment, server patching, networking support, and warehouse scanner configuration — the point where I started thinking of IT as an interconnected ecosystem rather than a collection of individual systems."
+      ],
+      "technologies": [
+        "macOS",
+        "Active Directory",
+        "Linux",
+        "Sage ERP",
+        "SQL Server",
+        "Networking",
+        "Barcode Scanning Systems"
+      ],
+      "districtId": "floating-citadel",
+      "type": "experience"
+    },
+    {
+      "id": "new-directions-technologies",
+      "employer": "New Directions Technologies, Inc. (NDTI)",
+      "role": "Senior Systems Administrator",
+      "startDate": "2024-03-01",
+      "current": true,
+      "location": "Ridgecrest, CA",
+      "summary": "Joining NDTI in March 2024 represented the culmination of more than two decades of learning, problem-solving, and continuous growth in technology, bringing together nearly every skill I've developed — from customer service and enterprise infrastructure to automation, cloud technologies, cybersecurity, and systems administration. As a Senior Systems Administrator supporting a Department of Defense contractor, my role spans Windows and Linux infrastructure, Microsoft 365 GCC High, Azure, Active Directory, virtualization, networking, security, compliance, and automation. Every day is different: designing infrastructure improvements, responding to production issues, strengthening security, or helping the organization meet strict regulatory requirements like CMMC Level 2, NIST 800-171, and ISO 27001. Automation has become one of my biggest focuses — I regularly use PowerShell, Python, Bash, and Ansible to eliminate repetitive administrative tasks, standardize deployments, and improve configuration consistency across Windows and Linux environments, always aiming to leave systems more reliable and easier for the next administrator to understand. Security is just as central: I've helped implement and maintain Microsoft Entra ID, Conditional Access, SAML authentication, multi-factor authentication, and hybrid identity solutions while supporting our migration into Microsoft GCC High, alongside security hardening scripts and vulnerability remediation. I've also led complex infrastructure work — Active Directory replication recovery, retiring legacy domain controllers, modernizing Microsoft 365 and Azure environments, implementing Fortinet SSL VPN with Entra SAML authentication, upgrading Veeam backup and disaster recovery infrastructure, and improving DNS and network reliability. One project I'm particularly proud of: while implementing SAML authentication, I discovered our VPN infrastructure was under a sustained brute-force attack. Rather than blocking addresses one at a time, I wrote a Python tool that analyzed firewall logs, condensed malicious IP addresses into efficient CIDR ranges, and generated optimized block lists — significantly reducing malicious traffic while making ongoing maintenance far easier. I've also been involved in Microsoft Teams Calling evaluations, endpoint management and imaging, hybrid cloud administration, Azure virtual machines, and Microsoft Intune, and I genuinely enjoy documenting processes, mentoring coworkers, and building repeatable solutions that improve the team's effectiveness over time. Working at NDTI has reinforced what every previous role gradually taught me: the best systems administrators don't simply keep servers running — they enable people to do their best work through reliable, secure, and well-designed technology. Looking back across my whole career, I can see a consistent pattern: I started by helping customers understand technology, grew into supporting enterprise users, then enterprise infrastructure, and today I focus on designing, automating, securing, and improving the systems organizations depend on every day — a journey that continues to shape both my work and the vision behind Ninjatronics.",
+      "highlights": [
+        "Joined NDTI in March 2024 as Senior Systems Administrator supporting a Department of Defense contractor — a role that draws on nearly every skill built across two decades: customer service, enterprise infrastructure, automation, cloud, cybersecurity, and systems administration.",
+        "Own infrastructure spanning Windows and Linux, Microsoft 365 GCC High, Azure, Active Directory, virtualization, networking, security, and compliance — including helping meet strict regulatory requirements like CMMC Level 2, NIST 800-171, and ISO 27001.",
+        "Use PowerShell, Python, Bash, and Ansible daily to eliminate repetitive administrative work, standardize deployments, and improve configuration consistency across Windows and Linux environments.",
+        "Implemented and maintain Microsoft Entra ID, Conditional Access, SAML authentication, MFA, and hybrid identity solutions while supporting the organization's migration into Microsoft GCC High, alongside security hardening scripts and vulnerability remediation.",
+        "Led complex infrastructure recovery and modernization work: Active Directory replication recovery, retiring legacy domain controllers, modernizing Microsoft 365 and Azure environments, implementing Fortinet SSL VPN with Entra SAML authentication, upgrading Veeam backup/DR infrastructure, and improving DNS and network reliability.",
+        "Discovered a sustained brute-force attack against the VPN infrastructure while implementing SAML authentication, and wrote a Python tool that parsed firewall logs, condensed malicious IPs into efficient CIDR ranges, and generated optimized block lists — one of the projects I'm proudest of.",
+        "Extended into Microsoft Teams Calling evaluations, endpoint management and imaging, hybrid cloud administration, Azure virtual machines, and Microsoft Intune as part of ongoing infrastructure modernization.",
+        "See a consistent arc across my whole career here: from helping customers understand technology, to enterprise users, to enterprise infrastructure, to now designing, automating, securing, and improving the systems organizations depend on — a journey that continues to shape both my work and the vision behind Ninjatronics."
+      ],
+      "technologies": [
+        "Windows Server",
+        "Linux",
+        "Microsoft 365 GCC High",
+        "Azure",
+        "Active Directory",
+        "Microsoft Entra ID",
+        "Conditional Access",
+        "SAML",
+        "Multi-Factor Authentication",
+        "PowerShell",
+        "Python",
+        "Bash",
+        "Ansible",
+        "Fortinet SSL VPN",
+        "Veeam",
+        "Microsoft Intune",
+        "Microsoft Teams Calling"
+      ],
+      "districtId": "floating-citadel",
+      "type": "experience"
+    },
+    {
+      "id": "raices",
+      "employer": "RAICES",
+      "role": "IT Specialist",
+      "startDate": "2019-10-01",
+      "endDate": "2021-06-01",
+      "location": "San Antonio, TX",
+      "summary": "Joined RAICES in October 2019 after relocating to San Antonio, Texas. It became one of the most meaningful roles of my career — every technical problem I solved ultimately helped people serving vulnerable families and children, which gave the work a deeper sense of purpose than infrastructure alone. As an IT Specialist, I provided infrastructure and end-user support across multiple Texas offices, including San Antonio, Dallas, and Corpus Christi, working with attorneys, administrative staff, software developers, and infrastructure projects for a genuinely distributed workforce. I helped modernize the organization's identity infrastructure, participating in the transition from traditional Active Directory toward Azure AD for Windows devices and JumpCloud for macOS, building a more flexible and secure environment. I administered Google Workspace and built automation tools that simplified moving data between Google Workspace and Microsoft OneDrive, cutting down the manual effort required by staff. I also invested heavily in user education — creating documentation and recorded training videos so staff could use their tools confidently instead of repeatedly depending on IT for the same questions. Beyond that, I strengthened my infrastructure skills troubleshooting complex networking and file server issues, supporting secure remote access as the organization adapted to remote work, implementing security improvements, and learning automation with Ansible to bring more consistency across systems. Looking back, RAICES reinforced that technology is ultimately about serving people — whether I was supporting developers, attorneys, or remote staff across Texas, every technical solution contributed to a larger mission. That perspective still shapes how I approach systems administration today: infrastructure isn't an end in itself, it's a way to enable people to do meaningful work.",
+      "highlights": [
+        "Provided infrastructure and end-user support across multiple Texas offices — San Antonio, Dallas, and Corpus Christi — for a genuinely distributed workforce of attorneys, administrative staff, and software developers.",
+        "Helped modernize identity infrastructure, participating in the shift from traditional Active Directory toward Azure AD for Windows devices and JumpCloud for macOS systems.",
+        "Administered Google Workspace and built automation tools to simplify moving data between Google Workspace and Microsoft OneDrive, reducing manual effort for staff.",
+        "Invested in user education — creating documentation and recorded training videos so staff could use their tools confidently, rather than repeatedly relying on IT for the same questions.",
+        "Strengthened infrastructure skills troubleshooting networking and file server issues, supporting secure remote access during the shift to remote work, implementing security improvements, and learning automation with Ansible.",
+        "Found this to be one of the most meaningful roles of my career: every technical solution ultimately helped people serving vulnerable families and children, reinforcing that technology exists to serve people, not the other way around."
+      ],
+      "technologies": [
+        "Azure AD",
+        "JumpCloud",
+        "Google Workspace",
+        "Microsoft OneDrive",
+        "Ansible",
+        "Active Directory",
+        "Networking"
+      ],
+      "districtId": "floating-citadel",
+      "type": "experience"
+    },
+    {
+      "id": "st-baldricks-foundation",
+      "employer": "St. Baldrick's Foundation",
+      "role": "Helpdesk Intern",
+      "startDate": "2011-02-01",
+      "endDate": "2011-03-31",
+      "location": "Monrovia, CA",
+      "summary": "Broke into professional IT in February 2011 through a referral from a friend I'd worked with at both EarthLink and Bank of America, who thought St. Baldrick's Foundation's Helpdesk Intern opening would be a great fit. In this two-month internship, I supported constituents experiencing issues with the organization's website — answering inbound calls, diagnosing reported problems, and reproducing bugs so they could be properly documented. I tracked and documented issues in Zendesk for the development team, and updated HTML content on the website to keep organizational information accurate and current. What stood out most was learning how professional IT teams actually work together: instead of just fixing things myself, I learned the value of reproducing issues consistently, documenting them clearly, and communicating everything a developer would need to resolve the underlying problem — my first real exposure to structured incident management and support/engineering collaboration. Although the internship lasted only two months, it gave me something far more valuable than its duration would suggest: my first professional IT experience. It gave me the confidence to pursue technology as a long-term career and opened the door to every opportunity that followed.",
+      "highlights": [
+        "Broke into professional IT through a referral from a friend I'd worked with at both EarthLink and Bank of America — the first of several times a prior colleague opened the next door.",
+        "Supported constituents experiencing issues with the organization's website: answering inbound calls, diagnosing problems, and reproducing bugs so they could be documented accurately.",
+        "Documented and tracked issues in Zendesk for the development team, learning structured incident management and how support and engineering teams collaborate to resolve the underlying problem, not just the symptom.",
+        "Updated HTML content on the website to keep organizational information accurate and current — first hands-on exposure to web operations.",
+        "Gained the confidence to pursue technology as a long-term career — a two-month internship that opened the door to every IT opportunity that followed."
+      ],
+      "technologies": [
+        "Zendesk",
+        "HTML"
+      ],
+      "districtId": "dojo-gate",
+      "type": "experience"
+    },
+    {
+      "id": "staar-surgical",
+      "employer": "STAAR Surgical",
+      "role": "IT Specialist Contractor",
+      "startDate": "2023-05-01",
+      "endDate": "2023-11-01",
+      "location": "Monrovia, CA",
+      "summary": "Came about through Kelly Services, who contacted me about an IT contractor position supporting one of the world's leading medical device manufacturers. The opportunity caught my attention immediately because it involved enterprise infrastructure, Linux, automation, and supporting engineering teams — all areas I wanted to keep growing in. As an IT Specialist Contractor, I supported both day-to-day enterprise operations and several infrastructure modernization projects. One of my primary responsibilities was helping refresh portions of the server infrastructure, including rebuilding Cisco UCS blade servers and participating in the migration of Linux systems from CentOS to Red Hat Enterprise Linux (RHEL), which significantly expanded my Linux administration skills and gave me firsthand exposure to enterprise server lifecycle management. Automation became a larger part of my daily work too — I used Ansible to provision and configure systems and developed PowerShell scripts to automate repetitive tasks, including cleaning up Windows user profiles and improving workstation deployment. I also supported software development teams, helping project managers and developers build and maintain reliable testing labs for development and validation, which reinforced how much successful software development depends on dependable infrastructure. Alongside these projects, I handled enterprise support responsibilities: onboarding new employees, provisioning secure workstations, administering user accounts, supporting enterprise applications such as SAGE, managing hardware inventory, and resolving hardware and software issues to keep employees productive. Looking back, STAAR Surgical strengthened my skills in Linux administration, enterprise automation, and infrastructure modernization, and reinforced a consistent theme in my career: I enjoy building systems that are reliable, repeatable, and easier for others to operate. Those experiences prepared me well for my next opportunity as a Senior Systems Administrator at New Directions Technologies.",
+      "highlights": [
+        "Brought on through Kelly Services as an IT Specialist Contractor supporting one of the world's leading medical device manufacturers — drawn to the role specifically for its enterprise infrastructure, Linux, and automation focus.",
+        "Helped refresh server infrastructure, including rebuilding Cisco UCS blade servers and migrating Linux systems from CentOS to Red Hat Enterprise Linux (RHEL), significantly expanding my Linux administration and server lifecycle management skills.",
+        "Used Ansible to provision and configure systems and wrote PowerShell scripts to automate repetitive tasks like Windows user profile cleanup and workstation deployment, continually looking for manual work to eliminate.",
+        "Supported software development teams by helping project managers and developers build and maintain reliable testing labs for development and validation.",
+        "Handled core enterprise IT responsibilities — onboarding, secure workstation provisioning, user account administration, SAGE application support, and hardware inventory management — alongside the infrastructure projects.",
+        "Reinforced a theme that has stayed consistent throughout my career: I enjoy building systems that are reliable, repeatable, and easy for others to operate — experience that directly prepared me for my next role as Senior Systems Administrator at New Directions Technologies."
+      ],
+      "technologies": [
+        "Linux",
+        "CentOS",
+        "Red Hat Enterprise Linux (RHEL)",
+        "Cisco UCS",
+        "Ansible",
+        "PowerShell",
+        "SAGE"
+      ],
+      "districtId": "floating-citadel",
+      "type": "experience"
+    },
+    {
+      "id": "union-bank",
+      "employer": "Union Bank",
+      "role": "Call Center Representative",
+      "startDate": "1999-09-01",
+      "endDate": "2001-08-01",
+      "location": "Monterey Park, CA",
+      "summary": "My first professional role, landed through AppleOne as a direct hire at Union Bank just before the Y2K transition. Supporting checking, savings, and loan customers by phone taught me to stay calm under pressure, document precisely across multiple systems, and communicate clearly — habits that carried straight through into every technical role that followed. It was also here, informally troubleshooting coworkers' computer problems while they waited on slow IT tickets, that I first suspected a technical role might fit me better than a purely customer-facing one.",
+      "highlights": [
+        "Supported customers by phone across checking, savings, and loan accounts, listening carefully and documenting accurate notes across multiple banking systems.",
+        "Volunteered for overtime in account reconciliation, entering high volumes of check data — sharpened 10-key-by-touch speed and reinforced how much financial data accuracy matters.",
+        "Mentored teammates on natural upselling techniques: filling call silence with small talk, and tying product suggestions to details the customer had already shared.",
+        "Treated a 'no thank you' as part of the process rather than a stopping point — persistence that still turned up real yeses.",
+        "Became the coworker people turned to for computer troubleshooting whenever official IT tickets were slow to get resolved — the first sign that a technical role might be a better fit than customer service.",
+        "Built the customer communication, documentation, and composure-under-pressure habits that became the foundation for later technical support and systems administration work."
+      ],
+      "districtId": "dojo-gate",
+      "type": "experience"
+    },
+    {
+      "id": "we-solve-problems",
+      "employer": "We Solve Problems",
+      "role": "MSP Senior IT Technician",
+      "startDate": "2022-02-01",
+      "endDate": "2022-11-01",
+      "location": "Los Angeles, CA",
+      "summary": "Moving back to California gave me the opportunity to experience a completely different side of IT. I joined We Solve Problems, a managed service provider, where instead of supporting a single organization, every day meant working with a different client, different technologies, and different business requirements. As an MSP Senior IT Technician, I supported organizations ranging from video game development studios and law firms to film production companies, and quickly learned that success in an MSP isn't just about technical ability — it's about adapting quickly, communicating effectively, and solving problems in environments you may have never seen before. One of my favorite projects was provisioning and configuring servers with Ansible for video game development teams, my first production use of infrastructure automation, which reinforced how powerful automation can be for reducing manual work and improving reliability. I also worked extensively with Microsoft 365, troubleshooting authentication, email, and application issues for legal clients where downtime had a direct impact on their ability to serve customers, and installed and relocated Cisco Meraki wireless infrastructure for media and entertainment clients to improve wireless coverage and network performance. Another important lesson was the value of documentation — in an MSP, anyone on the team might need to support a client at any time, so I documented systems, configurations, and procedures in IT Glue to improve knowledge sharing and operational continuity across the team. Looking back, We Solve Problems sharpened my ability to learn new environments quickly, communicate with a wide variety of customers, and deliver reliable solutions under pressure, while strengthening my experience with automation, cloud services, enterprise networking, and documentation — skills that became invaluable in the enterprise roles that followed.",
+      "highlights": [
+        "Joined We Solve Problems, a managed service provider, after moving back to California — a shift from supporting one organization to a different client, technology stack, and set of business requirements every day.",
+        "Supported a wide range of clients including video game development studios, law firms, and film production companies, learning that MSP success is as much about adapting quickly and communicating clearly as it is about technical ability.",
+        "Provisioned and configured servers with Ansible for video game development teams — my first production use of infrastructure automation, reinforcing how much manual work it could eliminate.",
+        "Troubleshot Microsoft 365 authentication, email, and application issues for legal clients where downtime had a direct impact on their ability to serve customers.",
+        "Installed and relocated Cisco Meraki wireless infrastructure for media and entertainment clients, improving wireless coverage and network performance.",
+        "Documented systems, configurations, and procedures in IT Glue — learning that in an MSP, anyone on the team might need to support a client at any time, so documentation directly enables knowledge sharing and continuity."
+      ],
+      "technologies": [
+        "Ansible",
+        "Microsoft 365",
+        "Cisco Meraki",
+        "IT Glue"
+      ],
+      "districtId": "floating-citadel",
+      "type": "experience"
+    },
+    {
+      "id": "wescom-credit-union",
+      "employer": "Wescom Credit Union",
+      "role": "Call Center Representative",
+      "startDate": "2006-03-01",
+      "endDate": "2007-07-01",
+      "location": "Pasadena, CA",
+      "summary": "Joined Wescom Credit Union in March 2006 after a panel interview at their Pasadena office, where I opened by explaining that every letter of my first name represents a member of my family — a personal story the panel appreciated, delivered with the same calm confidence I brought to the job itself. As a Call Center Representative, I assisted members with checking and savings accounts and prepared them for handoff to loan officers for more specialized needs. One call has always stuck with me: an extremely frustrated, profane member who, by the end of the conversation, apologized and thanked me for staying patient after I stayed calm, listened, and connected them with a loan officer who improved their rate. That call reinforced a lesson that has stayed with me ever since — people are usually frustrated with their situation, not with the person trying to help them. Staying composed and non-defensive under pressure became one of my strongest professional traits, one I still rely on supporting users during outages and communicating with executives in high-pressure moments. I left in July 2007 to pursue a role at Bank of America's headquarters, right next door.",
+      "highlights": [
+        "Landed the role via a panel interview at Wescom's Pasadena office, opening with a personal story about how each letter of my name represents a family member — calm, confident communication that set the tone for the role.",
+        "Assisted members with checking and savings accounts and prepared them for handoff to loan officers for more specialized financial needs.",
+        "De-escalated a call with an extremely frustrated, profane member by staying calm and focused on solving their problem — connected them with a loan officer who improved their rate, and the member apologized and thanked me by the end of the call.",
+        "Reinforced a lesson that has stuck for the rest of my career: people are usually frustrated with their situation, not with the person trying to help them.",
+        "Spent roughly a year and a half in the role before leaving to pursue a position at Bank of America's headquarters, located next door in Pasadena."
+      ],
+      "districtId": "dojo-gate",
+      "type": "experience"
+    },
+    {
+      "id": "work-market",
+      "employer": "Work Market",
+      "role": "Freelance IT Consultant",
+      "startDate": "2008-08-01",
+      "endDate": "2013-09-01",
+      "location": "Los Angeles & Orange County, CA",
+      "summary": "Work Market was a parallel consulting track, not a traditional job — between August 2008 and September 2013, I took on freelance and consulting IT assignments through their platform, fitting them around my other jobs, school, and internships. The platform connected businesses with independent IT professionals, and I was brought in for a wide range of work: computer hardware, software, networking, and general technical troubleshooting. Every engagement was different, which meant quickly assessing an unfamiliar environment, diagnosing the problem, and delivering a solution with very little context or support. One day I might be troubleshooting a workstation, the next resolving a networking issue, installing equipment, or getting a small business back up and running. Because I was working independently, I owned the entire customer experience — communicating with the client, diagnosing the issue, completing the work, and making sure they were satisfied — with no larger organization or support team to fall back on. That built real accountability and professionalism, and taught me that trust is earned through results. Looking back, Work Market was an important bridge between my education and my later enterprise IT roles: it let me apply classroom knowledge in real environments, exposed me to a wide range of technologies, and built the confidence that I could solve technical problems independently.",
+      "highlights": [
+        "Took on freelance and consulting IT assignments through Work Market's platform from August 2008 to September 2013, in parallel with school, internships, and other jobs — an ongoing independent consulting track, not a traditional full-time position.",
+        "Handled a wide variety of engagements — workstation troubleshooting, networking issues, equipment installation, and getting small businesses back up and running — each requiring a fast read of an unfamiliar environment with little context or support.",
+        "Owned the entire customer experience independently: communicating with the client, diagnosing the issue, completing the work, and ensuring satisfaction, with no larger organization or support team to fall back on.",
+        "Applied classroom knowledge from my IT and programming studies directly in real-world environments, turning theory into hands-on troubleshooting experience.",
+        "Built the confidence to solve technical problems independently, and the accountability that comes from earning trust through results — a bridge between my education and the enterprise IT roles that followed."
+      ],
+      "technologies": [
+        "Computer Hardware",
+        "Networking",
+        "Software Troubleshooting"
+      ],
+      "districtId": "dojo-gate",
+      "type": "experience"
     }
   ]
 }

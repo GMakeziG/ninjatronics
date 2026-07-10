@@ -1,0 +1,19 @@
+{
+  "id": "we-solve-problems",
+  "employer": "We Solve Problems",
+  "role": "MSP Senior IT Technician",
+  "startDate": "2022-02-01",
+  "endDate": "2022-11-01",
+  "location": "Los Angeles, CA",
+  "summary": "Moving back to California gave me the opportunity to experience a completely different side of IT. I joined We Solve Problems, a managed service provider, where instead of supporting a single organization, every day meant working with a different client, different technologies, and different business requirements. As an MSP Senior IT Technician, I supported organizations ranging from video game development studios and law firms to film production companies, and quickly learned that success in an MSP isn't just about technical ability — it's about adapting quickly, communicating effectively, and solving problems in environments you may have never seen before. One of my favorite projects was provisioning and configuring servers with Ansible for video game development teams, my first production use of infrastructure automation, which reinforced how powerful automation can be for reducing manual work and improving reliability. I also worked extensively with Microsoft 365, troubleshooting authentication, email, and application issues for legal clients where downtime had a direct impact on their ability to serve customers, and installed and relocated Cisco Meraki wireless infrastructure for media and entertainment clients to improve wireless coverage and network performance. Another important lesson was the value of documentation — in an MSP, anyone on the team might need to support a client at any time, so I documented systems, configurations, and procedures in IT Glue to improve knowledge sharing and operational continuity across the team. Looking back, We Solve Problems sharpened my ability to learn new environments quickly, communicate with a wide variety of customers, and deliver reliable solutions under pressure, while strengthening my experience with automation, cloud services, enterprise networking, and documentation — skills that became invaluable in the enterprise roles that followed.",
+  "highlights": [
+    "Joined We Solve Problems, a managed service provider, after moving back to California — a shift from supporting one organization to a different client, technology stack, and set of business requirements every day.",
+    "Supported a wide range of clients including video game development studios, law firms, and film production companies, learning that MSP success is as much about adapting quickly and communicating clearly as it is about technical ability.",
+    "Provisioned and configured servers with Ansible for video game development teams — my first production use of infrastructure automation, reinforcing how much manual work it could eliminate.",
+    "Troubleshot Microsoft 365 authentication, email, and application issues for legal clients where downtime had a direct impact on their ability to serve customers.",
+    "Installed and relocated Cisco Meraki wireless infrastructure for media and entertainment clients, improving wireless coverage and network performance.",
+    "Documented systems, configurations, and procedures in IT Glue — learning that in an MSP, anyone on the team might need to support a client at any time, so documentation directly enables knowledge sharing and continuity."
+  ],
+  "technologies": ["Ansible", "Microsoft 365", "Cisco Meraki", "IT Glue"],
+  "districtId": "floating-citadel"
+}

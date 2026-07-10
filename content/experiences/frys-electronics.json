@@ -1,0 +1,18 @@
+{
+  "id": "frys-electronics",
+  "employer": "Fry's Electronics",
+  "role": "Components Sales Associate",
+  "startDate": "2011-09-01",
+  "endDate": "2013-03-01",
+  "location": "City of Industry, CA",
+  "summary": "Fry's Electronics felt like my happy place — aisles packed end to end with the latest technology, and I'd naturally wander the networking and computer components sections on any free moment just to see what new hardware had shipped. I loved helping customers work through decisions in the networking aisle, like explaining why a dual-band router was worth considering over single-band: the 2.4GHz band was crowded with microwaves, cordless phones, and other wireless devices, while 5GHz offered faster speeds and less interference. I wasn't trying to sell anything — I just enjoyed helping people understand the technology well enough to make the right call. One day a department manager noticed me doing this, asked what I did for a living, and pulled me into the break room for an impromptu interview. He hired me on the spot — not because of my résumé, but because of genuine enthusiasm and willingness to help. As a Components Sales Associate, I recommended networking equipment, computer components, security products, tools, and complete computer systems, and helped customers select parts for custom-built gaming PCs, explaining how the pieces worked together to form a balanced system. Every interaction was a chance to teach rather than just sell. Looking back, Fry's was where my passion for technology truly came alive — it turned technology from a hobby into something I wanted to build a career around, strengthened my hardware knowledge, taught me to explain complex concepts in plain language, and reinforced that the best solution starts with understanding what the customer actually needs.",
+  "highlights": [
+    "Hired on the spot after a department manager noticed me informally helping customers in the networking aisle and pulled me into a break-room interview — enthusiasm and genuine technical curiosity earned the job, not a résumé.",
+    "Helped customers navigate networking and computer component decisions — like explaining why a dual-band router was worth the upgrade over single-band — by teaching, not selling.",
+    "Recommended networking equipment, computer components, security products, tools, and complete computer systems, including helping customers select parts for custom-built gaming PCs.",
+    "Explained how different hardware components worked together to build a balanced system, translating technical tradeoffs into plain language.",
+    "Realized here that helping people through technology was what I wanted to do professionally — Fry's turned technology from a personal hobby into a career I was building toward."
+  ],
+  "technologies": ["Networking Hardware", "PC Hardware", "Custom PC Building"],
+  "districtId": "dojo-gate"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "st-baldricks-foundation",
+  "employer": "St. Baldrick's Foundation",
+  "role": "Helpdesk Intern",
+  "startDate": "2011-02-01",
+  "endDate": "2011-03-31",
+  "location": "Monrovia, CA",
+  "summary": "Broke into professional IT in February 2011 through a referral from a friend I'd worked with at both EarthLink and Bank of America, who thought St. Baldrick's Foundation's Helpdesk Intern opening would be a great fit. In this two-month internship, I supported constituents experiencing issues with the organization's website — answering inbound calls, diagnosing reported problems, and reproducing bugs so they could be properly documented. I tracked and documented issues in Zendesk for the development team, and updated HTML content on the website to keep organizational information accurate and current. What stood out most was learning how professional IT teams actually work together: instead of just fixing things myself, I learned the value of reproducing issues consistently, documenting them clearly, and communicating everything a developer would need to resolve the underlying problem — my first real exposure to structured incident management and support/engineering collaboration. Although the internship lasted only two months, it gave me something far more valuable than its duration would suggest: my first professional IT experience. It gave me the confidence to pursue technology as a long-term career and opened the door to every opportunity that followed.",
+  "highlights": [
+    "Broke into professional IT through a referral from a friend I'd worked with at both EarthLink and Bank of America — the first of several times a prior colleague opened the next door.",
+    "Supported constituents experiencing issues with the organization's website: answering inbound calls, diagnosing problems, and reproducing bugs so they could be documented accurately.",
+    "Documented and tracked issues in Zendesk for the development team, learning structured incident management and how support and engineering teams collaborate to resolve the underlying problem, not just the symptom.",
+    "Updated HTML content on the website to keep organizational information accurate and current — first hands-on exposure to web operations.",
+    "Gained the confidence to pursue technology as a long-term career — a two-month internship that opened the door to every IT opportunity that followed."
+  ],
+  "technologies": ["Zendesk", "HTML"],
+  "districtId": "dojo-gate"
+}

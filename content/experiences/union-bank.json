@@ -1,0 +1,18 @@
+{
+  "id": "union-bank",
+  "employer": "Union Bank",
+  "role": "Call Center Representative",
+  "startDate": "1999-09-01",
+  "endDate": "2001-08-01",
+  "location": "Monterey Park, CA",
+  "summary": "My first professional role, landed through AppleOne as a direct hire at Union Bank just before the Y2K transition. Supporting checking, savings, and loan customers by phone taught me to stay calm under pressure, document precisely across multiple systems, and communicate clearly — habits that carried straight through into every technical role that followed. It was also here, informally troubleshooting coworkers' computer problems while they waited on slow IT tickets, that I first suspected a technical role might fit me better than a purely customer-facing one.",
+  "highlights": [
+    "Supported customers by phone across checking, savings, and loan accounts, listening carefully and documenting accurate notes across multiple banking systems.",
+    "Volunteered for overtime in account reconciliation, entering high volumes of check data — sharpened 10-key-by-touch speed and reinforced how much financial data accuracy matters.",
+    "Mentored teammates on natural upselling techniques: filling call silence with small talk, and tying product suggestions to details the customer had already shared.",
+    "Treated a 'no thank you' as part of the process rather than a stopping point — persistence that still turned up real yeses.",
+    "Became the coworker people turned to for computer troubleshooting whenever official IT tickets were slow to get resolved — the first sign that a technical role might be a better fit than customer service.",
+    "Built the customer communication, documentation, and composure-under-pressure habits that became the foundation for later technical support and systems administration work."
+  ],
+  "districtId": "dojo-gate"
+}

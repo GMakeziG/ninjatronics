@@ -1,0 +1,19 @@
+{
+  "id": "staar-surgical",
+  "employer": "STAAR Surgical",
+  "role": "IT Specialist Contractor",
+  "startDate": "2023-05-01",
+  "endDate": "2023-11-01",
+  "location": "Monrovia, CA",
+  "summary": "Came about through Kelly Services, who contacted me about an IT contractor position supporting one of the world's leading medical device manufacturers. The opportunity caught my attention immediately because it involved enterprise infrastructure, Linux, automation, and supporting engineering teams — all areas I wanted to keep growing in. As an IT Specialist Contractor, I supported both day-to-day enterprise operations and several infrastructure modernization projects. One of my primary responsibilities was helping refresh portions of the server infrastructure, including rebuilding Cisco UCS blade servers and participating in the migration of Linux systems from CentOS to Red Hat Enterprise Linux (RHEL), which significantly expanded my Linux administration skills and gave me firsthand exposure to enterprise server lifecycle management. Automation became a larger part of my daily work too — I used Ansible to provision and configure systems and developed PowerShell scripts to automate repetitive tasks, including cleaning up Windows user profiles and improving workstation deployment. I also supported software development teams, helping project managers and developers build and maintain reliable testing labs for development and validation, which reinforced how much successful software development depends on dependable infrastructure. Alongside these projects, I handled enterprise support responsibilities: onboarding new employees, provisioning secure workstations, administering user accounts, supporting enterprise applications such as SAGE, managing hardware inventory, and resolving hardware and software issues to keep employees productive. Looking back, STAAR Surgical strengthened my skills in Linux administration, enterprise automation, and infrastructure modernization, and reinforced a consistent theme in my career: I enjoy building systems that are reliable, repeatable, and easier for others to operate. Those experiences prepared me well for my next opportunity as a Senior Systems Administrator at New Directions Technologies.",
+  "highlights": [
+    "Brought on through Kelly Services as an IT Specialist Contractor supporting one of the world's leading medical device manufacturers — drawn to the role specifically for its enterprise infrastructure, Linux, and automation focus.",
+    "Helped refresh server infrastructure, including rebuilding Cisco UCS blade servers and migrating Linux systems from CentOS to Red Hat Enterprise Linux (RHEL), significantly expanding my Linux administration and server lifecycle management skills.",
+    "Used Ansible to provision and configure systems and wrote PowerShell scripts to automate repetitive tasks like Windows user profile cleanup and workstation deployment, continually looking for manual work to eliminate.",
+    "Supported software development teams by helping project managers and developers build and maintain reliable testing labs for development and validation.",
+    "Handled core enterprise IT responsibilities — onboarding, secure workstation provisioning, user account administration, SAGE application support, and hardware inventory management — alongside the infrastructure projects.",
+    "Reinforced a theme that has stayed consistent throughout my career: I enjoy building systems that are reliable, repeatable, and easy for others to operate — experience that directly prepared me for my next role as Senior Systems Administrator at New Directions Technologies."
+  ],
+  "technologies": ["Linux", "CentOS", "Red Hat Enterprise Linux (RHEL)", "Cisco UCS", "Ansible", "PowerShell", "SAGE"],
+  "districtId": "floating-citadel"
+}

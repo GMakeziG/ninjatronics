@@ -1,0 +1,20 @@
+{
+  "id": "made-goods",
+  "employer": "Made Goods",
+  "role": "Technology Experience Specialist",
+  "startDate": "2018-10-01",
+  "endDate": "2019-07-01",
+  "location": "City of Industry, CA",
+  "summary": "Joined Made Goods in October 2018 for more than a salary increase — it was a chance to broaden beyond the Windows-heavy enterprise foundation I'd built at AMETEK, with hands-on exposure to Apple and Linux environments. As a Technology Experience Specialist, I supported a genuinely heterogeneous environment: Windows, macOS, Active Directory, Linux-based warehouse systems, networking infrastructure, and the company's ERP platform — my first extensive experience making multiple operating systems work together seamlessly. One of the more interesting challenges was integrating Apple devices into a Windows-centric infrastructure while maintaining Active Directory compatibility and the organization's security policies, which taught me to think beyond a single platform. I also worked closely with the warehouse and logistics teams, troubleshooting Linux-based microcontrollers and barcode scanning systems that were critical to the supply chain and ERP workflow — issues there had direct business impact. The organization was transitioning from a legacy Sage ERP environment to a newer version during this time, giving me exposure to enterprise application support and business process modernization. Working alongside the organization's SQL developer stands out too — that mentorship deepened my understanding of SQL Server, database design, and how enterprise applications depend on reliable data, and it still shapes how I approach troubleshooting today. Beyond daily support, I developed technical documentation, standardized Windows and macOS deployments, managed server patching, supported networking equipment, and configured warehouse scanning devices. Looking back, Made Goods broadened my perspective as a systems administrator — reinforcing that modern enterprise environments rarely revolve around a single technology stack, and that success comes from understanding how Windows, Linux, macOS, networking, databases, ERP systems, and business processes all work together. That systems-thinking mindset has stayed with me ever since. I left in July 2019 to move to San Antonio, Texas.",
+  "highlights": [
+    "Joined in October 2018 specifically to broaden beyond the Windows-heavy foundation built at AMETEK, seeking hands-on exposure to Apple and Linux environments.",
+    "Supported a genuinely heterogeneous environment — Windows, macOS, Active Directory, Linux-based warehouse systems, networking, and the company's ERP platform — my first extensive experience making multiple operating systems work together.",
+    "Integrated Apple devices into a Windows-centric Active Directory infrastructure while maintaining the organization's security policies, learning to think beyond a single platform.",
+    "Troubleshot Linux-based microcontrollers and barcode scanning systems for the warehouse and logistics teams — systems critical to the supply chain and ERP workflow, where fast resolution had direct business impact.",
+    "Supported the organization's migration from a legacy Sage ERP environment to a newer version, gaining exposure to enterprise application support and business process modernization.",
+    "Learned SQL Server, database design, and data reliability principles directly from the organization's SQL developer — a mentorship that reshaped how I approach troubleshooting to this day.",
+    "Rounded out the role with documentation, standardized Windows/macOS deployment, server patching, networking support, and warehouse scanner configuration — the point where I started thinking of IT as an interconnected ecosystem rather than a collection of individual systems."
+  ],
+  "technologies": ["macOS", "Active Directory", "Linux", "Sage ERP", "SQL Server", "Networking", "Barcode Scanning Systems"],
+  "districtId": "floating-citadel"
+}

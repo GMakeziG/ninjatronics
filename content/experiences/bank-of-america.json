@@ -1,0 +1,17 @@
+{
+  "id": "bank-of-america",
+  "employer": "Bank of America",
+  "role": "Credit Card Specialist",
+  "startDate": "2007-08-01",
+  "endDate": "2008-09-01",
+  "location": "Pasadena, CA",
+  "summary": "Joined Bank of America in August 2007 after a friend on the team encouraged me to apply, believing my bilingual skills and reputation for customer service and technical problem-solving would be a strong fit. As a Credit Card Specialist, I helped customers understand credit card products, interest, payments, and responsible credit management — my goal wasn't just to answer the question in front of me, but to educate customers so they could make informed financial decisions going forward. I cross-sold additional products only when they genuinely fit a customer's needs, and worked with both English- and Spanish-speaking customers to explain complex financial concepts clearly regardless of their financial background. The biggest lesson from this role was that education beats simply solving the immediate problem — customers who understood *why* something worked, not just what to do, came away more confident and better equipped for the future. Looking back, this was part of a recurring theme in my early career: I genuinely enjoyed teaching people, whether the subject was banking products, Internet service, or technical issues — a passion that carried directly into IT, where I still enjoy mentoring users and coworkers, documenting solutions, and simplifying complex technical concepts. I left Bank of America in September 2008.",
+  "highlights": [
+    "Joined after a referral from a friend at BofA who saw a fit given my bilingual skills and track record in customer service and technical troubleshooting.",
+    "Guided customers through credit card products, interest, payments, and responsible credit management — prioritizing education over simply answering the immediate question.",
+    "Cross-sold additional banking products only when they genuinely fit a customer's needs, and explained complex financial concepts clearly to both English- and Spanish-speaking customers.",
+    "Learned that customers who understood why something worked, not just what to do, came away more confident and better equipped to manage their finances — a principle that still shapes how I explain cybersecurity concepts and document technical solutions today.",
+    "Recognized a recurring theme running through my early career: a genuine enjoyment of teaching people, whether the subject was banking products, Internet service, or IT — a passion that carried directly into mentoring users and coworkers and simplifying complex technical concepts."
+  ],
+  "districtId": "dojo-gate"
+}
