@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generatedAt": "2026-07-09T05:18:22.548Z",
-    "sourceFileCount": 16,
-    "entityCount": 16
+    "generatedAt": "2026-07-10T00:05:37.317Z",
+    "sourceFileCount": 19,
+    "entityCount": 19
   },
   "districts": [
     {
@@ -10,14 +10,26 @@
       "name": "Dojo Gate",
       "slug": "dojo-gate",
       "status": "locked",
-      "type": "district"
+      "type": "district",
+      "guardianId": "warden",
+      "subtitle": "Where discipline becomes mastery.",
+      "description": "Dojo Gate represents the practice of learning itself — the discipline of returning to fundamentals, the patience of repetition, and the mastery that comes only from deliberate practice sustained over time.",
+      "connections": [
+        "git-forest"
+      ]
     },
     {
       "id": "floating-citadel",
       "name": "Floating Citadel",
       "slug": "floating-citadel",
       "status": "locked",
-      "type": "district"
+      "type": "district",
+      "guardianId": "custodian",
+      "subtitle": "A stronghold built from proven accomplishment.",
+      "description": "The Floating Citadel represents professional achievement — the credentials, recognitions, and proven expertise that stand as evidence of mastery earned rather than claimed.",
+      "connections": [
+        "git-forest"
+      ]
     },
     {
       "id": "git-forest",
@@ -45,7 +57,13 @@
       "name": "Hall of Knowledge",
       "slug": "hall-of-knowledge",
       "status": "locked",
-      "type": "district"
+      "type": "district",
+      "guardianId": "scribe",
+      "subtitle": "Where understanding is gathered and kept.",
+      "description": "The Hall of Knowledge represents accumulated knowledge — research, reflection, and documentation gathered and organized so that understanding, once earned, is never lost.",
+      "connections": [
+        "git-forest"
+      ]
     }
   ],
   "guardians": [
@@ -61,6 +79,45 @@
         "branches",
         "releases",
         "projects"
+      ],
+      "type": "guardian"
+    },
+    {
+      "id": "custodian",
+      "name": "The Custodian",
+      "title": "Keeper of Verified Mastery",
+      "districtId": "floating-citadel",
+      "quote": "The citadel does not open for claims. It opens for proof.",
+      "knowledge": [
+        "certifications",
+        "credentials",
+        "verification"
+      ],
+      "type": "guardian"
+    },
+    {
+      "id": "scribe",
+      "name": "The Scribe",
+      "title": "Keeper of Written Knowledge",
+      "districtId": "hall-of-knowledge",
+      "quote": "A thought unwritten is a thought that will be walked past twice.",
+      "knowledge": [
+        "notes",
+        "research",
+        "documentation"
+      ],
+      "type": "guardian"
+    },
+    {
+      "id": "warden",
+      "name": "The Warden",
+      "title": "Keeper of the Threshold",
+      "districtId": "dojo-gate",
+      "quote": "Every path through this world begins with a single, deliberate step through the gate.",
+      "knowledge": [
+        "fundamentals",
+        "discipline",
+        "onboarding"
       ],
       "type": "guardian"
     }
@@ -162,12 +219,14 @@
       "id": "azure-administrator-associate",
       "name": "Microsoft Certified: Azure Administrator Associate (AZ-104)",
       "issuer": "Microsoft",
+      "districtId": "floating-citadel",
       "type": "certification"
     },
     {
       "id": "comptia-security-plus",
       "name": "CompTIA Security+",
       "issuer": "CompTIA",
+      "districtId": "floating-citadel",
       "type": "certification"
     }
   ],

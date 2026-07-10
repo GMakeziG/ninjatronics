@@ -1,0 +1,8 @@
+{
+  "id": "custodian",
+  "name": "The Custodian",
+  "title": "Keeper of Verified Mastery",
+  "districtId": "floating-citadel",
+  "quote": "The citadel does not open for claims. It opens for proof.",
+  "knowledge": ["certifications", "credentials", "verification"]
+}

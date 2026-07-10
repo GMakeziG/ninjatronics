@@ -1,0 +1,8 @@
+{
+  "id": "scribe",
+  "name": "The Scribe",
+  "title": "Keeper of Written Knowledge",
+  "districtId": "hall-of-knowledge",
+  "quote": "A thought unwritten is a thought that will be walked past twice.",
+  "knowledge": ["notes", "research", "documentation"]
+}

@@ -3,5 +3,10 @@
   "id": "floating-citadel",
   "name": "Floating Citadel",
   "slug": "floating-citadel",
-  "status": "locked"
+  "status": "locked",
+  "type": "district",
+  "guardianId": "custodian",
+  "subtitle": "A stronghold built from proven accomplishment.",
+  "description": "The Floating Citadel represents professional achievement — the credentials, recognitions, and proven expertise that stand as evidence of mastery earned rather than claimed.",
+  "connections": ["git-forest"]
 }

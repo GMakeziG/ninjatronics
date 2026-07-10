@@ -3,5 +3,10 @@
   "id": "dojo-gate",
   "name": "Dojo Gate",
   "slug": "dojo-gate",
-  "status": "locked"
+  "status": "locked",
+  "type": "district",
+  "guardianId": "warden",
+  "subtitle": "Where discipline becomes mastery.",
+  "description": "Dojo Gate represents the practice of learning itself — the discipline of returning to fundamentals, the patience of repetition, and the mastery that comes only from deliberate practice sustained over time.",
+  "connections": ["git-forest"]
 }

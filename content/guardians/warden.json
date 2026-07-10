@@ -1,0 +1,8 @@
+{
+  "id": "warden",
+  "name": "The Warden",
+  "title": "Keeper of the Threshold",
+  "districtId": "dojo-gate",
+  "quote": "Every path through this world begins with a single, deliberate step through the gate.",
+  "knowledge": ["fundamentals", "discipline", "onboarding"]
+}

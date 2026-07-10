@@ -2,5 +2,6 @@
 {
   "id": "comptia-security-plus",
   "name": "CompTIA Security+",
-  "issuer": "CompTIA"
+  "issuer": "CompTIA",
+  "districtId": "floating-citadel"
 }
