@@ -9,7 +9,8 @@ export type EntityType =
   | "note"
   | "skill"
   | "certification"
-  | "profile";
+  | "profile"
+  | "experience";
 
 /** A single loosely-typed JSON entity as read from content/. */
 export type RawEntity = Record<string, unknown> & { id?: unknown };

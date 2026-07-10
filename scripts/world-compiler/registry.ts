@@ -15,6 +15,7 @@ export const ENTITY_REGISTRY: RegistryEntry[] = [
   { folder: "skills", type: "skill", collection: "skills", schemaFile: "skill.schema.json" },
   { folder: "certifications", type: "certification", collection: "certifications", schemaFile: "certification.schema.json" },
   { folder: "profile", type: "profile", collection: "profiles", schemaFile: "profile.schema.json" },
+  { folder: "experiences", type: "experience", collection: "experiences", schemaFile: "experience.schema.json" },
 ];
 
 export function findRegistryEntry(folder: string): RegistryEntry | undefined {

@@ -20,7 +20,7 @@
 // a fabricated Profile without ever writing into content/.
 
 import { world, getProfile } from "./world.js";
-import type { Certification, Profile, Project, Quest, Skill } from "./world.js";
+import type { Certification, Experience, Profile, Project, Quest, Skill } from "./world.js";
 import { getFeaturedTrees } from "./git-forest.js";
 import type { RepositoryTree } from "./git-forest.js";
 
@@ -51,6 +51,7 @@ export interface MissionBrief {
   featuredRepositories: RepositoryTree[];
   projects: Project[];
   certifications: Certification[];
+  workHistory: Experience[];
 }
 
 /**
@@ -69,6 +70,23 @@ function deriveGithubUrl(): string | undefined {
     }
   }
   return undefined;
+}
+
+/**
+ * Orders work history for display: entries with an explicit `order` sort
+ * ascending by it (an authored placement wins over the automatic rule);
+ * unordered entries fall back to current-first, then `startDate` descending.
+ */
+function compareWorkHistory(a: Experience, b: Experience): number {
+  if (a.order !== undefined && b.order !== undefined) return a.order - b.order;
+  if (a.order !== undefined) return -1;
+  if (b.order !== undefined) return 1;
+  if (!!a.current !== !!b.current) return a.current ? -1 : 1;
+  return b.startDate.localeCompare(a.startDate);
+}
+
+function sortWorkHistory(experiences: Experience[]): Experience[] {
+  return [...experiences].sort(compareWorkHistory);
 }
 
 export function buildMissionBrief(profile: Profile | undefined = getProfile()): MissionBrief {
@@ -92,6 +110,7 @@ export function buildMissionBrief(profile: Profile | undefined = getProfile()): 
     featuredRepositories: getFeaturedTrees(),
     projects: world.projects,
     certifications: world.certifications,
+    workHistory: sortWorkHistory(world.experiences),
   };
 }
 

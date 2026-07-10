@@ -104,6 +104,23 @@ export interface Profile {
   links?: Array<{ label: string; url: string }>;
 }
 
+export interface Experience {
+  id: string;
+  type: "experience";
+  employer: string;
+  role: string;
+  startDate: string;
+  summary: string;
+  endDate?: string;
+  current?: boolean;
+  location?: string;
+  order?: number;
+  highlights?: string[];
+  technologies?: string[];
+  links?: Array<{ label: string; url: string }>;
+  districtId?: string;
+}
+
 export interface World {
   meta: { generatedAt: string; sourceFileCount: number; entityCount: number };
   districts: District[];
@@ -115,6 +132,7 @@ export interface World {
   skills: Skill[];
   certifications: Certification[];
   profiles: Profile[];
+  experiences: Experience[];
 }
 
 export const world = worldData as unknown as World;
@@ -131,6 +149,7 @@ const questsById = indexBy(world.quests);
 const notesById = indexBy(world.notes);
 const skillsById = indexBy(world.skills);
 const certificationsById = indexBy(world.certifications);
+const experiencesById = indexBy(world.experiences);
 
 export const getDistrict = (id: string): District | undefined => districtsById.get(id);
 export const getGuardian = (id: string): Guardian | undefined => guardiansById.get(id);
@@ -140,6 +159,7 @@ export const getQuest = (id: string): Quest | undefined => questsById.get(id);
 export const getNote = (id: string): Note | undefined => notesById.get(id);
 export const getSkill = (id: string): Skill | undefined => skillsById.get(id);
 export const getCertification = (id: string): Certification | undefined => certificationsById.get(id);
+export const getExperience = (id: string): Experience | undefined => experiencesById.get(id);
 
 export const listDistricts = (): District[] => world.districts;
 
