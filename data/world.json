@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generatedAt": "2026-07-10T07:21:25.944Z",
-    "sourceFileCount": 37,
-    "entityCount": 37
+    "generatedAt": "2026-07-16T05:20:28.721Z",
+    "sourceFileCount": 80,
+    "entityCount": 80
   },
   "districts": [
     {
@@ -213,7 +213,309 @@
   "projects": [],
   "quests": [],
   "notes": [],
-  "skills": [],
+  "skills": [
+    {
+      "id": "active-directory",
+      "name": "Active Directory",
+      "description": "Windows Server directory service for managing identities, authentication, and resources in enterprise networks.",
+      "category": "Identity",
+      "type": "skill"
+    },
+    {
+      "id": "ansible",
+      "name": "Ansible",
+      "description": "Agentless IT automation tool for configuration management and application deployment.",
+      "category": "Automation",
+      "type": "skill"
+    },
+    {
+      "id": "azure",
+      "name": "Azure",
+      "description": "Microsoft's cloud computing platform for hosting and managing infrastructure and services.",
+      "category": "Cloud",
+      "type": "skill"
+    },
+    {
+      "id": "barcode-scanning-systems",
+      "name": "Barcode Scanning Systems",
+      "description": "Hardware and software systems for barcode-based inventory and asset tracking.",
+      "category": "Business Apps",
+      "type": "skill"
+    },
+    {
+      "id": "bash",
+      "name": "Bash",
+      "description": "Unix shell and scripting language for command-line automation.",
+      "category": "Scripting",
+      "type": "skill"
+    },
+    {
+      "id": "cisco-meraki",
+      "name": "Cisco Meraki",
+      "description": "Cloud-managed networking platform for switches, wireless access points, and security appliances.",
+      "category": "Networking",
+      "type": "skill"
+    },
+    {
+      "id": "cisco-networking",
+      "name": "Cisco Networking",
+      "description": "Configuration and administration of Cisco routing and switching equipment.",
+      "category": "Networking",
+      "type": "skill"
+    },
+    {
+      "id": "cisco-ucs",
+      "name": "Cisco UCS",
+      "description": "Cisco's converged data center compute platform, including blade server administration.",
+      "category": "Networking",
+      "type": "skill"
+    },
+    {
+      "id": "conditional-access",
+      "name": "Conditional Access",
+      "description": "Microsoft Entra ID policy engine that grants or blocks access based on signals like device, location, and risk.",
+      "category": "Identity",
+      "type": "skill"
+    },
+    {
+      "id": "custom-pc-building",
+      "name": "Custom PC Building",
+      "description": "Selecting and assembling custom personal computer builds from individual components.",
+      "category": "Hardware",
+      "type": "skill"
+    },
+    {
+      "id": "dos-batch-scripting",
+      "name": "DOS Batch Scripting",
+      "description": "Scripting language for automating tasks in the Windows/DOS command-line environment.",
+      "category": "Scripting",
+      "type": "skill"
+    },
+    {
+      "id": "fortinet-ssl-vpn",
+      "name": "Fortinet SSL VPN",
+      "description": "SSL VPN configuration and administration on Fortinet security appliances.",
+      "category": "Networking",
+      "type": "skill"
+    },
+    {
+      "id": "google-workspace",
+      "name": "Google Workspace",
+      "description": "Google's suite of cloud productivity and collaboration tools.",
+      "category": "Cloud",
+      "type": "skill"
+    },
+    {
+      "id": "group-policy",
+      "name": "Group Policy",
+      "description": "Active Directory feature for centrally enforcing configuration and security settings across users and computers.",
+      "category": "Identity",
+      "type": "skill"
+    },
+    {
+      "id": "hardware-diagnostics-repair",
+      "name": "Hardware Diagnostics & Repair",
+      "description": "Diagnosing hardware faults and performing repairs, RMA processing, and burn-in testing.",
+      "category": "Hardware",
+      "type": "skill"
+    },
+    {
+      "id": "html",
+      "name": "HTML",
+      "description": "Markup language for structuring content on the web.",
+      "category": "Web",
+      "type": "skill"
+    },
+    {
+      "id": "it-glue",
+      "name": "IT Glue",
+      "description": "IT documentation platform for managed service providers and IT teams.",
+      "category": "ITSM",
+      "type": "skill"
+    },
+    {
+      "id": "jumpcloud",
+      "name": "JumpCloud",
+      "description": "Cloud directory platform for unified identity, device, and access management.",
+      "category": "Identity",
+      "type": "skill"
+    },
+    {
+      "id": "linux",
+      "name": "Linux",
+      "description": "General Linux operating system administration.",
+      "category": "Systems",
+      "type": "skill"
+    },
+    {
+      "id": "lotus-notes",
+      "name": "Lotus Notes",
+      "description": "IBM/HCL collaborative business application platform for email and messaging.",
+      "category": "Business Apps",
+      "type": "skill"
+    },
+    {
+      "id": "macos",
+      "name": "macOS",
+      "description": "Apple's desktop operating system administration.",
+      "category": "Systems",
+      "type": "skill"
+    },
+    {
+      "id": "microsoft-365",
+      "name": "Microsoft 365",
+      "description": "Microsoft's cloud productivity suite, including Office apps, Exchange, and related services.",
+      "category": "Cloud",
+      "type": "skill"
+    },
+    {
+      "id": "microsoft-access",
+      "name": "Microsoft Access",
+      "description": "Microsoft's desktop database management application.",
+      "category": "Business Apps",
+      "type": "skill"
+    },
+    {
+      "id": "microsoft-deployment-toolkit",
+      "name": "Microsoft Deployment Toolkit (MDT)",
+      "description": "Microsoft tool for automating Windows operating system deployment and imaging.",
+      "category": "Systems",
+      "type": "skill"
+    },
+    {
+      "id": "microsoft-entra-id",
+      "name": "Microsoft Entra ID",
+      "description": "Microsoft's cloud-based identity and access management service, formerly known as Azure AD.",
+      "category": "Identity",
+      "type": "skill"
+    },
+    {
+      "id": "microsoft-intune",
+      "name": "Microsoft Intune",
+      "description": "Cloud-based endpoint management service for mobile devices and PCs.",
+      "category": "Cloud",
+      "type": "skill"
+    },
+    {
+      "id": "microsoft-onedrive",
+      "name": "Microsoft OneDrive",
+      "description": "Microsoft's cloud file storage and synchronization service.",
+      "category": "Cloud",
+      "type": "skill"
+    },
+    {
+      "id": "microsoft-sql-server",
+      "name": "Microsoft SQL Server",
+      "description": "Microsoft's relational database management system.",
+      "category": "Business Apps",
+      "type": "skill"
+    },
+    {
+      "id": "microsoft-teams-calling",
+      "name": "Microsoft Teams Calling",
+      "description": "Administration of Microsoft Teams voice and calling capabilities.",
+      "category": "Cloud",
+      "type": "skill"
+    },
+    {
+      "id": "multi-factor-authentication",
+      "name": "Multi-Factor Authentication",
+      "description": "Authentication approach requiring more than one verification factor to confirm identity.",
+      "category": "Identity",
+      "type": "skill"
+    },
+    {
+      "id": "networking",
+      "name": "Networking",
+      "description": "Vendor-neutral computer networking concepts and hardware administration.",
+      "category": "Networking",
+      "type": "skill"
+    },
+    {
+      "id": "pc-hardware",
+      "name": "PC Hardware",
+      "description": "Diagnosis, assembly, and maintenance of personal computer hardware components.",
+      "category": "Hardware",
+      "type": "skill"
+    },
+    {
+      "id": "powershell",
+      "name": "PowerShell",
+      "description": "Microsoft's command-line shell and scripting language for task automation and configuration management.",
+      "category": "Scripting",
+      "type": "skill"
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "description": "General-purpose programming language used for scripting and automation.",
+      "category": "Scripting",
+      "type": "skill"
+    },
+    {
+      "id": "qbasic",
+      "name": "QBASIC",
+      "description": "Legacy BASIC-dialect programming language and IDE distributed with early DOS systems.",
+      "category": "Scripting",
+      "type": "skill"
+    },
+    {
+      "id": "red-hat-enterprise-linux",
+      "name": "Red Hat Enterprise Linux",
+      "description": "Administration and migration of Red Hat Enterprise Linux and CentOS systems.",
+      "category": "Systems",
+      "type": "skill"
+    },
+    {
+      "id": "sage-erp",
+      "name": "Sage ERP",
+      "description": "Sage enterprise resource planning software for accounting and business management.",
+      "category": "Business Apps",
+      "type": "skill"
+    },
+    {
+      "id": "saml",
+      "name": "SAML",
+      "description": "XML-based standard for exchanging authentication and authorization data between identity and service providers.",
+      "category": "Identity",
+      "type": "skill"
+    },
+    {
+      "id": "technical-troubleshooting",
+      "name": "Technical Troubleshooting",
+      "description": "Systematic diagnosis and resolution of technical issues across hardware, software, and systems.",
+      "category": "General",
+      "type": "skill"
+    },
+    {
+      "id": "veeam",
+      "name": "Veeam",
+      "description": "Backup and disaster recovery software for virtual, physical, and cloud environments.",
+      "category": "Infrastructure",
+      "type": "skill"
+    },
+    {
+      "id": "windows-client-administration",
+      "name": "Windows Client Administration",
+      "description": "Deployment, imaging, patching, and support of Windows desktop operating systems.",
+      "category": "Systems",
+      "type": "skill"
+    },
+    {
+      "id": "windows-server",
+      "name": "Windows Server",
+      "description": "Microsoft's server operating system for hosting enterprise services, directories, and infrastructure roles.",
+      "category": "Systems",
+      "type": "skill"
+    },
+    {
+      "id": "zendesk",
+      "name": "Zendesk",
+      "description": "Cloud-based customer service and support ticketing platform.",
+      "category": "ITSM",
+      "type": "skill"
+    }
+  ],
   "certifications": [
     {
       "id": "azure-administrator-associate",
@@ -263,11 +565,11 @@
         "Shifted my thinking from fixing individual problems to how infrastructure should be designed, secured, and standardized — a foundation that shaped every systems administration role that followed.",
         "Reinforced that continuous learning — combining formal training, certifications, and real-world experience — is one of the most valuable skills an IT professional can have, accelerating my transition from desktop support into infrastructure engineering."
       ],
-      "technologies": [
-        "Cisco Networking",
-        "Windows Server",
-        "Active Directory",
-        "Group Policy"
+      "skillIds": [
+        "cisco-networking",
+        "windows-server",
+        "active-directory",
+        "group-policy"
       ],
       "districtId": "floating-citadel",
       "type": "experience"
@@ -308,18 +610,18 @@
         "Hardened security across printers, CNC machines, and network devices; supported disaster recovery planning, infrastructure testing with logistics partners, and vendor evaluation for critical data center systems, while providing executive-level technical support.",
         "Left having fundamentally changed how I saw my own role — from someone who fixed computers to a systems administrator who designs, automates, secures, and continuously improves infrastructure; the habits formed here still define my work today."
       ],
-      "technologies": [
-        "PowerShell",
-        "Python",
-        "Bash",
-        "Microsoft Office 365",
-        "Lotus Notes",
-        "Microsoft Access",
-        "Microsoft SQL Server",
-        "Windows Server 2012 R2",
-        "Cisco Blade Servers",
-        "Microsoft Deployment Toolkit (MDT)",
-        "Windows 10"
+      "skillIds": [
+        "powershell",
+        "python",
+        "bash",
+        "microsoft-365",
+        "lotus-notes",
+        "microsoft-access",
+        "microsoft-sql-server",
+        "windows-server",
+        "cisco-ucs",
+        "microsoft-deployment-toolkit",
+        "windows-client-administration"
       ],
       "districtId": "floating-citadel",
       "type": "experience"
@@ -375,9 +677,9 @@
         "Carried one of the highest call volumes on the team while maintaining service quality, thanks in large part to those self-built efficiency tools.",
         "Worked out of EarthLink's HQ call center in Pasadena — a notably tight-knit, high-morale environment (arcade, pool table, ping pong, an on-site gym) — until the center was outsourced and the role ended in a severance layoff."
       ],
-      "technologies": [
-        "DOS Batch Scripting",
-        "QBASIC"
+      "skillIds": [
+        "dos-batch-scripting",
+        "qbasic"
       ],
       "districtId": "dojo-gate",
       "type": "experience"
@@ -415,10 +717,10 @@
         "Explained how different hardware components worked together to build a balanced system, translating technical tradeoffs into plain language.",
         "Realized here that helping people through technology was what I wanted to do professionally — Fry's turned technology from a personal hobby into a career I was building toward."
       ],
-      "technologies": [
-        "Networking Hardware",
-        "PC Hardware",
-        "Custom PC Building"
+      "skillIds": [
+        "networking",
+        "pc-hardware",
+        "custom-pc-building"
       ],
       "districtId": "dojo-gate",
       "type": "experience"
@@ -439,10 +741,8 @@
         "Got direct exposure to Intel, AMD, and NVIDIA representatives previewing upcoming hardware, plus hands-on experience preparing network infrastructure for gaming events.",
         "Left in January 2015 for my first enterprise systems administration role after management confirmed they couldn't match the offer — a deliberate transition that turned years of hardware passion into the foundation for enterprise infrastructure work."
       ],
-      "technologies": [
-        "Hardware Diagnostics",
-        "RMA Repair",
-        "Burn-in Testing"
+      "skillIds": [
+        "hardware-diagnostics-repair"
       ],
       "districtId": "dojo-gate",
       "type": "experience"
@@ -464,14 +764,14 @@
         "Learned SQL Server, database design, and data reliability principles directly from the organization's SQL developer — a mentorship that reshaped how I approach troubleshooting to this day.",
         "Rounded out the role with documentation, standardized Windows/macOS deployment, server patching, networking support, and warehouse scanner configuration — the point where I started thinking of IT as an interconnected ecosystem rather than a collection of individual systems."
       ],
-      "technologies": [
-        "macOS",
-        "Active Directory",
-        "Linux",
-        "Sage ERP",
-        "SQL Server",
-        "Networking",
-        "Barcode Scanning Systems"
+      "skillIds": [
+        "macos",
+        "active-directory",
+        "linux",
+        "sage-erp",
+        "microsoft-sql-server",
+        "networking",
+        "barcode-scanning-systems"
       ],
       "districtId": "floating-citadel",
       "type": "experience"
@@ -494,24 +794,24 @@
         "Extended into Microsoft Teams Calling evaluations, endpoint management and imaging, hybrid cloud administration, Azure virtual machines, and Microsoft Intune as part of ongoing infrastructure modernization.",
         "See a consistent arc across my whole career here: from helping customers understand technology, to enterprise users, to enterprise infrastructure, to now designing, automating, securing, and improving the systems organizations depend on — a journey that continues to shape both my work and the vision behind Ninjatronics."
       ],
-      "technologies": [
-        "Windows Server",
-        "Linux",
-        "Microsoft 365 GCC High",
-        "Azure",
-        "Active Directory",
-        "Microsoft Entra ID",
-        "Conditional Access",
-        "SAML",
-        "Multi-Factor Authentication",
-        "PowerShell",
-        "Python",
-        "Bash",
-        "Ansible",
-        "Fortinet SSL VPN",
-        "Veeam",
-        "Microsoft Intune",
-        "Microsoft Teams Calling"
+      "skillIds": [
+        "windows-server",
+        "linux",
+        "microsoft-365",
+        "azure",
+        "active-directory",
+        "microsoft-entra-id",
+        "conditional-access",
+        "saml",
+        "multi-factor-authentication",
+        "powershell",
+        "python",
+        "bash",
+        "ansible",
+        "fortinet-ssl-vpn",
+        "veeam",
+        "microsoft-intune",
+        "microsoft-teams-calling"
       ],
       "districtId": "floating-citadel",
       "type": "experience"
@@ -532,14 +832,14 @@
         "Strengthened infrastructure skills troubleshooting networking and file server issues, supporting secure remote access during the shift to remote work, implementing security improvements, and learning automation with Ansible.",
         "Found this to be one of the most meaningful roles of my career: every technical solution ultimately helped people serving vulnerable families and children, reinforcing that technology exists to serve people, not the other way around."
       ],
-      "technologies": [
-        "Azure AD",
-        "JumpCloud",
-        "Google Workspace",
-        "Microsoft OneDrive",
-        "Ansible",
-        "Active Directory",
-        "Networking"
+      "skillIds": [
+        "microsoft-entra-id",
+        "jumpcloud",
+        "google-workspace",
+        "microsoft-onedrive",
+        "ansible",
+        "active-directory",
+        "networking"
       ],
       "districtId": "floating-citadel",
       "type": "experience"
@@ -559,9 +859,9 @@
         "Updated HTML content on the website to keep organizational information accurate and current — first hands-on exposure to web operations.",
         "Gained the confidence to pursue technology as a long-term career — a two-month internship that opened the door to every IT opportunity that followed."
       ],
-      "technologies": [
-        "Zendesk",
-        "HTML"
+      "skillIds": [
+        "zendesk",
+        "html"
       ],
       "districtId": "dojo-gate",
       "type": "experience"
@@ -582,14 +882,12 @@
         "Handled core enterprise IT responsibilities — onboarding, secure workstation provisioning, user account administration, SAGE application support, and hardware inventory management — alongside the infrastructure projects.",
         "Reinforced a theme that has stayed consistent throughout my career: I enjoy building systems that are reliable, repeatable, and easy for others to operate — experience that directly prepared me for my next role as Senior Systems Administrator at New Directions Technologies."
       ],
-      "technologies": [
-        "Linux",
-        "CentOS",
-        "Red Hat Enterprise Linux (RHEL)",
-        "Cisco UCS",
-        "Ansible",
-        "PowerShell",
-        "SAGE"
+      "skillIds": [
+        "linux",
+        "red-hat-enterprise-linux",
+        "cisco-ucs",
+        "ansible",
+        "powershell"
       ],
       "districtId": "floating-citadel",
       "type": "experience"
@@ -629,11 +927,11 @@
         "Installed and relocated Cisco Meraki wireless infrastructure for media and entertainment clients, improving wireless coverage and network performance.",
         "Documented systems, configurations, and procedures in IT Glue — learning that in an MSP, anyone on the team might need to support a client at any time, so documentation directly enables knowledge sharing and continuity."
       ],
-      "technologies": [
-        "Ansible",
-        "Microsoft 365",
-        "Cisco Meraki",
-        "IT Glue"
+      "skillIds": [
+        "ansible",
+        "microsoft-365",
+        "cisco-meraki",
+        "it-glue"
       ],
       "districtId": "floating-citadel",
       "type": "experience"
@@ -671,10 +969,10 @@
         "Applied classroom knowledge from my IT and programming studies directly in real-world environments, turning theory into hands-on troubleshooting experience.",
         "Built the confidence to solve technical problems independently, and the accountability that comes from earning trust through results — a bridge between my education and the enterprise IT roles that followed."
       ],
-      "technologies": [
-        "Computer Hardware",
-        "Networking",
-        "Software Troubleshooting"
+      "skillIds": [
+        "pc-hardware",
+        "networking",
+        "technical-troubleshooting"
       ],
       "districtId": "dojo-gate",
       "type": "experience"

@@ -6,13 +6,25 @@
     "compile:world": "tsx scripts/compile-world.ts",
     "compile:world:check": "tsx scripts/compile-world.ts --check",
     "sync:github": "tsx scripts/sync-github.ts",
-    "sync:github:check": "tsx scripts/sync-github.ts --check"
+    "sync:github:check": "tsx scripts/sync-github.ts --check",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "@types/node": "^26.1.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
     "tsx": "^4.23.0",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vite": "^8.1.4"
+  },
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.1"
   }
 }
