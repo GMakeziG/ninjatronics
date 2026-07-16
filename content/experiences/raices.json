@@ -14,6 +14,14 @@
     "Strengthened infrastructure skills troubleshooting networking and file server issues, supporting secure remote access during the shift to remote work, implementing security improvements, and learning automation with Ansible.",
     "Found this to be one of the most meaningful roles of my career: every technical solution ultimately helped people serving vulnerable families and children, reinforcing that technology exists to serve people, not the other way around."
   ],
-  "technologies": ["Azure AD", "JumpCloud", "Google Workspace", "Microsoft OneDrive", "Ansible", "Active Directory", "Networking"],
+  "skillIds": [
+    "microsoft-entra-id",
+    "jumpcloud",
+    "google-workspace",
+    "microsoft-onedrive",
+    "ansible",
+    "active-directory",
+    "networking"
+  ],
   "districtId": "floating-citadel"
 }

@@ -1,0 +1,7 @@
+// content/skills/veeam.json
+{
+  "id": "veeam",
+  "name": "Veeam",
+  "description": "Backup and disaster recovery software for virtual, physical, and cloud environments.",
+  "category": "Infrastructure"
+}

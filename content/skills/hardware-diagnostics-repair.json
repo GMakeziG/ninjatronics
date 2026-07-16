@@ -1,0 +1,7 @@
+// content/skills/hardware-diagnostics-repair.json
+{
+  "id": "hardware-diagnostics-repair",
+  "name": "Hardware Diagnostics & Repair",
+  "description": "Diagnosing hardware faults and performing repairs, RMA processing, and burn-in testing.",
+  "category": "Hardware"
+}

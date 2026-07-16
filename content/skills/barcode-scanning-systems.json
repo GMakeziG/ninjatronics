@@ -1,0 +1,7 @@
+// content/skills/barcode-scanning-systems.json
+{
+  "id": "barcode-scanning-systems",
+  "name": "Barcode Scanning Systems",
+  "description": "Hardware and software systems for barcode-based inventory and asset tracking.",
+  "category": "Business Apps"
+}

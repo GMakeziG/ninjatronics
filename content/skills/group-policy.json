@@ -1,0 +1,7 @@
+// content/skills/group-policy.json
+{
+  "id": "group-policy",
+  "name": "Group Policy",
+  "description": "Active Directory feature for centrally enforcing configuration and security settings across users and computers.",
+  "category": "Identity"
+}

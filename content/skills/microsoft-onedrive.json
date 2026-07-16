@@ -1,0 +1,7 @@
+// content/skills/microsoft-onedrive.json
+{
+  "id": "microsoft-onedrive",
+  "name": "Microsoft OneDrive",
+  "description": "Microsoft's cloud file storage and synchronization service.",
+  "category": "Cloud"
+}

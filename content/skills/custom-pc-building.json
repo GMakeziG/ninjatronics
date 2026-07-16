@@ -1,0 +1,7 @@
+// content/skills/custom-pc-building.json
+{
+  "id": "custom-pc-building",
+  "name": "Custom PC Building",
+  "description": "Selecting and assembling custom personal computer builds from individual components.",
+  "category": "Hardware"
+}

@@ -1,0 +1,7 @@
+// content/skills/microsoft-teams-calling.json
+{
+  "id": "microsoft-teams-calling",
+  "name": "Microsoft Teams Calling",
+  "description": "Administration of Microsoft Teams voice and calling capabilities.",
+  "category": "Cloud"
+}

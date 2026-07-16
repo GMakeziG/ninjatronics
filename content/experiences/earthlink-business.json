@@ -13,6 +13,9 @@
     "Carried one of the highest call volumes on the team while maintaining service quality, thanks in large part to those self-built efficiency tools.",
     "Worked out of EarthLink's HQ call center in Pasadena — a notably tight-knit, high-morale environment (arcade, pool table, ping pong, an on-site gym) — until the center was outsourced and the role ended in a severance layoff."
   ],
-  "technologies": ["DOS Batch Scripting", "QBASIC"],
+  "skillIds": [
+    "dos-batch-scripting",
+    "qbasic"
+  ],
   "districtId": "dojo-gate"
 }

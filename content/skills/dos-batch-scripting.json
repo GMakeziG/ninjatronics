@@ -1,0 +1,7 @@
+// content/skills/dos-batch-scripting.json
+{
+  "id": "dos-batch-scripting",
+  "name": "DOS Batch Scripting",
+  "description": "Scripting language for automating tasks in the Windows/DOS command-line environment.",
+  "category": "Scripting"
+}

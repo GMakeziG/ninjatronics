@@ -1,0 +1,7 @@
+// content/skills/jumpcloud.json
+{
+  "id": "jumpcloud",
+  "name": "JumpCloud",
+  "description": "Cloud directory platform for unified identity, device, and access management.",
+  "category": "Identity"
+}

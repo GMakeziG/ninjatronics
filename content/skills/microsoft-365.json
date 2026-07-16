@@ -1,0 +1,7 @@
+// content/skills/microsoft-365.json
+{
+  "id": "microsoft-365",
+  "name": "Microsoft 365",
+  "description": "Microsoft's cloud productivity suite, including Office apps, Exchange, and related services.",
+  "category": "Cloud"
+}

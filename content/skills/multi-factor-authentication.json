@@ -1,0 +1,7 @@
+// content/skills/multi-factor-authentication.json
+{
+  "id": "multi-factor-authentication",
+  "name": "Multi-Factor Authentication",
+  "description": "Authentication approach requiring more than one verification factor to confirm identity.",
+  "category": "Identity"
+}

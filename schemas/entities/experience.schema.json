@@ -20,9 +20,9 @@
       "type": "array",
       "items": { "type": "string" }
     },
-    "technologies": {
+    "skillIds": {
       "type": "array",
-      "items": { "type": "string" }
+      "items": { "type": "string", "x-ref": "skill" }
     },
     "links": {
       "type": "array",

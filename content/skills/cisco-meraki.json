@@ -1,0 +1,7 @@
+// content/skills/cisco-meraki.json
+{
+  "id": "cisco-meraki",
+  "name": "Cisco Meraki",
+  "description": "Cloud-managed networking platform for switches, wireless access points, and security appliances.",
+  "category": "Networking"
+}

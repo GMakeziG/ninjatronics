@@ -1,0 +1,7 @@
+// content/skills/cisco-networking.json
+{
+  "id": "cisco-networking",
+  "name": "Cisco Networking",
+  "description": "Configuration and administration of Cisco routing and switching equipment.",
+  "category": "Networking"
+}

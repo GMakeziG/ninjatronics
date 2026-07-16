@@ -14,6 +14,12 @@
     "Handled core enterprise IT responsibilities — onboarding, secure workstation provisioning, user account administration, SAGE application support, and hardware inventory management — alongside the infrastructure projects.",
     "Reinforced a theme that has stayed consistent throughout my career: I enjoy building systems that are reliable, repeatable, and easy for others to operate — experience that directly prepared me for my next role as Senior Systems Administrator at New Directions Technologies."
   ],
-  "technologies": ["Linux", "CentOS", "Red Hat Enterprise Linux (RHEL)", "Cisco UCS", "Ansible", "PowerShell", "SAGE"],
+  "skillIds": [
+    "linux",
+    "red-hat-enterprise-linux",
+    "cisco-ucs",
+    "ansible",
+    "powershell"
+  ],
   "districtId": "floating-citadel"
 }

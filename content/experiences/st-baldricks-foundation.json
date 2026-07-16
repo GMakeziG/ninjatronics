@@ -13,6 +13,9 @@
     "Updated HTML content on the website to keep organizational information accurate and current — first hands-on exposure to web operations.",
     "Gained the confidence to pursue technology as a long-term career — a two-month internship that opened the door to every IT opportunity that followed."
   ],
-  "technologies": ["Zendesk", "HTML"],
+  "skillIds": [
+    "zendesk",
+    "html"
+  ],
   "districtId": "dojo-gate"
 }

@@ -1,0 +1,7 @@
+// content/skills/microsoft-deployment-toolkit.json
+{
+  "id": "microsoft-deployment-toolkit",
+  "name": "Microsoft Deployment Toolkit (MDT)",
+  "description": "Microsoft tool for automating Windows operating system deployment and imaging.",
+  "category": "Systems"
+}

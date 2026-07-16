@@ -1,0 +1,7 @@
+// content/skills/saml.json
+{
+  "id": "saml",
+  "name": "SAML",
+  "description": "XML-based standard for exchanging authentication and authorization data between identity and service providers.",
+  "category": "Identity"
+}

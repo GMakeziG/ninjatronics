@@ -15,6 +15,14 @@
     "Learned SQL Server, database design, and data reliability principles directly from the organization's SQL developer — a mentorship that reshaped how I approach troubleshooting to this day.",
     "Rounded out the role with documentation, standardized Windows/macOS deployment, server patching, networking support, and warehouse scanner configuration — the point where I started thinking of IT as an interconnected ecosystem rather than a collection of individual systems."
   ],
-  "technologies": ["macOS", "Active Directory", "Linux", "Sage ERP", "SQL Server", "Networking", "Barcode Scanning Systems"],
+  "skillIds": [
+    "macos",
+    "active-directory",
+    "linux",
+    "sage-erp",
+    "microsoft-sql-server",
+    "networking",
+    "barcode-scanning-systems"
+  ],
   "districtId": "floating-citadel"
 }

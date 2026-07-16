@@ -1,0 +1,7 @@
+// content/skills/windows-client-administration.json
+{
+  "id": "windows-client-administration",
+  "name": "Windows Client Administration",
+  "description": "Deployment, imaging, patching, and support of Windows desktop operating systems.",
+  "category": "Systems"
+}

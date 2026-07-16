@@ -1,0 +1,7 @@
+// content/skills/macos.json
+{
+  "id": "macos",
+  "name": "macOS",
+  "description": "Apple's desktop operating system administration.",
+  "category": "Systems"
+}

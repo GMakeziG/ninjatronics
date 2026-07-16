@@ -14,6 +14,11 @@
     "Shifted my thinking from fixing individual problems to how infrastructure should be designed, secured, and standardized — a foundation that shaped every systems administration role that followed.",
     "Reinforced that continuous learning — combining formal training, certifications, and real-world experience — is one of the most valuable skills an IT professional can have, accelerating my transition from desktop support into infrastructure engineering."
   ],
-  "technologies": ["Cisco Networking", "Windows Server", "Active Directory", "Group Policy"],
+  "skillIds": [
+    "cisco-networking",
+    "windows-server",
+    "active-directory",
+    "group-policy"
+  ],
   "districtId": "floating-citadel"
 }

@@ -1,0 +1,7 @@
+// content/skills/linux.json
+{
+  "id": "linux",
+  "name": "Linux",
+  "description": "General Linux operating system administration.",
+  "category": "Systems"
+}

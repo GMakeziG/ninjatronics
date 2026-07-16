@@ -1,0 +1,7 @@
+// content/skills/networking.json
+{
+  "id": "networking",
+  "name": "Networking",
+  "description": "Vendor-neutral computer networking concepts and hardware administration.",
+  "category": "Networking"
+}

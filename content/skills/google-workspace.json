@@ -1,0 +1,7 @@
+// content/skills/google-workspace.json
+{
+  "id": "google-workspace",
+  "name": "Google Workspace",
+  "description": "Google's suite of cloud productivity and collaboration tools.",
+  "category": "Cloud"
+}

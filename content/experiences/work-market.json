@@ -13,6 +13,10 @@
     "Applied classroom knowledge from my IT and programming studies directly in real-world environments, turning theory into hands-on troubleshooting experience.",
     "Built the confidence to solve technical problems independently, and the accountability that comes from earning trust through results — a bridge between my education and the enterprise IT roles that followed."
   ],
-  "technologies": ["Computer Hardware", "Networking", "Software Troubleshooting"],
+  "skillIds": [
+    "pc-hardware",
+    "networking",
+    "technical-troubleshooting"
+  ],
   "districtId": "dojo-gate"
 }

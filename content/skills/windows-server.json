@@ -1,0 +1,7 @@
+// content/skills/windows-server.json
+{
+  "id": "windows-server",
+  "name": "Windows Server",
+  "description": "Microsoft's server operating system for hosting enterprise services, directories, and infrastructure roles.",
+  "category": "Systems"
+}

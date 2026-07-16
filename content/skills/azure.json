@@ -1,0 +1,7 @@
+// content/skills/azure.json
+{
+  "id": "azure",
+  "name": "Azure",
+  "description": "Microsoft's cloud computing platform for hosting and managing infrastructure and services.",
+  "category": "Cloud"
+}

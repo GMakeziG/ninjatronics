@@ -1,0 +1,7 @@
+// content/skills/bash.json
+{
+  "id": "bash",
+  "name": "Bash",
+  "description": "Unix shell and scripting language for command-line automation.",
+  "category": "Scripting"
+}

@@ -13,6 +13,10 @@
     "Explained how different hardware components worked together to build a balanced system, translating technical tradeoffs into plain language.",
     "Realized here that helping people through technology was what I wanted to do professionally — Fry's turned technology from a personal hobby into a career I was building toward."
   ],
-  "technologies": ["Networking Hardware", "PC Hardware", "Custom PC Building"],
+  "skillIds": [
+    "networking",
+    "pc-hardware",
+    "custom-pc-building"
+  ],
   "districtId": "dojo-gate"
 }

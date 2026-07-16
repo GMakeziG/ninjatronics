@@ -1,0 +1,7 @@
+// content/skills/microsoft-entra-id.json
+{
+  "id": "microsoft-entra-id",
+  "name": "Microsoft Entra ID",
+  "description": "Microsoft's cloud-based identity and access management service, formerly known as Azure AD.",
+  "category": "Identity"
+}

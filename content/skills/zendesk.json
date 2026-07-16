@@ -1,0 +1,7 @@
+// content/skills/zendesk.json
+{
+  "id": "zendesk",
+  "name": "Zendesk",
+  "description": "Cloud-based customer service and support ticketing platform.",
+  "category": "ITSM"
+}

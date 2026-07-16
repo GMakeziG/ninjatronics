@@ -1,0 +1,7 @@
+// content/skills/python.json
+{
+  "id": "python",
+  "name": "Python",
+  "description": "General-purpose programming language used for scripting and automation.",
+  "category": "Scripting"
+}

@@ -1,0 +1,7 @@
+// content/skills/cisco-ucs.json
+{
+  "id": "cisco-ucs",
+  "name": "Cisco UCS",
+  "description": "Cisco's converged data center compute platform, including blade server administration.",
+  "category": "Networking"
+}

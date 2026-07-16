@@ -1,0 +1,7 @@
+// content/skills/it-glue.json
+{
+  "id": "it-glue",
+  "name": "IT Glue",
+  "description": "IT documentation platform for managed service providers and IT teams.",
+  "category": "ITSM"
+}

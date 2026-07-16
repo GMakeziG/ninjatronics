@@ -1,0 +1,7 @@
+// content/skills/active-directory.json
+{
+  "id": "active-directory",
+  "name": "Active Directory",
+  "description": "Windows Server directory service for managing identities, authentication, and resources in enterprise networks.",
+  "category": "Identity"
+}

@@ -1,0 +1,7 @@
+// content/skills/qbasic.json
+{
+  "id": "qbasic",
+  "name": "QBASIC",
+  "description": "Legacy BASIC-dialect programming language and IDE distributed with early DOS systems.",
+  "category": "Scripting"
+}

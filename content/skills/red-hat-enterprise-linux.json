@@ -1,0 +1,7 @@
+// content/skills/red-hat-enterprise-linux.json
+{
+  "id": "red-hat-enterprise-linux",
+  "name": "Red Hat Enterprise Linux",
+  "description": "Administration and migration of Red Hat Enterprise Linux and CentOS systems.",
+  "category": "Systems"
+}

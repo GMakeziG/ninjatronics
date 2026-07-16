@@ -1,0 +1,7 @@
+// content/skills/lotus-notes.json
+{
+  "id": "lotus-notes",
+  "name": "Lotus Notes",
+  "description": "IBM/HCL collaborative business application platform for email and messaging.",
+  "category": "Business Apps"
+}

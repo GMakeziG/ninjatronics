@@ -1,0 +1,7 @@
+// content/skills/conditional-access.json
+{
+  "id": "conditional-access",
+  "name": "Conditional Access",
+  "description": "Microsoft Entra ID policy engine that grants or blocks access based on signals like device, location, and risk.",
+  "category": "Identity"
+}

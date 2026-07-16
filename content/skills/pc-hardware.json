@@ -1,0 +1,7 @@
+// content/skills/pc-hardware.json
+{
+  "id": "pc-hardware",
+  "name": "PC Hardware",
+  "description": "Diagnosis, assembly, and maintenance of personal computer hardware components.",
+  "category": "Hardware"
+}

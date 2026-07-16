@@ -1,0 +1,7 @@
+// content/skills/microsoft-access.json
+{
+  "id": "microsoft-access",
+  "name": "Microsoft Access",
+  "description": "Microsoft's desktop database management application.",
+  "category": "Business Apps"
+}

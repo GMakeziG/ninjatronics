@@ -28,6 +28,7 @@ export interface RepositoryOverride {
   treeName?: string;
   story?: string;
   technologies?: string[];
+  skillIds?: string[];
   skip?: boolean;
   [key: string]: unknown;
 }

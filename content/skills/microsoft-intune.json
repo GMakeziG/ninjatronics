@@ -1,0 +1,7 @@
+// content/skills/microsoft-intune.json
+{
+  "id": "microsoft-intune",
+  "name": "Microsoft Intune",
+  "description": "Cloud-based endpoint management service for mobile devices and PCs.",
+  "category": "Cloud"
+}

@@ -14,6 +14,8 @@
     "Got direct exposure to Intel, AMD, and NVIDIA representatives previewing upcoming hardware, plus hands-on experience preparing network infrastructure for gaming events.",
     "Left in January 2015 for my first enterprise systems administration role after management confirmed they couldn't match the offer — a deliberate transition that turned years of hardware passion into the foundation for enterprise infrastructure work."
   ],
-  "technologies": ["Hardware Diagnostics", "RMA Repair", "Burn-in Testing"],
+  "skillIds": [
+    "hardware-diagnostics-repair"
+  ],
   "districtId": "dojo-gate"
 }

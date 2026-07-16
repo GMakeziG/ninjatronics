@@ -17,6 +17,10 @@
       "type": "array",
       "items": { "type": "string" }
     },
+    "skillIds": {
+      "type": "array",
+      "items": { "type": "string", "x-ref": "skill" }
+    },
     "links": {
       "type": "array",
       "items": {

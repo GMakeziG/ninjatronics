@@ -16,10 +16,18 @@
     "Hardened security across printers, CNC machines, and network devices; supported disaster recovery planning, infrastructure testing with logistics partners, and vendor evaluation for critical data center systems, while providing executive-level technical support.",
     "Left having fundamentally changed how I saw my own role — from someone who fixed computers to a systems administrator who designs, automates, secures, and continuously improves infrastructure; the habits formed here still define my work today."
   ],
-  "technologies": [
-    "PowerShell", "Python", "Bash", "Microsoft Office 365", "Lotus Notes",
-    "Microsoft Access", "Microsoft SQL Server", "Windows Server 2012 R2",
-    "Cisco Blade Servers", "Microsoft Deployment Toolkit (MDT)", "Windows 10"
+  "skillIds": [
+    "powershell",
+    "python",
+    "bash",
+    "microsoft-365",
+    "lotus-notes",
+    "microsoft-access",
+    "microsoft-sql-server",
+    "windows-server",
+    "cisco-ucs",
+    "microsoft-deployment-toolkit",
+    "windows-client-administration"
   ],
   "districtId": "floating-citadel"
 }

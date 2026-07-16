@@ -1,0 +1,7 @@
+// content/skills/technical-troubleshooting.json
+{
+  "id": "technical-troubleshooting",
+  "name": "Technical Troubleshooting",
+  "description": "Systematic diagnosis and resolution of technical issues across hardware, software, and systems.",
+  "category": "General"
+}

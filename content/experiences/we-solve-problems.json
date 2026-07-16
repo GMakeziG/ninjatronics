@@ -14,6 +14,11 @@
     "Installed and relocated Cisco Meraki wireless infrastructure for media and entertainment clients, improving wireless coverage and network performance.",
     "Documented systems, configurations, and procedures in IT Glue — learning that in an MSP, anyone on the team might need to support a client at any time, so documentation directly enables knowledge sharing and continuity."
   ],
-  "technologies": ["Ansible", "Microsoft 365", "Cisco Meraki", "IT Glue"],
+  "skillIds": [
+    "ansible",
+    "microsoft-365",
+    "cisco-meraki",
+    "it-glue"
+  ],
   "districtId": "floating-citadel"
 }

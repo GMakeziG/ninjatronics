@@ -1,0 +1,7 @@
+// content/skills/html.json
+{
+  "id": "html",
+  "name": "HTML",
+  "description": "Markup language for structuring content on the web.",
+  "category": "Web"
+}

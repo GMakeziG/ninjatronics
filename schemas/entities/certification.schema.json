@@ -12,6 +12,10 @@
     "issuer": { "type": "string", "minLength": 1 },
     "dateEarned": { "type": "string", "format": "date" },
     "credentialUrl": { "type": "string", "format": "uri" },
-    "districtId": { "type": "string", "x-ref": "district" }
+    "districtId": { "type": "string", "x-ref": "district" },
+    "skillIds": {
+      "type": "array",
+      "items": { "type": "string", "x-ref": "skill" }
+    }
   }
 }

@@ -37,6 +37,7 @@ export interface Repository {
   districtId: string;
   story?: string;
   technologies?: string[];
+  skillIds?: string[];
 }
 
 export interface Project {
@@ -48,6 +49,7 @@ export interface Project {
   districtId?: string;
   repositoryId?: string;
   technologies?: string[];
+  skillIds?: string[];
   links?: Array<{ label: string; url: string }>;
 }
 
@@ -78,7 +80,6 @@ export interface Skill {
   name: string;
   description?: string;
   category?: string;
-  relatedProjectIds?: string[];
 }
 
 export interface Certification {
@@ -89,6 +90,7 @@ export interface Certification {
   dateEarned?: string;
   credentialUrl?: string;
   districtId?: string;
+  skillIds?: string[];
 }
 
 export interface Profile {
@@ -116,7 +118,7 @@ export interface Experience {
   location?: string;
   order?: number;
   highlights?: string[];
-  technologies?: string[];
+  skillIds?: string[];
   links?: Array<{ label: string; url: string }>;
   districtId?: string;
 }
@@ -173,6 +175,18 @@ export const getConnectedDistricts = (districtId: string): District[] =>
   (getDistrict(districtId)?.connections ?? []).map(getDistrict).filter((d): d is District => d !== undefined);
 
 export const getProfile = (): Profile | undefined => world.profiles[0];
+
+export const getExperiencesForSkill = (skillId: string): Experience[] =>
+  world.experiences.filter((experience) => experience.skillIds?.includes(skillId));
+
+export const getCertificationsForSkill = (skillId: string): Certification[] =>
+  world.certifications.filter((certification) => certification.skillIds?.includes(skillId));
+
+export const getRepositoriesForSkill = (skillId: string): Repository[] =>
+  world.repositories.filter((repository) => repository.skillIds?.includes(skillId));
+
+export const getProjectsForSkill = (skillId: string): Project[] =>
+  world.projects.filter((project) => project.skillIds?.includes(skillId));
 
 export { buildWorldGraph, getRecommendedPath };
 export type { DistrictNode, GraphEdge, GraphWarning, GraphWarningKind, WorldGraph };

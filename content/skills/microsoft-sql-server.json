@@ -1,0 +1,7 @@
+// content/skills/microsoft-sql-server.json
+{
+  "id": "microsoft-sql-server",
+  "name": "Microsoft SQL Server",
+  "description": "Microsoft's relational database management system.",
+  "category": "Business Apps"
+}

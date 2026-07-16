@@ -1,0 +1,7 @@
+// content/skills/ansible.json
+{
+  "id": "ansible",
+  "name": "Ansible",
+  "description": "Agentless IT automation tool for configuration management and application deployment.",
+  "category": "Automation"
+}

@@ -1,0 +1,7 @@
+// content/skills/fortinet-ssl-vpn.json
+{
+  "id": "fortinet-ssl-vpn",
+  "name": "Fortinet SSL VPN",
+  "description": "SSL VPN configuration and administration on Fortinet security appliances.",
+  "category": "Networking"
+}

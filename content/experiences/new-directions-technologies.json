@@ -16,11 +16,24 @@
     "Extended into Microsoft Teams Calling evaluations, endpoint management and imaging, hybrid cloud administration, Azure virtual machines, and Microsoft Intune as part of ongoing infrastructure modernization.",
     "See a consistent arc across my whole career here: from helping customers understand technology, to enterprise users, to enterprise infrastructure, to now designing, automating, securing, and improving the systems organizations depend on — a journey that continues to shape both my work and the vision behind Ninjatronics."
   ],
-  "technologies": [
-    "Windows Server", "Linux", "Microsoft 365 GCC High", "Azure", "Active Directory",
-    "Microsoft Entra ID", "Conditional Access", "SAML", "Multi-Factor Authentication",
-    "PowerShell", "Python", "Bash", "Ansible", "Fortinet SSL VPN", "Veeam",
-    "Microsoft Intune", "Microsoft Teams Calling"
+  "skillIds": [
+    "windows-server",
+    "linux",
+    "microsoft-365",
+    "azure",
+    "active-directory",
+    "microsoft-entra-id",
+    "conditional-access",
+    "saml",
+    "multi-factor-authentication",
+    "powershell",
+    "python",
+    "bash",
+    "ansible",
+    "fortinet-ssl-vpn",
+    "veeam",
+    "microsoft-intune",
+    "microsoft-teams-calling"
   ],
   "districtId": "floating-citadel"
 }

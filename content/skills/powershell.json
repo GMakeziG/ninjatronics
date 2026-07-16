@@ -1,0 +1,7 @@
+// content/skills/powershell.json
+{
+  "id": "powershell",
+  "name": "PowerShell",
+  "description": "Microsoft's command-line shell and scripting language for task automation and configuration management.",
+  "category": "Scripting"
+}
