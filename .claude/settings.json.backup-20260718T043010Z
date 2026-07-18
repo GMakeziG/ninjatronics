@@ -35,36 +35,6 @@
       "Bash(git rebase*)",
       "Bash(git reset*)",
       "Bash(sudo *)"
-    ],
-    "deny": [
-      "Read(.env)",
-      "Read(.env.*)",
-      "Read(**/.env)",
-      "Read(**/.env.*)",
-      "Read(**/.ssh/**)",
-      "Read(**/*.pem)",
-      "Read(**/id_rsa*)",
-      "Read(**/id_ed25519*)",
-      "Read(**/.aws/credentials)",
-      "Read(**/.npmrc)",
-      "Read(**/.docker/config.json)",
-      "Read(**/.git-credentials)",
-      "Read(**/.gnupg/**)",
-      "Read(**/.kube/config)",
-      "Bash(cat *.env*)",
-      "Bash(grep *.env*)",
-      "Bash(rg *.env*)",
-      "Bash(rm -rf /*)",
-      "Bash(rm -rf ~*)",
-      "Bash(rm -rf .)"
-    ]
-  },
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [{ "type": "command", "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/bash-guard.sh", "args": [] }]
-      }
     ]
   }
 }
