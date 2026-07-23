@@ -53,7 +53,15 @@ export function MissionBrief() {
 
       <CertificationSummary certifications={brief.certifications} district={floatingCitadel} />
 
-      <ExploreWorld districts={districts} />
+      {/* Floating Citadel already gets its own direct handoff link at the
+          end of CertificationSummary above — listing it again immediately
+          below in Explore the World would be a redundant second link to
+          the same place. Filtered by real id, not removed from the
+          underlying collection (world-summary counts above still use the
+          unfiltered `districts`), and ExploreWorld itself stays generic —
+          it would happily render Floating Citadel again in any other
+          context that doesn't already have its own handoff. */}
+      <ExploreWorld districts={districts.filter((district) => district.id !== "floating-citadel")} />
     </main>
   );
 }

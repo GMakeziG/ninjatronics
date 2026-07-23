@@ -18,7 +18,9 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
           return (
             <li key={item.path} className="breadcrumbs__item">
               {isCurrent ? (
-                <span aria-current="location">{item.label}</span>
+                <span aria-current="location" title={item.label} className="breadcrumbs__current">
+                  {item.label}
+                </span>
               ) : (
                 <Link to={item.path}>{item.label}</Link>
               )}

@@ -70,6 +70,7 @@
 .breadcrumbs__list {
   display: flex;
   align-items: center;
+  min-width: 0;
   gap: var(--space-1);
   margin: 0;
   padding: 0;
@@ -79,6 +80,7 @@
 .breadcrumbs__item {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   gap: var(--space-1);
   white-space: nowrap;
 }
@@ -98,8 +100,27 @@
   color: var(--text-primary);
 }
 
+/* Only the final (current) crumb ever shrinks/truncates — a long
+   certification or repository name gets an ellipsis on one line rather
+   than wrapping (which would grow the StatusBar's height) or squeezing
+   out the earlier, still-navigable crumbs. */
+.breadcrumbs__item:last-child {
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.breadcrumbs__current {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
 .breadcrumbs__separator {
   color: var(--color-ink-900);
+  flex-shrink: 0;
 }
 
 .world-status {

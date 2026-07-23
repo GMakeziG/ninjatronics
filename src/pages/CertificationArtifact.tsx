@@ -38,6 +38,7 @@ export function CertificationArtifact() {
       )}
 
       <header className="certification-artifact__identity">
+        <p className="certification-artifact__eyebrow">Credential Record</p>
         <h1 className="certification-artifact__name">{certification.name}</h1>
 
         <dl className="certification-artifact__meta">

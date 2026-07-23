@@ -12,14 +12,26 @@
  * with "do not rely on color alone"). No literal castle/hologram imagery.
  */
 
-.floating-citadel,
-.certification-artifact {
+.floating-citadel {
   display: flex;
   flex-direction: column;
   gap: var(--space-14);
   max-width: var(--grid-max-width);
   margin: 0 auto;
   padding: var(--space-10) var(--space-6) var(--space-24);
+}
+
+/* A single credential record is a much smaller page than the district
+   overview — a compact record, not a multi-section report — so it gets a
+   noticeably tighter gap/bottom padding than .floating-citadel rather than
+   sharing that rule and ending up with large empty gaps around 2-3 fields. */
+.certification-artifact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-6) var(--space-10);
 }
 
 /* ---------- FloatingCitadelHeader ---------- */
@@ -289,7 +301,15 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  margin-top: var(--space-6);
+}
+
+.certification-artifact__eyebrow {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-locked);
 }
 
 .certification-artifact__meta {
@@ -334,7 +354,7 @@
 }
 
 .certification-artifact__section {
-  padding-top: var(--space-6);
+  padding-top: var(--space-4);
   border-top: var(--border-width-hairline) solid var(--border-default);
 }
 
@@ -343,7 +363,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--space-4);
-  padding-top: var(--space-6);
+  padding-top: var(--space-4);
   border-top: var(--border-width-hairline) solid var(--border-default);
 }
 
