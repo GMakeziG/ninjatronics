@@ -1,15 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { NAVIGATION_COMMANDS } from "./navigationCommands.js";
+import { isEditableTarget } from "../../lib/dom.js";
 
 /** How long a bare `g` keypress stays "pending" before it expires. */
 export const G_PREFIX_TIMEOUT_MS = 1200;
-
-function isEditableTarget(target: EventTarget | null): boolean {
-  if (!(target instanceof HTMLElement)) return false;
-  const tag = target.tagName;
-  return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || target.isContentEditable;
-}
 
 export interface GlobalShortcutsState {
   helpOpen: boolean;
