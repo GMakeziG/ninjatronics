@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import "./AppShell.css";
 import { ThemeProvider } from "./theme/ThemeProvider.js";
@@ -17,6 +16,12 @@ const ROUTE_LABELS: Record<string, string> = {
   "/brief": "Mission Brief",
 };
 
+/** Shared with routed pages (Gate today) via <Outlet context>. */
+export interface AppShellOutletContext {
+  onOpenTerminal: () => void;
+  onOpenShortcutHelp: () => void;
+}
+
 function useBreadcrumb(): BreadcrumbItem[] {
   const location = useLocation();
 
@@ -34,24 +39,41 @@ export function AppShell() {
   const breadcrumb = useBreadcrumb();
   const districts = listDistricts();
   const districtsOpen = districts.filter((district) => district.status === "open").length;
-  const { helpOpen, closeHelp } = useGlobalShortcuts();
+  const { helpOpen, openHelp, closeHelp } = useGlobalShortcuts();
   const terminal = useTerminal();
 
-  // The terminal's own input already suspends global shortcuts once it has
-  // focus (isEditableTarget), but the shortcut-help overlay is a separate,
-  // higher-stacked modal (z-modal > z-docked-overlay per Design Tokens.md)
-  // that could otherwise sit on top of the terminal if both happened to be
-  // open — close it as a courtesy when the terminal opens.
-  useEffect(() => {
-    if (terminal.isOpen) closeHelp();
-  }, [terminal.isOpen, closeHelp]);
+  // AppShell is the one place that owns both overlays, so it's the one
+  // place exclusivity between them is enforced — opening either one
+  // explicitly closes the other, rather than each hook reaching into the
+  // other's state (see Design Tokens.md's z-modal > z-docked-overlay
+  // ordering for why they'd otherwise visually stack).
+  const handleOpenTerminal = () => {
+    closeHelp();
+    terminal.open();
+  };
+
+  const handleOpenShortcutHelp = () => {
+    terminal.close();
+    openHelp();
+  };
+
+  const outletContext: AppShellOutletContext = {
+    onOpenTerminal: handleOpenTerminal,
+    onOpenShortcutHelp: handleOpenShortcutHelp,
+  };
 
   return (
     <ThemeProvider>
-      <StatusBar breadcrumb={breadcrumb} districtsOpen={districtsOpen} districtsTotal={districts.length} />
+      <StatusBar
+        breadcrumb={breadcrumb}
+        districtsOpen={districtsOpen}
+        districtsTotal={districts.length}
+        onOpenTerminal={handleOpenTerminal}
+        onOpenShortcutHelp={handleOpenShortcutHelp}
+      />
       <NavigationRail />
       <div className="app-shell__content">
-        <Outlet />
+        <Outlet context={outletContext} />
       </div>
       <ShortcutHelp open={helpOpen} onClose={closeHelp} commands={NAVIGATION_COMMANDS} />
       <Terminal open={terminal.isOpen} lines={terminal.lines} onClose={terminal.close} onSubmit={terminal.submit} />

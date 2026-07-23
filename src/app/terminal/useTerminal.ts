@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { isEditableTarget } from "../../lib/dom.js";
 import { runTerminalCommand } from "./runTerminalCommand.js";
@@ -13,11 +13,10 @@ export interface TerminalLine {
 export interface TerminalState {
   isOpen: boolean;
   lines: TerminalLine[];
+  open: () => void;
   close: () => void;
   submit: (rawInput: string) => void;
 }
-
-const WELCOME_LINE = 'Ninjatronics Terminal — type "help" for available commands.';
 
 /**
  * Owns terminal open/closed state, its output log, and the global `` ` ``
@@ -25,6 +24,11 @@ const WELCOME_LINE = 'Ninjatronics Terminal — type "help" for available comman
  * by the Terminal component itself, since by then focus is inside its own
  * input — see Terminal.tsx for why that alone is enough to suspend global
  * shortcuts without this hook coordinating with useGlobalShortcuts at all.
+ *
+ * The "press ` or Esc to close / type help" hint now lives as static
+ * chrome in Terminal.tsx's header, not as a seeded log line — so it's
+ * never repeated into the log and `clear` can wipe output to nothing
+ * instead of re-seeding a message.
  */
 export function useTerminal(): TerminalState {
   const navigate = useNavigate();
@@ -32,25 +36,28 @@ export function useTerminal(): TerminalState {
   const nextId = () => ++idRef.current;
 
   const [isOpen, setIsOpen] = useState(false);
-  const [lines, setLines] = useState<TerminalLine[]>([{ id: nextId(), kind: "output", text: WELCOME_LINE }]);
+  const [lines, setLines] = useState<TerminalLine[]>([]);
 
-  const close = () => setIsOpen(false);
+  const open = useCallback(() => setIsOpen(true), []);
+  const close = useCallback(() => setIsOpen(false), []);
+  const clearOutput = useCallback(() => setLines([]), []);
 
-  const clearOutput = () => setLines([{ id: nextId(), kind: "output", text: WELCOME_LINE }]);
+  const submit = useCallback(
+    (rawInput: string) => {
+      const trimmed = rawInput.trim();
+      if (!trimmed) return;
 
-  const submit = (rawInput: string) => {
-    const trimmed = rawInput.trim();
-    if (!trimmed) return;
+      const context: TerminalCommandContext = { navigate, clear: clearOutput, close };
+      const output = runTerminalCommand(trimmed, context);
 
-    const context: TerminalCommandContext = { navigate, clear: clearOutput, close };
-    const output = runTerminalCommand(trimmed, context);
-
-    setLines((current) => [
-      ...current,
-      { id: nextId(), kind: "input", text: trimmed },
-      ...output.map((text) => ({ id: nextId(), kind: "output" as const, text })),
-    ]);
-  };
+      setLines((current) => [
+        ...current,
+        { id: nextId(), kind: "input", text: trimmed },
+        ...output.map((text) => ({ id: nextId(), kind: "output" as const, text })),
+      ]);
+    },
+    [navigate, clearOutput, close],
+  );
 
   useEffect(() => {
     // Only responsible for *opening*. While open, focus is inside the
@@ -71,5 +78,5 @@ export function useTerminal(): TerminalState {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [isOpen]);
 
-  return { isOpen, lines, close, submit };
+  return { isOpen, lines, open, close, submit };
 }

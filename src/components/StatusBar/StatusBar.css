@@ -128,3 +128,51 @@
    StatusBar mobile behavior) is deferred until NavigationRail exists —
    this compact state only hides the world-status counters and product
    label, keeping breadcrumb + clock per StatusBar's "compact" state. */
+
+.status-bar__hints {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.status-bar__hint {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  background: transparent;
+  border: var(--border-width-hairline) solid var(--border-default);
+  border-radius: var(--radius-sm);
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    color var(--duration-feedback) var(--easing-standard),
+    border-color var(--duration-feedback) var(--easing-standard);
+}
+
+.status-bar__hint kbd {
+  padding: 0 var(--space-1);
+  font-family: inherit;
+  font-style: normal;
+  color: var(--accent-primary);
+}
+
+.status-bar__hint:hover,
+.status-bar__hint:focus-visible {
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+}
+
+/* Unlike the product label / world-status (purely decorative and safe to
+   hide), these are the primary tap-accessible way to reach Terminal and
+   shortcut help on touch devices — they stay visible on mobile, just
+   compacted to their <kbd> glyph so they don't crowd the bar. Each
+   button's accessible name (aria-label) stays the same regardless. */
+@media (max-width: 639px) {
+  .status-bar__hint-label {
+    display: none;
+  }
+}

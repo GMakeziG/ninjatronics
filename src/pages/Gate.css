@@ -18,3 +18,60 @@
   transition: filter var(--duration-overlay) var(--easing-standard);
   filter: brightness(1.15) saturate(1.1);
 }
+
+.gate__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Quiet, secondary — deliberately smaller and dimmer than the CTA above it
+   so it reads as a hint, not a second call to action. Appears only once
+   boot completes, via a subtle opacity-only reveal (respects reduced
+   motion via the global safety net — no transform involved, so there's
+   nothing extra to disable). */
+.gate__hint {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  color: var(--text-muted);
+  animation: gate-hint-in var(--duration-overlay) var(--easing-standard);
+}
+
+@keyframes gate-hint-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.gate__hint kbd {
+  padding: 0 var(--space-1);
+  background: var(--surface-panel);
+  border: var(--border-width-hairline) solid var(--border-default);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-style: normal;
+  color: var(--accent-primary);
+}
+
+.gate__hint-action {
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  transition: color var(--duration-feedback) var(--easing-standard);
+}
+
+.gate__hint-action:hover,
+.gate__hint-action:focus-visible {
+  color: var(--text-primary);
+}

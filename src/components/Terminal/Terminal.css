@@ -50,10 +50,31 @@
   border-bottom: var(--border-width-hairline) solid var(--border-default);
 }
 
+.terminal__heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
 .terminal__title {
   font-size: var(--type-mono-sm-size);
   letter-spacing: 0.08em;
   color: var(--accent-primary);
+}
+
+.terminal__hint {
+  font-size: var(--type-mono-sm-size);
+  color: var(--text-muted);
+}
+
+.terminal__hint kbd {
+  padding: 0 var(--space-1);
+  background: var(--surface-panel);
+  border: var(--border-width-hairline) solid var(--border-default);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-style: normal;
 }
 
 .terminal__close {

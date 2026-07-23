@@ -8,6 +8,7 @@ export const G_PREFIX_TIMEOUT_MS = 1200;
 
 export interface GlobalShortcutsState {
   helpOpen: boolean;
+  openHelp: () => void;
   closeHelp: () => void;
 }
 
@@ -79,5 +80,8 @@ export function useGlobalShortcuts(): GlobalShortcutsState {
     };
   }, [navigate, helpOpen, clearGPending]);
 
-  return { helpOpen, closeHelp: () => setHelpOpen(false) };
+  const openHelp = useCallback(() => setHelpOpen(true), []);
+  const closeHelp = useCallback(() => setHelpOpen(false), []);
+
+  return { helpOpen, openHelp, closeHelp };
 }

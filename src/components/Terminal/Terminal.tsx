@@ -86,7 +86,12 @@ export function Terminal({ open, lines, onClose, onSubmit }: TerminalProps) {
       onKeyDown={handlePanelKeyDown}
     >
       <div className="terminal__header">
-        <span className="terminal__title">NINJATRONICS TERMINAL</span>
+        <div className="terminal__heading">
+          <span className="terminal__title">NINJATRONICS TERMINAL</span>
+          <span className="terminal__hint">
+            Press <kbd>`</kbd> or <kbd>Esc</kbd> to close · Type &quot;help&quot; for commands
+          </span>
+        </div>
         <button type="button" className="terminal__close" onClick={onClose}>
           Close
         </button>

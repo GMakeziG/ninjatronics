@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import "./Gate.css";
 import { useTheme } from "../app/theme/ThemeProvider.js";
+import type { AppShellOutletContext } from "../app/AppShell.js";
 import { GateHero } from "../components/Gate/GateHero.js";
 import { BootSequence } from "../components/Gate/BootSequence.js";
 import { EnterButton } from "../components/Gate/EnterButton.js";
@@ -38,6 +39,7 @@ function buildBootLines(): string[] {
 
 export function Gate() {
   const navigate = useNavigate();
+  const { onOpenTerminal, onOpenShortcutHelp } = useOutletContext<AppShellOutletContext>();
   const { reducedMotion } = useTheme();
   const profile = getProfile();
   const [bootReady, setBootReady] = useState(false);
@@ -60,7 +62,28 @@ export function Gate() {
     <main className={`gate${entering ? " gate--entering" : ""}`}>
       <GateHero tagline={profile?.tagline} glitchActive={!reducedMotion && !bootReady} />
       <BootSequence lines={bootLines} onReady={() => setBootReady(true)} />
-      <EnterButton ready={bootReady} onEnter={handleEnter} />
+      <div className="gate__cta">
+        <EnterButton ready={bootReady} onEnter={handleEnter} />
+
+        {bootReady && (
+          <p className="gate__hint">
+            Press <kbd>`</kbd>{" "}
+            <button type="button" className="gate__hint-action" onClick={onOpenTerminal} aria-label="Open Terminal">
+              for Terminal
+            </button>
+            {" · "}
+            <kbd>?</kbd>{" "}
+            <button
+              type="button"
+              className="gate__hint-action"
+              onClick={onOpenShortcutHelp}
+              aria-label="Open keyboard shortcuts help"
+            >
+              for shortcuts
+            </button>
+          </p>
+        )}
+      </div>
     </main>
   );
 }
