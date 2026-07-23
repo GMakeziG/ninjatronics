@@ -84,10 +84,6 @@
   overflow: hidden;
 }
 
-.district-card--locked .district-card__description {
-  opacity: var(--opacity-muted);
-}
-
 .district-card__stats {
   display: flex;
   flex-wrap: wrap;
@@ -132,8 +128,4 @@
   font-size: var(--type-body-sm-size);
   line-height: var(--type-body-sm-line);
   color: var(--text-tertiary);
-}
-
-.district-card--locked .district-card__guardian-quote {
-  opacity: var(--opacity-muted);
 }
