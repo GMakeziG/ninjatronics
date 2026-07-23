@@ -88,3 +88,22 @@ export function getFeaturedTrees(limit = 3): RepositoryTree[] {
     .sort((a, b) => b.richness - a.richness || a.id.localeCompare(b.id))
     .slice(0, safeLimit);
 }
+
+/** All trees belonging to one district — the per-district counterpart to
+ * `getGitForest().trees`, for district pages that need only their own
+ * repositories rather than the whole forest. */
+export function getTreesForDistrict(districtId: string): RepositoryTree[] {
+  return gitForest.trees.filter((tree) => tree.district.id === districtId);
+}
+
+/** Same richness-based selection as `getFeaturedTrees`, scoped to one
+ * district — so a district page's "featured repository" is drawn from its
+ * own repositories, not accidentally from the whole forest (today those
+ * are identical since every repository lives under git-forest, but this
+ * stays correct once that's no longer true). */
+export function getFeaturedTreesForDistrict(districtId: string, limit = 1): RepositoryTree[] {
+  const safeLimit = Math.max(0, limit);
+  return getTreesForDistrict(districtId)
+    .sort((a, b) => b.richness - a.richness || a.id.localeCompare(b.id))
+    .slice(0, safeLimit);
+}

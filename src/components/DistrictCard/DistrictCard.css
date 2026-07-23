@@ -9,6 +9,10 @@
   border: var(--border-width-hairline) solid var(--border-default);
   border-left-width: var(--border-width-emphasis);
   border-left-color: var(--status-success);
+  /* Reset link defaults for open cards, which render as <a> — harmless on
+     locked/in-progress cards, which stay plain <article>s. */
+  color: inherit;
+  text-decoration: none;
   transition:
     transform var(--duration-feedback) var(--easing-standard),
     box-shadow var(--duration-feedback) var(--easing-standard),
@@ -17,10 +21,10 @@
     border-bottom-color var(--duration-feedback) var(--easing-standard);
 }
 
-/* Cards aren't wired to navigation yet (no district-detail route exists),
-   so the cursor is a forward-looking affordance only — it signals what
-   each status will mean once selection is real, without a click handler
-   pretending to do something today. */
+/* Open cards are real links (see DistrictCard.tsx) — cursor is native
+   link behavior here, not a simulated affordance. In-progress districts
+   have no real content/page yet, so they keep the pointer cursor as a
+   forward-looking signal only, same as before. */
 .district-card--open,
 .district-card--in-progress {
   cursor: pointer;

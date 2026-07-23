@@ -13,6 +13,7 @@ import { useTerminal } from "./terminal/useTerminal.js";
 
 const ROUTE_LABELS: Record<string, string> = {
   "/valley": "Valley",
+  "/valley/git-forest": "Git Forest",
   "/brief": "Mission Brief",
 };
 
@@ -23,16 +24,27 @@ export interface AppShellOutletContext {
 }
 
 function useBreadcrumb(): BreadcrumbItem[] {
-  const location = useLocation();
+  const { pathname } = useLocation();
 
-  if (location.pathname === "/") {
+  if (pathname === "/") {
     return [{ label: "Gate", path: "/" }];
   }
 
-  return [
-    { label: "Gate", path: "/" },
-    { label: ROUTE_LABELS[location.pathname] ?? location.pathname, path: location.pathname },
-  ];
+  const crumbs: BreadcrumbItem[] = [{ label: "Gate", path: "/" }];
+
+  // Every /valley/* route (only /valley/git-forest exists today) sits
+  // under a real "Valley" crumb, not just Gate → itself — so this stays
+  // correct as more district pages are added, without per-route wiring.
+  if (pathname.startsWith("/valley")) {
+    crumbs.push({ label: "Valley", path: "/valley" });
+    if (pathname !== "/valley") {
+      crumbs.push({ label: ROUTE_LABELS[pathname] ?? pathname, path: pathname });
+    }
+    return crumbs;
+  }
+
+  crumbs.push({ label: ROUTE_LABELS[pathname] ?? pathname, path: pathname });
+  return crumbs;
 }
 
 export function AppShell() {

@@ -35,18 +35,26 @@ const GOTO_ALIASES: Record<string, string> = {
   world: "valley",
   brief: "mission-brief",
   mission: "mission-brief",
+  "git-forest": "git-forest",
+  forest: "git-forest",
 };
 
+const DESTINATION_HINT = "Destinations: gate (home), valley (world), brief (mission), git-forest (forest)";
+
+/** Shared by both "goto" and "open" — "open <district>" reads naturally
+ * for entering a place, but it's the same destination resolution and the
+ * same navigate() call, so it's one function registered under two command
+ * names rather than two implementations. */
 function runGoto(args: string[], context: TerminalCommandContext): string[] {
   const target = args[0]?.toLowerCase();
   if (!target) {
-    return ["Usage: goto <destination>", "Destinations: gate (home), valley (world), brief (mission)"];
+    return ["Usage: goto <destination>", DESTINATION_HINT];
   }
 
   const commandId = GOTO_ALIASES[target];
   const command = commandId ? getNavigationCommand(commandId) : undefined;
   if (!command) {
-    return [`Unknown destination "${target}".`, "Destinations: gate (home), valley (world), brief (mission)"];
+    return [`Unknown destination "${target}".`, DESTINATION_HINT];
   }
 
   context.navigate(command.path);
@@ -107,7 +115,12 @@ export const TERMINAL_COMMANDS: TerminalCommand[] = [
   },
   {
     name: "goto",
-    summary: 'Navigate to a place, e.g. "goto valley".',
+    summary: 'Navigate to a place, e.g. "goto valley" or "goto git-forest".',
+    run: runGoto,
+  },
+  {
+    name: "open",
+    summary: 'Alias of "goto", e.g. "open git-forest".',
     run: runGoto,
   },
   {

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./DistrictCard.css";
 import type { District, Guardian } from "../../lib/world.js";
 
@@ -15,23 +16,24 @@ const STATUS_LABEL: Record<District["status"], string> = {
 };
 
 /**
- * Presentational summary of one district for the Valley grid. Not yet
- * interactive — there is no district-detail route/DistrictScene to select
- * into, so this deliberately stops short of the spec's onSelect/keyboard
- * affordances rather than wiring a control that goes nowhere. Revisit once
- * a real `/valley/:districtId` destination exists.
+ * Valley-grid summary of one district. Open districts are real links into
+ * `/valley/:slug` — today that only resolves to a built page for
+ * "git-forest"; a future district only becomes a link once its own page
+ * exists (status flips to "open" and a route is built together, same as
+ * this milestone did for Git Forest). Locked/in-progress districts stay
+ * non-interactive `<article>`s — no click handler, no dead control.
  */
 export function DistrictCard({ district, guardian, connectionCount, repositoryCount }: DistrictCardProps) {
   // "Alive" is derived from a real signal (repositories actually flowing
   // into this district), not a hardcoded district id — any future district
   // that gains synced repositories gets the same treatment automatically.
   const isAlive = !!repositoryCount;
+  const isOpen = district.status === "open";
   const isLocked = district.status === "locked";
+  const className = `district-card district-card--${district.status}${isAlive ? " district-card--alive" : ""}`;
 
-  return (
-    <article
-      className={`district-card district-card--${district.status}${isAlive ? " district-card--alive" : ""}`}
-    >
+  const content = (
+    <>
       <div className="district-card__header">
         <h3 className="district-card__name">{district.name}</h3>
         <span className="district-card__status">
@@ -70,6 +72,19 @@ export function DistrictCard({ district, guardian, connectionCount, repositoryCo
           <p className="district-card__lock-tip-body">Sealed until its trial is complete.</p>
         </div>
       )}
-    </article>
+    </>
   );
+
+  if (isOpen) {
+    // The card's own visible content (name, description, guardian quote,
+    // ...) would otherwise become this link's accessible name verbatim —
+    // an explicit aria-label keeps what's announced concise instead.
+    return (
+      <Link to={`/valley/${district.slug}`} className={className} aria-label={`Enter ${district.name}`}>
+        {content}
+      </Link>
+    );
+  }
+
+  return <article className={className}>{content}</article>;
 }
