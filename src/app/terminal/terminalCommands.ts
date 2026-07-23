@@ -6,7 +6,8 @@
 
 import { getNavigationCommand } from "../navigation/navigationCommands.js";
 import { getMissionBrief } from "../../lib/mission-brief.js";
-import { getGitForest } from "../../lib/git-forest.js";
+import { getGitForest, getRepositoryTree, getRepositoryArtifactPath } from "../../lib/git-forest.js";
+import type { RepositoryTree } from "../../lib/git-forest.js";
 import { groupSkillsByCategory } from "../../lib/skills-overview.js";
 
 export interface TerminalCommandContext {
@@ -41,10 +42,6 @@ const GOTO_ALIASES: Record<string, string> = {
 
 const DESTINATION_HINT = "Destinations: gate (home), valley (world), brief (mission), git-forest (forest)";
 
-/** Shared by both "goto" and "open" — "open <district>" reads naturally
- * for entering a place, but it's the same destination resolution and the
- * same navigate() call, so it's one function registered under two command
- * names rather than two implementations. */
 function runGoto(args: string[], context: TerminalCommandContext): string[] {
   const target = args[0]?.toLowerCase();
   if (!target) {
@@ -59,6 +56,76 @@ function runGoto(args: string[], context: TerminalCommandContext): string[] {
 
   context.navigate(command.path);
   return [`Navigating to ${command.label}...`];
+}
+
+function repositoryListHint(): string {
+  return `Repositories: ${getGitForest().trees.map((tree) => tree.id).join(", ")}`;
+}
+
+function kebabCase(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+/**
+ * Resolves user input to a real repository two ways: the real slug/id
+ * directly ("lab", "go-practice"), or — "optionally, where unambiguous" —
+ * a kebab-cased match against the repository's lore name ("the ancient
+ * oak" / "the-ancient-oak" → "lab"). Both `repo` and `open` call this same
+ * function rather than each re-implementing repository lookup.
+ */
+function findRepository(args: string[]): RepositoryTree | undefined {
+  if (args.length === 0) return undefined;
+
+  const direct = getRepositoryTree(args[0].toLowerCase());
+  if (direct) return direct;
+
+  const loreSlug = kebabCase(args.join(" "));
+  return getGitForest().trees.find((tree) => kebabCase(tree.treeName) === loreSlug);
+}
+
+function runRepo(args: string[], context: TerminalCommandContext): string[] {
+  if (args.length === 0) {
+    return ["Usage: repo <name>", repositoryListHint()];
+  }
+
+  const repo = findRepository(args);
+  if (!repo) {
+    return [`Unknown repository "${args.join(" ")}".`, repositoryListHint()];
+  }
+
+  context.navigate(getRepositoryArtifactPath(repo));
+  return [`Opening ${repo.treeName}...`];
+}
+
+/**
+ * "open" tries a district destination first (the same GOTO_ALIASES map
+ * "goto" uses), then falls back to repository resolution — one verb for
+ * "open <anything real>," without teaching "goto" itself about
+ * repositories or duplicating either resolution path.
+ */
+function runOpen(args: string[], context: TerminalCommandContext): string[] {
+  const target = args[0]?.toLowerCase();
+  if (!target) {
+    return ["Usage: open <destination-or-repository>", DESTINATION_HINT, repositoryListHint()];
+  }
+
+  const commandId = GOTO_ALIASES[target];
+  const destination = commandId ? getNavigationCommand(commandId) : undefined;
+  if (destination) {
+    context.navigate(destination.path);
+    return [`Navigating to ${destination.label}...`];
+  }
+
+  const repo = findRepository(args);
+  if (repo) {
+    context.navigate(getRepositoryArtifactPath(repo));
+    return [`Opening ${repo.treeName}...`];
+  }
+
+  return [`Unknown destination or repository "${args.join(" ")}".`, DESTINATION_HINT, repositoryListHint()];
 }
 
 function runProfile(): string[] {
@@ -120,8 +187,13 @@ export const TERMINAL_COMMANDS: TerminalCommand[] = [
   },
   {
     name: "open",
-    summary: 'Alias of "goto", e.g. "open git-forest".',
-    run: runGoto,
+    summary: 'Navigate to a place or a repository, e.g. "open git-forest" or "open lab".',
+    run: runOpen,
+  },
+  {
+    name: "repo",
+    summary: 'Open a repository\'s page, e.g. "repo lab".',
+    run: runRepo,
   },
   {
     name: "profile",

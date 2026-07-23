@@ -82,6 +82,18 @@ export function getRepositoryTree(id: string): RepositoryTree | undefined {
   return treesById.get(id);
 }
 
+/**
+ * The single place a repository artifact URL is built — both the UI
+ * (RepositoryTreeCard's link) and the Terminal (`repo`/`open <repo>`)
+ * call this rather than each constructing "/valley/.../..." themselves.
+ * Derived from the tree's own district slug rather than a hardcoded
+ * "git-forest" segment, so it stays correct if a second district ever
+ * has repositories of its own.
+ */
+export function getRepositoryArtifactPath(tree: Pick<RepositoryTree, "id" | "district">): string {
+  return `/valley/${tree.district.slug}/${tree.id}`;
+}
+
 export function getFeaturedTrees(limit = 3): RepositoryTree[] {
   const safeLimit = Math.max(0, limit);
   return [...gitForest.trees]

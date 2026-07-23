@@ -1,5 +1,6 @@
 import { useState } from "react";
-import type { RepositoryTree } from "../../lib/git-forest.js";
+import { Link } from "react-router-dom";
+import { getRepositoryArtifactPath, type RepositoryTree } from "../../lib/git-forest.js";
 
 export interface RepositoryTreeCardProps {
   tree: RepositoryTree;
@@ -15,7 +16,11 @@ export function RepositoryTreeCard({ tree, featured = false }: RepositoryTreeCar
     <article className={`repo-tree-card${featured ? " repo-tree-card--featured" : ""}`}>
       <div className="repo-tree-card__primary">
         <div className="repo-tree-card__header">
-          <h3 className="repo-tree-card__name">{tree.treeName}</h3>
+          <h3 className="repo-tree-card__name">
+            <Link to={getRepositoryArtifactPath(tree)} className="repo-tree-card__name-link">
+              {tree.treeName}
+            </Link>
+          </h3>
           {featured && <span className="repo-tree-card__badge">Featured</span>}
         </div>
 

@@ -239,6 +239,23 @@
   color: var(--text-primary);
 }
 
+/* Internal navigation (to the repository's own artifact page) — distinct
+   from the external "View on GitHub" link below it: no underline by
+   default (it reads as a heading first), accent color + underline only
+   on hover/focus. */
+.repo-tree-card__name-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--duration-feedback) var(--easing-standard);
+}
+
+.repo-tree-card__name-link:hover,
+.repo-tree-card__name-link:focus-visible {
+  color: var(--accent-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .repo-tree-card__badge {
   flex-shrink: 0;
   padding: var(--space-1) var(--space-2);
@@ -337,4 +354,126 @@
   font-family: var(--font-mono);
   font-size: var(--type-mono-sm-size);
   color: var(--text-secondary);
+}
+
+/* ---------- RepositoryArtifact (src/pages/RepositoryArtifact.tsx) ---------- */
+
+.repository-artifact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  max-width: var(--grid-max-width);
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-6) var(--space-24);
+}
+
+.repository-artifact__identity {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.repository-artifact__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-display-lg-size);
+  line-height: var(--type-display-lg-line);
+  font-weight: var(--weight-display-strong);
+  color: var(--text-primary);
+}
+
+.repository-artifact__repo-name {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-md-size);
+  color: var(--text-muted);
+}
+
+.repository-artifact__meta {
+  margin: 0;
+}
+
+.repository-artifact__meta-item dt {
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.repository-artifact__meta-item dd {
+  margin: 0;
+  font-size: var(--type-body-md-size);
+  color: var(--text-secondary);
+}
+
+.repository-artifact__github-link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-md-size);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: var(--accent-primary);
+  transition: color var(--duration-feedback) var(--easing-standard);
+}
+
+.repository-artifact__github-link:hover,
+.repository-artifact__github-link:focus-visible {
+  color: var(--text-primary);
+}
+
+.repository-artifact__section {
+  padding-top: var(--space-6);
+  border-top: var(--border-width-hairline) solid var(--border-default);
+}
+
+.repository-artifact__section-heading {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--type-display-md-size);
+  line-height: var(--type-display-md-line);
+  font-weight: var(--weight-body-medium);
+  color: var(--text-primary);
+}
+
+.repository-artifact__story {
+  margin: 0;
+  max-width: 70ch;
+  font-size: var(--type-body-md-size);
+  line-height: var(--type-body-md-line);
+  color: var(--text-tertiary);
+}
+
+.repository-artifact__related {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-top: var(--space-6);
+  border-top: var(--border-width-hairline) solid var(--border-default);
+}
+
+.repository-artifact__related-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: color var(--duration-feedback) var(--easing-standard);
+}
+
+.repository-artifact__related-link:hover,
+.repository-artifact__related-link:focus-visible {
+  color: var(--accent-primary);
+}
+
+.repository-artifact__related-link--next {
+  margin-left: auto;
 }

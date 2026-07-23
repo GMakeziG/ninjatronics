@@ -6,6 +6,7 @@ import { NavigationRail } from "../components/NavigationRail/NavigationRail.js";
 import { ShortcutHelp } from "../components/ShortcutHelp/ShortcutHelp.js";
 import { Terminal } from "../components/Terminal/Terminal.js";
 import { listDistricts } from "../lib/world.js";
+import { getRepositoryTree } from "../lib/git-forest.js";
 import type { BreadcrumbItem } from "../components/StatusBar/Breadcrumbs.js";
 import { useGlobalShortcuts } from "./navigation/useGlobalShortcuts.js";
 import { NAVIGATION_COMMANDS } from "./navigation/navigationCommands.js";
@@ -32,14 +33,27 @@ function useBreadcrumb(): BreadcrumbItem[] {
 
   const crumbs: BreadcrumbItem[] = [{ label: "Gate", path: "/" }];
 
-  // Every /valley/* route (only /valley/git-forest exists today) sits
-  // under a real "Valley" crumb, not just Gate → itself — so this stays
-  // correct as more district pages are added, without per-route wiring.
+  // Every /valley/* route sits under a real "Valley" crumb, not just
+  // Gate → itself. /valley/:district/:repositorySlug additionally
+  // resolves the real repository name for its own crumb (falling back to
+  // no 4th crumb — not a fabricated label — when the slug doesn't
+  // resolve to a real repository; RepositoryArtifact itself renders
+  // NotFound in that case).
   if (pathname.startsWith("/valley")) {
     crumbs.push({ label: "Valley", path: "/valley" });
-    if (pathname !== "/valley") {
-      crumbs.push({ label: ROUTE_LABELS[pathname] ?? pathname, path: pathname });
+    if (pathname === "/valley") return crumbs;
+
+    const segments = pathname.split("/").filter(Boolean);
+    const districtPath = `/valley/${segments[1]}`;
+    crumbs.push({ label: ROUTE_LABELS[districtPath] ?? segments[1], path: districtPath });
+
+    if (segments[2]) {
+      const repository = getRepositoryTree(segments[2]);
+      if (repository) {
+        crumbs.push({ label: repository.treeName, path: pathname });
+      }
     }
+
     return crumbs;
   }
 
