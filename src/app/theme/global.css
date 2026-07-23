@@ -1,0 +1,57 @@
+/*
+ * Global base styles. Reset + document-level defaults only — no
+ * component-specific rules belong here. Depends on tokens.css being
+ * loaded first.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--surface-bg);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-weight: var(--weight-body-default);
+  font-size: var(--type-body-md-size);
+  line-height: var(--type-body-md-line);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.text-body-lg,
+.text-display-xl,
+.text-display-lg,
+.text-display-md {
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+}
+
+/* Reduced-motion safety net: any animation/transition not yet gated by
+   the ThemeProvider's `reducedMotion` flag still collapses to effectively
+   instantaneous rather than silently keeping full motion. Components with
+   a documented reduced-motion behavior (Motion Specification.md) should
+   still implement that behavior explicitly — this is a floor, not a
+   substitute. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

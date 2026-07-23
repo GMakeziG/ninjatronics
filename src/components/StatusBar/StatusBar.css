@@ -1,0 +1,130 @@
+.status-bar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-chrome);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  height: var(--space-14);
+  padding: 0 var(--space-6);
+  background: var(--surface-panel);
+  border-bottom: var(--border-width-hairline) solid var(--border-default);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-md-size);
+  line-height: var(--type-mono-md-line);
+  color: var(--text-tertiary);
+}
+
+.status-bar__section {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.status-bar__section--center {
+  flex: 1;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.status-bar__product {
+  color: var(--text-primary);
+  font-weight: var(--weight-mono-emphasis);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.status-bar__dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: var(--radius-pill);
+  background: var(--accent-primary);
+  box-shadow: var(--glow-ki-sm);
+  animation: rim var(--duration-ambient-fast) var(--easing-ambient) infinite;
+}
+
+@keyframes rim {
+  0%,
+  100% {
+    opacity: var(--opacity-ambient-min);
+  }
+  50% {
+    opacity: var(--opacity-ambient-max);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-bar__dot {
+    animation: none;
+    opacity: calc((var(--opacity-ambient-min) + var(--opacity-ambient-max)) / 2);
+  }
+}
+
+.status-bar__divider {
+  color: var(--color-ink-900);
+}
+
+.breadcrumbs__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbs__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  white-space: nowrap;
+}
+
+.breadcrumbs__item a {
+  color: var(--text-tertiary);
+  text-decoration: none;
+  transition: color var(--duration-feedback) var(--easing-standard);
+}
+
+.breadcrumbs__item a:hover,
+.breadcrumbs__item a:focus-visible {
+  color: var(--accent-primary);
+}
+
+.breadcrumbs__item [aria-current="location"] {
+  color: var(--text-primary);
+}
+
+.breadcrumbs__separator {
+  color: var(--color-ink-900);
+}
+
+.world-status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--type-mono-sm-size);
+  line-height: var(--type-mono-sm-line);
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.world-status__divider {
+  color: var(--color-ink-900);
+}
+
+@media (max-width: 639px) {
+  .status-bar__product,
+  .world-status {
+    display: none;
+  }
+}
+
+/* Full hamburger/drawer treatment (per Component Specification.md's
+   StatusBar mobile behavior) is deferred until NavigationRail exists —
+   this compact state only hides the world-status counters and product
+   label, keeping breadcrumb + clock per StatusBar's "compact" state. */
