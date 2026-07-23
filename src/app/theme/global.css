@@ -39,6 +39,22 @@ a {
   color: inherit;
 }
 
+/* Standard visually-hidden-but-screen-reader-visible utility — for text
+   that clarifies a control's behavior (e.g. "opens in a new tab") without
+   adding visible clutter. Shared across the app rather than redefined
+   per-component. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* One shared focus ring for every focusable element in the app, using
    Design Tokens.md's dedicated focus-ring width token — components don't
    define their own outline. */
