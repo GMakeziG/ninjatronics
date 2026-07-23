@@ -34,42 +34,59 @@ export function BootSequence({ lines, onReady }: BootSequenceProps) {
   const readyFired = useRef(false);
 
   useEffect(() => {
-    const finish = () => {
-      if (readyFired.current) return;
-      readyFired.current = true;
-      onReady();
-    };
-
     if (reducedMotion) {
-      finish();
+      if (!readyFired.current) {
+        readyFired.current = true;
+        onReady();
+      }
       return;
     }
 
     const totalDuration = lines.length * LINE_STAGGER_MS + LINE_REVEAL_MS + SETTLE_HOLD_MS;
-    const timeout = window.setTimeout(finish, totalDuration);
+    let timeout: number;
 
     // Any key/click while booting completes it immediately — and must be
     // the *only* thing that key does. Listening on the capture phase and
     // calling stopPropagation() here means this handler runs and consumes
     // the event before it ever reaches the bubble-phase global shortcut
     // listener mounted in AppShell, so the same keypress can't also arm
-    // `g`, toggle the shortcut-help overlay, or navigate. Once boot is
-    // done, these listeners are torn down and global shortcuts see every
-    // subsequent key normally.
-    const interrupt = (event: Event) => {
+    // `g`, toggle the shortcut-help overlay, or navigate.
+    //
+    // Bug fixed here: these listeners MUST be torn down as soon as boot
+    // completes (natural timeout or interrupt), not only on unmount. They
+    // previously were removed only in the effect's unmount cleanup, so
+    // after a normal (non-interrupted) boot finished, they stayed attached
+    // to `window` for the rest of the Gate's lifetime — silently
+    // stopPropagation()-ing every later click/keydown anywhere on the
+    // page, including a click or Enter/Space on the now-"active" Enter
+    // button, before it ever reached the button. That's why the CTA looked
+    // enabled but did nothing.
+    function removeInterruptListeners() {
+      window.removeEventListener("keydown", interrupt, { capture: true });
+      window.removeEventListener("click", interrupt, { capture: true });
+    }
+
+    function finish() {
+      if (readyFired.current) return;
+      readyFired.current = true;
+      window.clearTimeout(timeout);
+      removeInterruptListeners();
+      onReady();
+    }
+
+    function interrupt(event: Event) {
       event.stopPropagation();
       setInstant(true);
-      window.clearTimeout(timeout);
       finish();
-    };
+    }
 
+    timeout = window.setTimeout(finish, totalDuration);
     window.addEventListener("keydown", interrupt, { capture: true });
     window.addEventListener("click", interrupt, { capture: true });
 
     return () => {
       window.clearTimeout(timeout);
-      window.removeEventListener("keydown", interrupt, { capture: true });
-      window.removeEventListener("click", interrupt, { capture: true });
+      removeInterruptListeners();
     };
     // Intentionally mount-only: this sequence runs exactly once per Gate
     // mount, per the required behavior — it does not react to later

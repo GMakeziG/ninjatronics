@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generatedAt": "2026-07-16T05:20:28.721Z",
-    "sourceFileCount": 80,
-    "entityCount": 80
+    "generatedAt": "2026-07-23T03:43:21.495Z",
+    "sourceFileCount": 81,
+    "entityCount": 81
   },
   "districts": [
     {
@@ -521,6 +521,7 @@
       "id": "azure-administrator-associate",
       "name": "Microsoft Certified: Azure Administrator Associate (AZ-104)",
       "issuer": "Microsoft",
+      "credentialUrl": "https://learn.microsoft.com/api/credentials/share/en-us/GersoRobayoGuillen-7914/55DA06DAA283FB5C?sharingId=74F03DB3343764B3",
       "districtId": "floating-citadel",
       "type": "certification"
     },
@@ -528,6 +529,15 @@
       "id": "comptia-security-plus",
       "name": "CompTIA Security+",
       "issuer": "CompTIA",
+      "credentialUrl": "https://cp.certmetrics.com/comptia/en/public/verify/credential/Z18ERHVTFNB4QZSW",
+      "districtId": "floating-citadel",
+      "type": "certification"
+    },
+    {
+      "id": "github-foundations",
+      "name": "Microsoft Certified: GitHub Foundations (GH-900)",
+      "issuer": "Microsoft",
+      "credentialUrl": "https://learn.microsoft.com/api/credentials/share/en-us/GersoMakeziRobayoGuillen-1170/BB7EBDF476A44402?sharingId=FA5879ED0A4F1275",
       "districtId": "floating-citadel",
       "type": "certification"
     }
@@ -539,6 +549,7 @@
       "title": "Senior Systems Administrator",
       "tagline": "Building secure infrastructure, automation, and cloud-native systems that scale.",
       "location": "Ridgecrest, California, USA",
+      "linkedin": "https://www.linkedin.com/in/gerso-guillen/",
       "links": [
         {
           "label": "GitHub",

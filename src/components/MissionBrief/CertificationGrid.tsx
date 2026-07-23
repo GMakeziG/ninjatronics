@@ -28,7 +28,7 @@ export function CertificationGrid({ certifications }: CertificationGridProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View credential <span aria-hidden="true">↗</span>
+                Verified Credential <span aria-hidden="true">↗</span>
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>
             )}

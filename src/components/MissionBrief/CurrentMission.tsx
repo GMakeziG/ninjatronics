@@ -6,7 +6,8 @@ export interface CurrentMissionProps {
   skills: Skill[];
 }
 
-const COLLAPSED_HIGHLIGHT_COUNT = 3;
+const COLLAPSED_HIGHLIGHT_COUNT = 2;
+const COLLAPSED_SKILL_COUNT = 8;
 
 export function CurrentMission({ experience, skills }: CurrentMissionProps) {
   const [expanded, setExpanded] = useState(false);
@@ -16,6 +17,9 @@ export function CurrentMission({ experience, skills }: CurrentMissionProps) {
   const highlights = experience.highlights ?? [];
   const visibleHighlights = expanded ? highlights : highlights.slice(0, COLLAPSED_HIGHLIGHT_COUNT);
   const hasMoreHighlights = highlights.length > COLLAPSED_HIGHLIGHT_COUNT;
+
+  const visibleSkills = expanded ? skills : skills.slice(0, COLLAPSED_SKILL_COUNT);
+  const hiddenSkillCount = skills.length - visibleSkills.length;
 
   return (
     <section className="current-mission" aria-labelledby="current-mission-heading">
@@ -40,9 +44,24 @@ export function CurrentMission({ experience, skills }: CurrentMissionProps) {
             ))}
           </ul>
         )}
+
+        {skills.length > 0 && (
+          <ul className="current-mission__skills">
+            {visibleSkills.map((skill) => (
+              <li key={skill.id} className="current-mission__skill-chip">
+                {skill.name}
+              </li>
+            ))}
+            {!expanded && hiddenSkillCount > 0 && (
+              <li className="current-mission__skill-chip current-mission__skill-chip--more">
+                +{hiddenSkillCount} more
+              </li>
+            )}
+          </ul>
+        )}
       </div>
 
-      {(hasMoreHighlights || experience.summary.length > 240) && (
+      {(hasMoreHighlights || hiddenSkillCount > 0 || experience.summary.length > 240) && (
         <button
           type="button"
           className="current-mission__toggle"
@@ -52,16 +71,6 @@ export function CurrentMission({ experience, skills }: CurrentMissionProps) {
         >
           {expanded ? "Show less" : "Read full mission brief"}
         </button>
-      )}
-
-      {skills.length > 0 && (
-        <ul className="current-mission__skills">
-          {skills.map((skill) => (
-            <li key={skill.id} className="current-mission__skill-chip">
-              {skill.name}
-            </li>
-          ))}
-        </ul>
       )}
     </section>
   );

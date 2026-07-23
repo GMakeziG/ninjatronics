@@ -3,5 +3,6 @@
   "id": "comptia-security-plus",
   "name": "CompTIA Security+",
   "issuer": "CompTIA",
+  "credentialUrl": "https://cp.certmetrics.com/comptia/en/public/verify/credential/Z18ERHVTFNB4QZSW",
   "districtId": "floating-citadel"
 }
