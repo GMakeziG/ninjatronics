@@ -1,4 +1,5 @@
 .district-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
@@ -8,9 +9,34 @@
   border: var(--border-width-hairline) solid var(--border-default);
   border-left-width: var(--border-width-emphasis);
   border-left-color: var(--status-success);
+  transition:
+    transform var(--duration-feedback) var(--easing-standard),
+    box-shadow var(--duration-feedback) var(--easing-standard),
+    border-top-color var(--duration-feedback) var(--easing-standard),
+    border-right-color var(--duration-feedback) var(--easing-standard),
+    border-bottom-color var(--duration-feedback) var(--easing-standard);
+}
+
+/* Cards aren't wired to navigation yet (no district-detail route exists),
+   so the cursor is a forward-looking affordance only — it signals what
+   each status will mean once selection is real, without a click handler
+   pretending to do something today. */
+.district-card--open,
+.district-card--in-progress {
+  cursor: pointer;
+}
+
+.district-card--open:hover,
+.district-card--in-progress:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--glow-ki-md);
+  border-top-color: var(--border-emphasis);
+  border-right-color: var(--border-emphasis);
+  border-bottom-color: var(--border-emphasis);
 }
 
 .district-card--locked {
+  cursor: not-allowed;
   border-style: var(--border-style-locked);
   border-left-style: solid;
   border-left-color: var(--accent-locked);
@@ -18,6 +44,45 @@
 
 .district-card--in-progress {
   border-left-color: var(--accent-info);
+}
+
+/* Alive: derived from real synced-repository data (see DistrictCard.tsx),
+   not a hardcoded district id. Steady low-alpha ambient glow (Design
+   Tokens.md's passive-state budget, ≤0.08 alpha) plus a small pulsing dot
+   using the small-emitter glow budget (≤0.20 alpha) — restrained, not a
+   whole-card animation. */
+.district-card--open.district-card--alive,
+.district-card--in-progress.district-card--alive {
+  border-color: var(--color-accent-ki);
+  box-shadow: var(--glow-ki-lg);
+}
+
+.district-card__pulse {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-ki);
+  box-shadow: var(--glow-ki-sm);
+  animation: pulse-alive var(--duration-ambient-fast) var(--easing-ambient) infinite;
+}
+
+@keyframes pulse-alive {
+  0%,
+  100% {
+    opacity: var(--opacity-ambient-min);
+  }
+  50% {
+    opacity: var(--opacity-ambient-max);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .district-card__pulse {
+    animation: none;
+    opacity: calc((var(--opacity-ambient-min) + var(--opacity-ambient-max)) / 2);
+  }
 }
 
 .district-card__header {
@@ -37,6 +102,8 @@
 }
 
 .district-card__status {
+  display: inline-flex;
+  align-items: center;
   flex-shrink: 0;
   padding: var(--space-1) var(--space-2);
   border: var(--border-width-hairline) solid var(--border-emphasis);
@@ -128,4 +195,40 @@
   font-size: var(--type-body-sm-size);
   line-height: var(--type-body-sm-line);
   color: var(--text-tertiary);
+}
+
+/* Decorative-only (aria-hidden): a flavor reveal, not a functional
+   requirements list — no unlock mechanism exists yet. Opacity-only fade,
+   no transform, so it needs no separate reduced-motion handling. */
+.district-card__lock-tip {
+  position: absolute;
+  inset: auto var(--space-5) var(--space-5) var(--space-5);
+  padding: var(--space-3);
+  background: var(--surface-overlay);
+  border: var(--border-width-hairline) solid var(--accent-locked);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-feedback) var(--easing-standard);
+}
+
+.district-card--locked:hover .district-card__lock-tip {
+  opacity: 1;
+}
+
+.district-card__lock-tip-title {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  line-height: var(--type-mono-sm-line);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: var(--weight-mono-emphasis);
+  color: var(--accent-locked);
+}
+
+.district-card__lock-tip-body {
+  margin: var(--space-1) 0 0;
+  font-size: var(--type-body-sm-size);
+  line-height: var(--type-body-sm-line);
+  color: var(--text-secondary);
 }

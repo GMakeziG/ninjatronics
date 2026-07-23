@@ -39,6 +39,14 @@ a {
   color: inherit;
 }
 
+/* One shared focus ring for every focusable element in the app, using
+   Design Tokens.md's dedicated focus-ring width token — components don't
+   define their own outline. */
+:focus-visible {
+  outline: var(--border-width-emphasis) solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
 /* Reduced-motion safety net: any animation/transition not yet gated by
    the ThemeProvider's `reducedMotion` flag still collapses to effectively
    instantaneous rather than silently keeping full motion. Components with
