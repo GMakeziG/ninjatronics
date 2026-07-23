@@ -26,6 +26,56 @@
   color: var(--accent-primary);
 }
 
+/*
+ * One-shot, deterministic disruption partway through boot — "a system
+ * handoff correcting itself," not a loop and not random. Fixed delay so
+ * it lands mid-sequence regardless of render timing. Text itself never
+ * changes/disappears — only transform/text-shadow, decorative only.
+ * Discrete `steps()` timing gives a digital jump-cut feel rather than a
+ * smooth wobble, distinguishing it from the softer boot-line glitch.
+ */
+.gate-hero__wordmark--glitch {
+  animation-name: wordmark-glitch;
+  animation-duration: 220ms;
+  animation-timing-function: steps(1, end);
+  animation-delay: 1400ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes wordmark-glitch {
+  0% {
+    transform: translate(0, 0);
+    text-shadow: none;
+  }
+  20% {
+    transform: translate(-2px, 1px);
+    text-shadow:
+      1px 0 var(--accent-info),
+      -1px 0 var(--accent-locked);
+  }
+  40% {
+    transform: translate(2px, -1px);
+    text-shadow:
+      -1px 0 var(--accent-primary),
+      1px 0 var(--accent-info);
+  }
+  60% {
+    transform: translate(-1px, 0);
+    text-shadow: none;
+  }
+  100% {
+    transform: translate(0, 0);
+    text-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gate-hero__wordmark--glitch {
+    animation: none;
+  }
+}
+
 .gate-hero__tagline {
   margin: 0 auto;
   max-width: 46ch;

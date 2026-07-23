@@ -58,7 +58,7 @@ export function Gate() {
 
   return (
     <main className={`gate${entering ? " gate--entering" : ""}`}>
-      <GateHero tagline={profile?.tagline} />
+      <GateHero tagline={profile?.tagline} glitchActive={!reducedMotion && !bootReady} />
       <BootSequence lines={bootLines} onReady={() => setBootReady(true)} />
       <EnterButton ready={bootReady} onEnter={handleEnter} />
     </main>

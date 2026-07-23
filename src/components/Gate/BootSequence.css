@@ -14,7 +14,10 @@
   color: var(--text-secondary);
   opacity: 0;
   transform: translateY(8px);
-  animation: boot-line-reveal var(--duration-overlay) var(--easing-standard) forwards;
+  /* Duration is a boot-narrative-specific value (BootSequence.tsx's
+     LINE_REVEAL_MS), not one of the shared duration tier tokens — keep
+     the two in sync by hand if either changes. */
+  animation: boot-line-reveal 550ms var(--easing-standard) forwards;
 }
 
 @keyframes boot-line-reveal {
@@ -24,8 +27,52 @@
   }
 }
 
+/*
+ * First line only: "a terminal buffer briefly desynchronizing" — a small,
+ * bounded wobble (opacity dips, ≤2px shift, never full transparency)
+ * before settling into the same end state as every other line. One
+ * occurrence, at boot start, not a loop.
+ */
+.boot-sequence__line--glitch {
+  animation-name: boot-line-glitch;
+}
+
+@keyframes boot-line-glitch {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  35% {
+    opacity: 0.55;
+    transform: translate(2px, 1px);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translate(-2px, 0);
+  }
+  65% {
+    opacity: 0.75;
+    transform: translate(1px, -1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .boot-sequence--instant .boot-sequence__line {
   animation: none;
   opacity: 1;
   transform: none;
+}
+
+/* Belt-and-suspenders: the JS `instant` state already covers this (it's
+   derived from `reducedMotion`), but the glitch keyframe is deliberate
+   enough motion to also disable directly at the CSS level. */
+@media (prefers-reduced-motion: reduce) {
+  .boot-sequence__line--glitch {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
