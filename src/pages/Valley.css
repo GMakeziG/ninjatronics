@@ -60,7 +60,7 @@
  * (mobile/tablet/desktop) — this is a scoped, local exception for a
  * fourth density tier, not a proposal to add a new global --bp-* token.
  */
-@media (min-width: 1440px) {
+@media (min-width: 1600px) {
   .valley__grid {
     grid-template-columns: repeat(4, 1fr);
   }
