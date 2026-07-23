@@ -1,0 +1,126 @@
+.shortcut-help__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  background: color-mix(in srgb, var(--color-void-900) 60%, transparent);
+}
+
+.shortcut-help {
+  width: min(420px, 100%);
+  padding: var(--space-6);
+  background: var(--surface-overlay);
+  border: var(--border-width-hairline) solid var(--border-emphasis);
+  animation: shortcut-help-in var(--duration-overlay) var(--easing-standard);
+}
+
+.shortcut-help:focus-visible {
+  outline: none;
+}
+
+@keyframes shortcut-help-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Motion Specification.md's overlay-tier reduced-motion rule: keep the
+   opacity fade, drop the transform — not the blunter "instant" fallback
+   used for ambient loops elsewhere. */
+@media (prefers-reduced-motion: reduce) {
+  .shortcut-help {
+    animation-name: shortcut-help-in-reduced;
+  }
+}
+
+@keyframes shortcut-help-in-reduced {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.shortcut-help__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.shortcut-help__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-display-md-size);
+  line-height: var(--type-display-md-line);
+  font-weight: var(--weight-body-medium);
+  color: var(--text-primary);
+}
+
+.shortcut-help__close {
+  flex-shrink: 0;
+  padding: var(--space-1) var(--space-3);
+  background: transparent;
+  border: var(--border-width-hairline) solid var(--border-default);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    color var(--duration-feedback) var(--easing-standard),
+    border-color var(--duration-feedback) var(--easing-standard);
+}
+
+.shortcut-help__close:hover,
+.shortcut-help__close:focus-visible {
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+}
+
+.shortcut-help__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.shortcut-help__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.shortcut-help__keys {
+  flex-shrink: 0;
+  min-width: 84px;
+  padding: var(--space-1) var(--space-2);
+  background: var(--surface-panel);
+  border: var(--border-width-hairline) solid var(--border-default);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  line-height: var(--type-mono-sm-line);
+  color: var(--accent-primary);
+  text-align: center;
+  font-style: normal;
+}
+
+.shortcut-help__label {
+  font-size: var(--type-body-sm-size);
+  line-height: var(--type-body-sm-line);
+  color: var(--text-secondary);
+}

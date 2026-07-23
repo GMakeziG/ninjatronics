@@ -3,8 +3,11 @@ import "./AppShell.css";
 import { ThemeProvider } from "./theme/ThemeProvider.js";
 import { StatusBar } from "../components/StatusBar/StatusBar.js";
 import { NavigationRail } from "../components/NavigationRail/NavigationRail.js";
+import { ShortcutHelp } from "../components/ShortcutHelp/ShortcutHelp.js";
 import { listDistricts } from "../lib/world.js";
 import type { BreadcrumbItem } from "../components/StatusBar/Breadcrumbs.js";
+import { useGlobalShortcuts } from "./navigation/useGlobalShortcuts.js";
+import { NAVIGATION_COMMANDS } from "./navigation/navigationCommands.js";
 
 const ROUTE_LABELS: Record<string, string> = {
   "/valley": "Valley",
@@ -28,6 +31,7 @@ export function AppShell() {
   const breadcrumb = useBreadcrumb();
   const districts = listDistricts();
   const districtsOpen = districts.filter((district) => district.status === "open").length;
+  const { helpOpen, closeHelp } = useGlobalShortcuts();
 
   return (
     <ThemeProvider>
@@ -36,6 +40,7 @@ export function AppShell() {
       <div className="app-shell__content">
         <Outlet />
       </div>
+      <ShortcutHelp open={helpOpen} onClose={closeHelp} commands={NAVIGATION_COMMANDS} />
     </ThemeProvider>
   );
 }
