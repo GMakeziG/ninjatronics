@@ -266,7 +266,7 @@
 
 .experience-timeline__heading,
 .skills-overview__heading,
-.certification-grid__heading,
+.certification-summary__heading,
 .explore-world__heading {
   margin: 0 0 var(--space-5);
   font-family: var(--font-display);
@@ -406,64 +406,42 @@
   }
 }
 
-/* ---------- CertificationGrid ---------- */
+/* ---------- CertificationSummary ---------- */
 
-.certification-grid__list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
-  margin: 0;
+.certification-summary__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-4);
   padding: 0;
   list-style: none;
 }
 
-.certification-grid__card {
-  padding: var(--space-4);
+.certification-summary__list li {
+  padding: var(--space-3) var(--space-4);
   background: var(--surface-panel);
   border: var(--border-width-hairline) solid var(--border-default);
-}
-
-.certification-grid__name {
-  margin: 0 0 var(--space-1);
-  font-family: var(--font-display);
-  font-size: var(--type-body-lg-size);
-  font-weight: var(--weight-body-medium);
-  color: var(--text-primary);
-}
-
-.certification-grid__issuer {
-  margin: 0 0 var(--space-2);
-  font-size: var(--type-body-sm-size);
+  border-left-width: var(--border-width-emphasis);
+  border-left-color: var(--accent-locked);
+  font-size: var(--type-body-md-size);
   color: var(--text-secondary);
 }
 
-.certification-grid__date {
-  margin: 0 0 var(--space-2);
-  font-family: var(--font-mono);
-  font-size: var(--type-mono-sm-size);
-  color: var(--text-muted);
-}
-
-.certification-grid__link {
+.certification-summary__link {
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
   font-family: var(--font-mono);
   font-size: var(--type-mono-sm-size);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
   color: var(--accent-primary);
   transition: color var(--duration-feedback) var(--easing-standard);
 }
 
-.certification-grid__link:hover,
-.certification-grid__link:focus-visible {
+.certification-summary__link:hover,
+.certification-summary__link:focus-visible {
   color: var(--text-primary);
-}
-
-@media (min-width: 640px) {
-  .certification-grid__list {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 /* ---------- ExploreWorld ---------- */
@@ -505,12 +483,22 @@
 
 /* Locked rows are deliberately plain, non-interactive text — no border
    accent, no hover feedback, no cursor change — so they never read as a
-   dead link. */
+   dead link. Distinctiveness comes from the dashed/ember border alone, not
+   from dimming the whole row (same fix already applied to DistrictCard —
+   stacking opacity on already-muted text made it hard to read). */
 .explore-world__row--locked {
   border-left-width: var(--border-width-emphasis);
   border-left-style: var(--border-style-locked);
   border-left-color: var(--accent-locked);
-  opacity: var(--opacity-muted);
+}
+
+.explore-world__row--locked .explore-world__subtitle {
+  color: var(--text-secondary);
+}
+
+.explore-world__row--locked .explore-world__status {
+  color: var(--text-secondary);
+  border-color: var(--border-emphasis);
 }
 
 .explore-world__name {

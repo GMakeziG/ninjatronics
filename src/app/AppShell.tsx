@@ -5,7 +5,7 @@ import { StatusBar } from "../components/StatusBar/StatusBar.js";
 import { NavigationRail } from "../components/NavigationRail/NavigationRail.js";
 import { ShortcutHelp } from "../components/ShortcutHelp/ShortcutHelp.js";
 import { Terminal } from "../components/Terminal/Terminal.js";
-import { listDistricts } from "../lib/world.js";
+import { listDistricts, getCertification } from "../lib/world.js";
 import { getRepositoryTree } from "../lib/git-forest.js";
 import type { BreadcrumbItem } from "../components/StatusBar/Breadcrumbs.js";
 import { useGlobalShortcuts } from "./navigation/useGlobalShortcuts.js";
@@ -15,8 +15,17 @@ import { useTerminal } from "./terminal/useTerminal.js";
 const ROUTE_LABELS: Record<string, string> = {
   "/valley": "Valley",
   "/valley/git-forest": "Git Forest",
+  "/valley/floating-citadel": "Floating Citadel",
   "/brief": "Mission Brief",
 };
+
+/** Tries every known artifact kind for a leaf segment under a district
+ * route — repository first, then certification. Different districts'
+ * artifacts live in separate id namespaces, so trying both in sequence is
+ * safe; returns undefined (no 4th crumb) if neither resolves. */
+function resolveArtifactLabel(slug: string): string | undefined {
+  return getRepositoryTree(slug)?.treeName ?? getCertification(slug)?.name;
+}
 
 /** Shared with routed pages (Gate today) via <Outlet context>. */
 export interface AppShellOutletContext {
@@ -34,11 +43,11 @@ function useBreadcrumb(): BreadcrumbItem[] {
   const crumbs: BreadcrumbItem[] = [{ label: "Gate", path: "/" }];
 
   // Every /valley/* route sits under a real "Valley" crumb, not just
-  // Gate → itself. /valley/:district/:repositorySlug additionally
-  // resolves the real repository name for its own crumb (falling back to
-  // no 4th crumb — not a fabricated label — when the slug doesn't
-  // resolve to a real repository; RepositoryArtifact itself renders
-  // NotFound in that case).
+  // Gate → itself. /valley/:district/:artifactSlug additionally resolves
+  // the real artifact name (repository or certification) for its own
+  // crumb — falling back to no 4th crumb, not a fabricated label, when
+  // the slug doesn't resolve to anything real; the artifact page itself
+  // renders NotFound in that case.
   if (pathname.startsWith("/valley")) {
     crumbs.push({ label: "Valley", path: "/valley" });
     if (pathname === "/valley") return crumbs;
@@ -48,9 +57,9 @@ function useBreadcrumb(): BreadcrumbItem[] {
     crumbs.push({ label: ROUTE_LABELS[districtPath] ?? segments[1], path: districtPath });
 
     if (segments[2]) {
-      const repository = getRepositoryTree(segments[2]);
-      if (repository) {
-        crumbs.push({ label: repository.treeName, path: pathname });
+      const artifactLabel = resolveArtifactLabel(segments[2]);
+      if (artifactLabel) {
+        crumbs.push({ label: artifactLabel, path: pathname });
       }
     }
 

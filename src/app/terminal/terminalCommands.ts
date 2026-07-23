@@ -8,6 +8,9 @@ import { getNavigationCommand } from "../navigation/navigationCommands.js";
 import { getMissionBrief } from "../../lib/mission-brief.js";
 import { getGitForest, getRepositoryTree, getRepositoryArtifactPath } from "../../lib/git-forest.js";
 import type { RepositoryTree } from "../../lib/git-forest.js";
+import { getCertificationArtifactPath } from "../../lib/floating-citadel.js";
+import { world, getCertification } from "../../lib/world.js";
+import type { Certification } from "../../lib/world.js";
 import { groupSkillsByCategory } from "../../lib/skills-overview.js";
 
 export interface TerminalCommandContext {
@@ -38,9 +41,12 @@ const GOTO_ALIASES: Record<string, string> = {
   mission: "mission-brief",
   "git-forest": "git-forest",
   forest: "git-forest",
+  "floating-citadel": "floating-citadel",
+  citadel: "floating-citadel",
 };
 
-const DESTINATION_HINT = "Destinations: gate (home), valley (world), brief (mission), git-forest (forest)";
+const DESTINATION_HINT =
+  "Destinations: gate (home), valley (world), brief (mission), git-forest (forest), floating-citadel (citadel)";
 
 function runGoto(args: string[], context: TerminalCommandContext): string[] {
   const target = args[0]?.toLowerCase();
@@ -58,8 +64,12 @@ function runGoto(args: string[], context: TerminalCommandContext): string[] {
   return [`Navigating to ${command.label}...`];
 }
 
-function repositoryListHint(): string {
-  return `Repositories: ${getGitForest().trees.map((tree) => tree.id).join(", ")}`;
+/** Strips everything but lowercase letters/digits — used to compare
+ * typed input against real id/name fields regardless of hyphens, spaces,
+ * or punctuation (e.g. "az-104" vs "az 104" vs the "(AZ-104)" embedded in
+ * a certification's real name). */
+function normalize(value: string): string {
+  return value.toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
 function kebabCase(value: string): string {
@@ -67,6 +77,14 @@ function kebabCase(value: string): string {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
+}
+
+function repositoryListHint(): string {
+  return `Repositories: ${getGitForest().trees.map((tree) => tree.id).join(", ")}`;
+}
+
+function certificationListHint(): string {
+  return `Certifications: ${world.certifications.map((cert) => cert.id).join(", ")}`;
 }
 
 /**
@@ -86,6 +104,28 @@ function findRepository(args: string[]): RepositoryTree | undefined {
   return getGitForest().trees.find((tree) => kebabCase(tree.treeName) === loreSlug);
 }
 
+/**
+ * Resolves user input to a real certification: the real id directly, or a
+ * normalized substring match against the id/name — this is what makes
+ * exam-code shorthand like "az-104" or "gh-900" (both embedded in the
+ * certification's real `name`, e.g. "... (AZ-104)") and "security-plus"
+ * (a substring of "CompTIA Security+") resolve without a hardcoded alias
+ * table. Both `cert` and `open` call this same function.
+ */
+function findCertification(args: string[]): Certification | undefined {
+  if (args.length === 0) return undefined;
+
+  const direct = getCertification(args[0].toLowerCase());
+  if (direct) return direct;
+
+  const needle = normalize(args.join(" "));
+  if (!needle) return undefined;
+
+  return world.certifications.find(
+    (cert) => normalize(cert.id).includes(needle) || normalize(cert.name).includes(needle),
+  );
+}
+
 function runRepo(args: string[], context: TerminalCommandContext): string[] {
   if (args.length === 0) {
     return ["Usage: repo <name>", repositoryListHint()];
@@ -100,16 +140,36 @@ function runRepo(args: string[], context: TerminalCommandContext): string[] {
   return [`Opening ${repo.treeName}...`];
 }
 
+function runCert(args: string[], context: TerminalCommandContext): string[] {
+  if (args.length === 0) {
+    return ["Usage: cert <name>", certificationListHint()];
+  }
+
+  const cert = findCertification(args);
+  if (!cert) {
+    return [`Unknown certification "${args.join(" ")}".`, certificationListHint()];
+  }
+
+  const path = getCertificationArtifactPath(cert);
+  if (!path) {
+    return [`"${cert.name}" has no district assigned yet — nowhere to open.`];
+  }
+
+  context.navigate(path);
+  return [`Opening ${cert.name}...`];
+}
+
 /**
  * "open" tries a district destination first (the same GOTO_ALIASES map
- * "goto" uses), then falls back to repository resolution — one verb for
+ * "goto" uses), then a repository, then a certification — one verb for
  * "open <anything real>," without teaching "goto" itself about
- * repositories or duplicating either resolution path.
+ * repositories/certifications or duplicating any of the three resolution
+ * paths (each already exists as its own function above).
  */
 function runOpen(args: string[], context: TerminalCommandContext): string[] {
   const target = args[0]?.toLowerCase();
   if (!target) {
-    return ["Usage: open <destination-or-repository>", DESTINATION_HINT, repositoryListHint()];
+    return ["Usage: open <destination-or-repository-or-certification>", DESTINATION_HINT];
   }
 
   const commandId = GOTO_ALIASES[target];
@@ -125,7 +185,21 @@ function runOpen(args: string[], context: TerminalCommandContext): string[] {
     return [`Opening ${repo.treeName}...`];
   }
 
-  return [`Unknown destination or repository "${args.join(" ")}".`, DESTINATION_HINT, repositoryListHint()];
+  const cert = findCertification(args);
+  if (cert) {
+    const path = getCertificationArtifactPath(cert);
+    if (path) {
+      context.navigate(path);
+      return [`Opening ${cert.name}...`];
+    }
+  }
+
+  return [
+    `Unknown destination, repository, or certification "${args.join(" ")}".`,
+    DESTINATION_HINT,
+    repositoryListHint(),
+    certificationListHint(),
+  ];
 }
 
 function runProfile(): string[] {
@@ -187,13 +261,18 @@ export const TERMINAL_COMMANDS: TerminalCommand[] = [
   },
   {
     name: "open",
-    summary: 'Navigate to a place or a repository, e.g. "open git-forest" or "open lab".',
+    summary: 'Navigate to a place, repository, or certification, e.g. "open citadel" or "open az-104".',
     run: runOpen,
   },
   {
     name: "repo",
     summary: 'Open a repository\'s page, e.g. "repo lab".',
     run: runRepo,
+  },
+  {
+    name: "cert",
+    summary: 'Open a certification\'s page, e.g. "cert az-104".',
+    run: runCert,
   },
   {
     name: "profile",

@@ -1,0 +1,368 @@
+/*
+ * Shared stylesheet for the Floating Citadel page and its sub-components
+ * (FloatingCitadelHeader, CertificationVault, CertificationCard) plus the
+ * certification artifact page — one file per this project's "avoid
+ * fragmentation" convention (see GitForest.css, MissionBrief.css).
+ *
+ * Visual direction: a calm, elevated credential vault — restrained amber
+ * accents (var(--accent-locked)) distinguish this district from Git
+ * Forest's ki-green "alive" language, while status badges keep the
+ * site-wide green-means-open convention (amber already means
+ * "locked/attention" elsewhere, so reusing it for "open" would conflict
+ * with "do not rely on color alone"). No literal castle/hologram imagery.
+ */
+
+.floating-citadel,
+.certification-artifact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-14);
+  max-width: var(--grid-max-width);
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-6) var(--space-24);
+}
+
+/* ---------- FloatingCitadelHeader ---------- */
+
+.floating-citadel__back-link,
+.certification-artifact__back-link {
+  align-self: flex-start;
+  margin-bottom: var(--space-6);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--text-tertiary);
+  transition: color var(--duration-feedback) var(--easing-standard);
+}
+
+.floating-citadel__back-link:hover,
+.floating-citadel__back-link:focus-visible,
+.certification-artifact__back-link:hover,
+.certification-artifact__back-link:focus-visible {
+  color: var(--accent-locked);
+}
+
+.floating-citadel__title-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.floating-citadel__name,
+.certification-artifact__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-display-lg-size);
+  line-height: var(--type-display-lg-line);
+  font-weight: var(--weight-display-strong);
+  color: var(--text-primary);
+}
+
+.floating-citadel__status {
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-width-hairline) solid var(--status-success);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--status-success);
+}
+
+.floating-citadel__subtitle {
+  margin: 0 0 var(--space-3);
+  max-width: 70ch;
+  font-size: var(--type-body-lg-size);
+  line-height: var(--type-body-lg-line);
+  color: var(--text-secondary);
+}
+
+.floating-citadel__description {
+  margin: 0 0 var(--space-5);
+  max-width: 70ch;
+  font-size: var(--type-body-md-size);
+  line-height: var(--type-body-md-line);
+  color: var(--text-tertiary);
+}
+
+.floating-citadel__summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: var(--surface-panel);
+  border: var(--border-width-hairline) solid var(--border-default);
+}
+
+.floating-citadel__stats {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.floating-citadel__stat dt {
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.floating-citadel__stat dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--type-display-md-size);
+  font-weight: var(--weight-mono-emphasis);
+  color: var(--accent-locked);
+}
+
+.floating-citadel__guardian {
+  padding-top: var(--space-4);
+  border-top: var(--border-width-hairline) solid var(--border-default);
+}
+
+@media (min-width: 768px) {
+  .floating-citadel__summary {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-8);
+  }
+
+  .floating-citadel__stats {
+    min-width: 140px;
+  }
+
+  .floating-citadel__guardian {
+    flex: 1;
+    padding-top: 0;
+    padding-left: var(--space-8);
+    border-top: none;
+    border-left: var(--border-width-hairline) solid var(--border-default);
+  }
+}
+
+.floating-citadel__guardian-name {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-md-size);
+  color: var(--accent-locked);
+}
+
+.floating-citadel__guardian-title {
+  color: var(--text-muted);
+}
+
+.floating-citadel__guardian-quote {
+  margin: var(--space-1) 0 0;
+  max-width: 60ch;
+  font-size: var(--type-body-sm-size);
+  line-height: var(--type-body-sm-line);
+  color: var(--text-tertiary);
+}
+
+/* ---------- CertificationVault ---------- */
+
+.certification-vault__heading,
+.certification-artifact__section-heading {
+  margin: 0 0 var(--space-5);
+  font-family: var(--font-display);
+  font-size: var(--type-display-md-size);
+  line-height: var(--type-display-md-line);
+  font-weight: var(--weight-body-medium);
+  color: var(--text-primary);
+}
+
+.certification-vault__empty {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.certification-vault__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .certification-vault__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .certification-vault__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- CertificationCard ---------- */
+
+.certification-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--surface-panel);
+  border: var(--border-width-hairline) solid var(--border-default);
+  border-left-width: var(--border-width-emphasis);
+  border-left-color: var(--accent-locked);
+}
+
+.certification-card__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-body-lg-size);
+  font-weight: var(--weight-body-medium);
+  color: var(--text-primary);
+}
+
+.certification-card__name a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--duration-feedback) var(--easing-standard);
+}
+
+.certification-card__name a:hover,
+.certification-card__name a:focus-visible {
+  color: var(--accent-locked);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.certification-card__issuer {
+  margin: 0;
+  font-size: var(--type-body-sm-size);
+  color: var(--text-secondary);
+}
+
+.certification-card__date {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  color: var(--text-muted);
+}
+
+/* External action — always underlined like ordinary hypertext, distinct
+   from the card's internal name-link, which is underlined only on
+   hover/focus (reads as a heading first). */
+.certification-card__link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: var(--accent-primary);
+  transition: color var(--duration-feedback) var(--easing-standard);
+}
+
+.certification-card__link:hover,
+.certification-card__link:focus-visible {
+  color: var(--text-primary);
+}
+
+.certification-card__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.certification-card__skills li {
+  padding: var(--space-1) var(--space-2);
+  background: var(--surface-panel-hover);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  color: var(--text-secondary);
+}
+
+/* ---------- CertificationArtifact (src/pages/CertificationArtifact.tsx) ---------- */
+
+.certification-artifact__identity {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.certification-artifact__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.certification-artifact__meta-item dt {
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.certification-artifact__meta-item dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  color: var(--text-secondary);
+}
+
+.certification-artifact__link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-md-size);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: var(--accent-primary);
+  transition: color var(--duration-feedback) var(--easing-standard);
+}
+
+.certification-artifact__link:hover,
+.certification-artifact__link:focus-visible {
+  color: var(--text-primary);
+}
+
+.certification-artifact__section {
+  padding-top: var(--space-6);
+  border-top: var(--border-width-hairline) solid var(--border-default);
+}
+
+.certification-artifact__related {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-top: var(--space-6);
+  border-top: var(--border-width-hairline) solid var(--border-default);
+}
+
+.certification-artifact__related-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: color var(--duration-feedback) var(--easing-standard);
+}
+
+.certification-artifact__related-link:hover,
+.certification-artifact__related-link:focus-visible {
+  color: var(--accent-locked);
+}
+
+.certification-artifact__related-link--next {
+  margin-left: auto;
+}

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-07-23T03:43:21.495Z",
+    "generatedAt": "2026-07-23T06:14:52.810Z",
     "sourceFileCount": 81,
     "entityCount": 81
   },
@@ -22,7 +22,7 @@
       "id": "floating-citadel",
       "name": "Floating Citadel",
       "slug": "floating-citadel",
-      "status": "locked",
+      "status": "open",
       "type": "district",
       "guardianId": "custodian",
       "subtitle": "A stronghold built from proven accomplishment.",

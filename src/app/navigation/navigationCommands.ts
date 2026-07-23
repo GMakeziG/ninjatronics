@@ -20,6 +20,7 @@ export const NAVIGATION_COMMANDS: NavigationCommand[] = [
   { id: "valley", label: "Valley", path: "/valley", keys: ["g", "v"] },
   { id: "mission-brief", label: "Mission Brief", path: "/brief", keys: ["g", "b"] },
   { id: "git-forest", label: "Git Forest", path: "/valley/git-forest", keys: ["g", "f"] },
+  { id: "floating-citadel", label: "Floating Citadel", path: "/valley/floating-citadel", keys: ["g", "c"] },
 ];
 
 export function getNavigationCommand(id: string): NavigationCommand | undefined {
