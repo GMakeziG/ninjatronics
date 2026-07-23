@@ -5,12 +5,11 @@ import { LiveClock } from "./LiveClock.js";
 
 export interface StatusBarProps {
   breadcrumb: BreadcrumbItem[];
-  ninjaFormName: string;
   districtsOpen: number;
   districtsTotal: number;
 }
 
-export function StatusBar({ breadcrumb, ninjaFormName, districtsOpen, districtsTotal }: StatusBarProps) {
+export function StatusBar({ breadcrumb, districtsOpen, districtsTotal }: StatusBarProps) {
   return (
     <header className="status-bar">
       <div className="status-bar__section status-bar__section--start">
@@ -23,7 +22,7 @@ export function StatusBar({ breadcrumb, ninjaFormName, districtsOpen, districtsT
       </div>
 
       <div className="status-bar__section status-bar__section--end">
-        <WorldStatus ninjaFormName={ninjaFormName} districtsOpen={districtsOpen} districtsTotal={districtsTotal} />
+        <WorldStatus districtsOpen={districtsOpen} districtsTotal={districtsTotal} />
         <span className="status-bar__divider" aria-hidden="true">
           ·
         </span>

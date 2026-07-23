@@ -1,0 +1,96 @@
+/*
+ * Desktop/tablet default: fixed side rail below the StatusBar.
+ * Switches to a bottom tab bar at the canonical mobile breakpoint
+ * (Design Tokens.md §8, --bp-mobile-max: 639px).
+ */
+.navigation-rail {
+  position: fixed;
+  top: var(--space-14);
+  left: 0;
+  bottom: 0;
+  z-index: var(--z-chrome);
+  width: var(--space-18);
+  background: var(--surface-panel);
+  border-right: var(--border-width-hairline) solid var(--border-default);
+}
+
+.navigation-rail__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-2) 0;
+  list-style: none;
+}
+
+.navigation-rail__item {
+  display: flex;
+}
+
+.navigation-rail__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  line-height: var(--type-mono-sm-line);
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-tertiary);
+  border-left: var(--border-width-emphasis) solid transparent;
+  transition:
+    color var(--duration-feedback) var(--easing-standard),
+    border-color var(--duration-feedback) var(--easing-standard),
+    background var(--duration-feedback) var(--easing-standard);
+}
+
+.navigation-rail__link:hover,
+.navigation-rail__link:focus-visible {
+  color: var(--text-primary);
+  background: var(--surface-panel-hover);
+}
+
+.navigation-rail__link--active {
+  color: var(--text-primary);
+  font-weight: var(--weight-mono-emphasis);
+  border-left-color: var(--accent-primary);
+  background: var(--surface-panel-hover);
+}
+
+@media (max-width: 639px) {
+  .navigation-rail {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: var(--space-18);
+    border-right: none;
+    border-top: var(--border-width-hairline) solid var(--border-default);
+  }
+
+  .navigation-rail__list {
+    flex-direction: row;
+    height: 100%;
+    padding: 0;
+  }
+
+  .navigation-rail__item {
+    flex: 1;
+  }
+
+  .navigation-rail__link {
+    height: 100%;
+    border-left: none;
+    border-top: var(--border-width-emphasis) solid transparent;
+  }
+
+  .navigation-rail__link--active {
+    border-left-color: transparent;
+    border-top-color: var(--accent-primary);
+  }
+}

@@ -1,0 +1,20 @@
+/*
+ * Reserves layout space for the fixed NavigationRail so page content is
+ * never hidden behind it. StatusBar is `position: sticky`, so it already
+ * occupies its own space in normal flow and needs no offset here.
+ */
+.app-shell__content {
+  min-height: calc(100vh - var(--space-14));
+}
+
+@media (min-width: 640px) {
+  .app-shell__content {
+    margin-left: var(--space-18);
+  }
+}
+
+@media (max-width: 639px) {
+  .app-shell__content {
+    padding-bottom: var(--space-18);
+  }
+}

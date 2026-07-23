@@ -1,6 +1,8 @@
 import { Outlet, useLocation } from "react-router-dom";
+import "./AppShell.css";
 import { ThemeProvider } from "./theme/ThemeProvider.js";
 import { StatusBar } from "../components/StatusBar/StatusBar.js";
+import { NavigationRail } from "../components/NavigationRail/NavigationRail.js";
 import { listDistricts } from "../lib/world.js";
 import type { BreadcrumbItem } from "../components/StatusBar/Breadcrumbs.js";
 
@@ -29,13 +31,11 @@ export function AppShell() {
 
   return (
     <ThemeProvider>
-      <StatusBar
-        breadcrumb={breadcrumb}
-        ninjaFormName="Apprentice"
-        districtsOpen={districtsOpen}
-        districtsTotal={districts.length}
-      />
-      <Outlet />
+      <StatusBar breadcrumb={breadcrumb} districtsOpen={districtsOpen} districtsTotal={districts.length} />
+      <NavigationRail />
+      <div className="app-shell__content">
+        <Outlet />
+      </div>
     </ThemeProvider>
   );
 }
