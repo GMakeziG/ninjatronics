@@ -1,0 +1,139 @@
+.district-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  height: 100%;
+  padding: var(--space-5);
+  background: var(--surface-panel);
+  border: var(--border-width-hairline) solid var(--border-default);
+  border-left-width: var(--border-width-emphasis);
+  border-left-color: var(--status-success);
+}
+
+.district-card--locked {
+  border-style: var(--border-style-locked);
+  border-left-style: solid;
+  border-left-color: var(--accent-locked);
+}
+
+.district-card--in-progress {
+  border-left-color: var(--accent-info);
+}
+
+.district-card__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.district-card__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-display-md-size);
+  line-height: var(--type-display-md-line);
+  font-weight: var(--weight-body-medium);
+  color: var(--text-primary);
+}
+
+.district-card__status {
+  flex-shrink: 0;
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-width-hairline) solid var(--border-emphasis);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  line-height: var(--type-mono-sm-line);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.district-card--open .district-card__status {
+  color: var(--status-success);
+  border-color: var(--status-success);
+}
+
+.district-card--in-progress .district-card__status {
+  color: var(--accent-info);
+  border-color: var(--accent-info);
+}
+
+.district-card--locked .district-card__status {
+  color: var(--accent-locked);
+  border-color: var(--accent-locked);
+}
+
+.district-card__subtitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-body-md-size);
+  line-height: var(--type-body-md-line);
+  font-weight: var(--weight-body-default);
+  color: var(--text-secondary);
+}
+
+.district-card__description {
+  margin: 0;
+  font-size: var(--type-body-sm-size);
+  line-height: var(--type-body-sm-line);
+  color: var(--text-tertiary);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.district-card--locked .district-card__description {
+  opacity: var(--opacity-muted);
+}
+
+.district-card__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.district-card__stat dt {
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  line-height: var(--type-mono-sm-line);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.district-card__stat dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-md-size);
+  line-height: var(--type-mono-md-line);
+  font-weight: var(--weight-mono-emphasis);
+  color: var(--text-primary);
+}
+
+.district-card__guardian {
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: var(--border-width-hairline) solid var(--border-default);
+}
+
+.district-card__guardian-name {
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  line-height: var(--type-mono-sm-line);
+  letter-spacing: 0.04em;
+  color: var(--accent-primary);
+}
+
+.district-card__guardian-quote {
+  margin: var(--space-1) 0 0;
+  font-size: var(--type-body-sm-size);
+  line-height: var(--type-body-sm-line);
+  color: var(--text-tertiary);
+}
+
+.district-card--locked .district-card__guardian-quote {
+  opacity: var(--opacity-muted);
+}
