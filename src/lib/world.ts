@@ -74,11 +74,11 @@ export interface Note {
   body: string;
   published: boolean;
   updatedAt: string;
+  districtId: string;
   tags?: string[];
   relatedSkillIds?: string[];
   relatedRepositoryIds?: string[];
   relatedNoteIds?: string[];
-  districtId?: string;
   source?: string;
   order?: number;
 }

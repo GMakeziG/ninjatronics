@@ -1,0 +1,126 @@
+/*
+ * Semantic elements, styled via descendant selectors under one wrapper
+ * class rather than a components override per tag — react-markdown emits
+ * real <h2>/<p>/<ul>/<code>/etc. elements already; this just themes them
+ * with existing design tokens. Only `a`, `img`, and `pre` have real
+ * component overrides (see MarkdownContent.tsx), for behavior no amount
+ * of CSS alone can provide (link safety, disabling images, keyboard
+ * scrollability).
+ */
+
+.markdown-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 65ch;
+  color: var(--text-tertiary);
+  font-size: var(--type-body-md-size);
+  line-height: var(--type-body-md-line);
+}
+
+.markdown-content > :first-child {
+  margin-top: 0;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  margin: var(--space-2) 0 0;
+  font-family: var(--font-display);
+  font-weight: var(--weight-body-medium);
+  color: var(--text-primary);
+}
+
+.markdown-content h1 {
+  font-size: var(--type-display-md-size);
+  line-height: var(--type-display-md-line);
+}
+
+.markdown-content h2 {
+  font-size: var(--type-body-lg-size);
+  line-height: var(--type-body-lg-line);
+}
+
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-md-size);
+  font-weight: var(--weight-mono-emphasis);
+  letter-spacing: 0.02em;
+}
+
+.markdown-content p {
+  margin: 0;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding-left: var(--space-6);
+}
+
+.markdown-content blockquote {
+  margin: 0;
+  padding-left: var(--space-4);
+  border-left: var(--border-width-emphasis) solid var(--border-emphasis);
+  color: var(--text-secondary);
+}
+
+.markdown-content code {
+  padding: 0 var(--space-1);
+  background: var(--surface-panel-hover);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  color: var(--text-secondary);
+}
+
+.markdown-content pre {
+  margin: 0;
+  padding: var(--space-3);
+  background: var(--surface-panel);
+  border: var(--border-width-hairline) solid var(--border-default);
+  overflow-x: auto;
+}
+
+.markdown-content pre code {
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  color: var(--text-secondary);
+}
+
+.markdown-content hr {
+  margin: var(--space-2) 0;
+  border: none;
+  border-top: var(--border-width-hairline) solid var(--border-default);
+}
+
+.markdown-content strong {
+  color: var(--text-primary);
+  font-weight: var(--weight-body-medium);
+}
+
+.markdown-content em {
+  font-style: italic;
+}
+
+.markdown-content a {
+  color: var(--accent-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--duration-feedback) var(--easing-standard);
+}
+
+.markdown-content a:hover,
+.markdown-content a:focus-visible {
+  color: var(--text-primary);
+}

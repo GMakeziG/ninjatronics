@@ -2,50 +2,111 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "note.schema.json",
   "title": "Note",
-  "description": "A published knowledge-note entity for Hall of Knowledge. Canonical public source lives under content/knowledge/**/*.json — see docs/design/Hall of Knowledge — Publishing Boundary & Privacy Checklist.md for the authoring/privacy rules this schema enforces structurally.",
+  "description": "A published knowledge-note entity for Hall of Knowledge. Canonical public source lives under content/knowledge/**/*.json \u2014 see docs/design/Hall of Knowledge \u2014 Publishing Boundary & Privacy Checklist.md for the authoring/privacy rules this schema enforces structurally.",
   "type": "object",
   "additionalProperties": false,
   "x-requires-published": true,
-  "required": ["id", "slug", "title", "summary", "category", "body", "published", "updatedAt"],
+  "required": [
+    "id",
+    "slug",
+    "title",
+    "summary",
+    "category",
+    "body",
+    "published",
+    "updatedAt",
+    "districtId"
+  ],
   "properties": {
-    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
-    "type": { "const": "note" },
-    "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
-    "title": { "type": "string", "minLength": 1 },
-    "summary": { "type": "string", "minLength": 1 },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "type": {
+      "const": "note"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
     "category": {
       "type": "string",
-      "enum": ["linux", "networking", "cloud", "automation", "security", "kubernetes", "projects", "career"]
+      "enum": [
+        "linux",
+        "networking",
+        "cloud",
+        "automation",
+        "security",
+        "kubernetes",
+        "projects",
+        "career"
+      ]
     },
     "body": {
       "type": "string",
       "minLength": 1,
-      "description": "Markdown-formatted text. A plain string field today (no frontmatter/file parsing) — see the publishing-boundary doc for why, and for how a future Markdown importer is expected to produce this same field without changing the schema."
+      "maxLength": 20000,
+      "description": "Markdown-formatted text. A plain string field today (no frontmatter/file parsing) \u2014 see the publishing-boundary doc for why, and for how a future Markdown importer is expected to produce this same field without changing the schema. maxLength is a generous sanity ceiling (roughly 6-10x today's longest sample note), meant to catch a runaway/malformed import, not to constrain genuine writing."
     },
-    "published": { "type": "boolean" },
-    "updatedAt": { "type": "string", "format": "date" },
+    "published": {
+      "type": "boolean"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date"
+    },
     "tags": {
       "type": "array",
-      "items": { "type": "string" }
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "relatedSkillIds": {
       "type": "array",
-      "items": { "type": "string", "x-ref": "skill" }
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "x-ref": "skill"
+      }
     },
     "relatedRepositoryIds": {
       "type": "array",
-      "items": { "type": "string", "x-ref": "repository" }
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "x-ref": "repository"
+      }
     },
     "relatedNoteIds": {
       "type": "array",
-      "items": { "type": "string", "x-ref": "note" }
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "x-ref": "note"
+      }
     },
-    "districtId": { "type": "string", "x-ref": "district" },
+    "districtId": {
+      "type": "string",
+      "x-ref": "district",
+      "description": "Required \u2014 a published note with no district has no artifact route (getKnowledgeNoteArtifactPath returns undefined without one), leaving it unreachable from the UI and Terminal. Kept as a generic x-ref (not locked to hall-of-knowledge specifically) for the same reason repositories/certifications aren't locked to their district \u2014 consistent with the project's existing anti-hardcoding convention."
+    },
     "source": {
       "type": "string",
-      "description": "Free-text provenance note (e.g. \"adapted from personal lab notes\") — never a filesystem path.",
-      "pattern": "^(?!/|~).*$"
+      "description": "Free-text provenance note (e.g. \"adapted from personal lab notes\") \u2014 never a filesystem path (POSIX or Windows-style).",
+      "pattern": "^(?!/|~|[A-Za-z]:[\\\\/]).*$"
     },
-    "order": { "type": "number" }
+    "order": {
+      "type": "number"
+    }
   }
 }

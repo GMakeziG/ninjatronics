@@ -1,45 +1,11 @@
 import { Link, useParams } from "react-router-dom";
-import type { ReactNode } from "react";
 import "../components/HallOfKnowledge/HallOfKnowledge.css";
 import { getDistrict, getDistrictPath, getSkill } from "../lib/world.js";
 import { getKnowledgeNote, getRelatedNotes, getKnowledgeNoteArtifactPath, categoryLabel } from "../lib/knowledge.js";
 import { getRepositoryTree, getRepositoryArtifactPath } from "../lib/git-forest.js";
 import { formatMonthYear } from "../lib/format-date.js";
+import { MarkdownContent } from "../components/Markdown/MarkdownContent.js";
 import { NotFound } from "./NotFound.js";
-
-/**
- * Deliberately minimal — recognizes only the two conventions every sample
- * note actually uses (a "## " line as a heading, a 4-space-indented line
- * as a one-line code sample), not general Markdown. This is not the
- * Markdown renderer decision for the project; per this milestone's scope,
- * no Markdown-parsing dependency was added, so inline emphasis
- * (`**bold**`, `` `code` ``) intentionally still renders as literal
- * characters — a disclosed limitation, not a silent gap.
- */
-function renderNoteBody(body: string): ReactNode[] {
-  return body.split(/\n\n+/).map((block, index) => {
-    const trimmed = block.trim();
-    if (trimmed.startsWith("## ")) {
-      return (
-        <h3 key={index} className="knowledge-note__body-heading">
-          {trimmed.slice(3)}
-        </h3>
-      );
-    }
-    if (/^ {4}\S/.test(block)) {
-      return (
-        <pre key={index} className="knowledge-note__body-code">
-          {trimmed}
-        </pre>
-      );
-    }
-    return (
-      <p key={index} className="knowledge-note__body-paragraph">
-        {trimmed}
-      </p>
-    );
-  });
-}
 
 export function KnowledgeNoteArtifact() {
   const { noteSlug } = useParams<{ noteSlug: string }>();
@@ -92,7 +58,9 @@ export function KnowledgeNoteArtifact() {
         )}
       </header>
 
-      <section className="knowledge-note__body">{renderNoteBody(note.body)}</section>
+      <section className="knowledge-note__body">
+        <MarkdownContent body={note.body} />
+      </section>
 
       {hasRelated && (
         <section className="knowledge-note__section" aria-labelledby="knowledge-note-related-heading">

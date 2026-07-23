@@ -22,9 +22,9 @@ import { reportErrors, reportSuccess } from "./world-compiler/report.js";
 import type { CompilerError, EntityType, RawEntity, ValidatedEntity } from "./world-compiler/types.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const REPO_ROOT = join(__dirname, "..");
+export const REPO_ROOT = join(__dirname, "..");
 
-interface CliOptions {
+export interface CliOptions {
   contentDir: string;
   schemasDir: string;
   outFile: string;
@@ -50,7 +50,7 @@ function parseArgs(argv: string[]): CliOptions {
   return options;
 }
 
-function compile(options: CliOptions): { errors: CompilerError[]; world?: ReturnType<typeof assembleWorld> } {
+export function compile(options: CliOptions): { errors: CompilerError[]; world?: ReturnType<typeof assembleWorld> } {
   const errors: CompilerError[] = [];
   const schemas = loadSchemas(options.schemasDir);
   const files = discoverContentFiles(options.contentDir);
@@ -181,4 +181,11 @@ function main() {
   reportSuccess(options.check ? `${options.outFile} (check only, not written)` : options.outFile, counts);
 }
 
-main();
+// Only run as a CLI when executed directly (`tsx scripts/compile-world.ts`),
+// not when imported as a module — the regression tests
+// (scripts/compile-world.test.ts) import `compile()` directly against
+// fixture content directories and must not trigger the real CLI's argv
+// parsing, file writes, or process.exit().
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main();
+}
