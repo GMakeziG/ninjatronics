@@ -7,6 +7,7 @@ import { ShortcutHelp } from "../components/ShortcutHelp/ShortcutHelp.js";
 import { Terminal } from "../components/Terminal/Terminal.js";
 import { listDistricts, getCertification } from "../lib/world.js";
 import { getRepositoryTree } from "../lib/git-forest.js";
+import { getKnowledgeNote } from "../lib/knowledge.js";
 import type { BreadcrumbItem } from "../components/StatusBar/Breadcrumbs.js";
 import { useGlobalShortcuts } from "./navigation/useGlobalShortcuts.js";
 import { NAVIGATION_COMMANDS } from "./navigation/navigationCommands.js";
@@ -16,15 +17,17 @@ const ROUTE_LABELS: Record<string, string> = {
   "/valley": "Valley",
   "/valley/git-forest": "Git Forest",
   "/valley/floating-citadel": "Floating Citadel",
+  "/valley/hall-of-knowledge": "Hall of Knowledge",
   "/brief": "Mission Brief",
 };
 
 /** Tries every known artifact kind for a leaf segment under a district
- * route — repository first, then certification. Different districts'
- * artifacts live in separate id namespaces, so trying both in sequence is
- * safe; returns undefined (no 4th crumb) if neither resolves. */
+ * route — repository, then certification, then knowledge note. Each
+ * district's artifacts live in a separate id/slug namespace, so trying all
+ * three in sequence is safe; returns undefined (no 4th crumb) if none
+ * resolve. */
 function resolveArtifactLabel(slug: string): string | undefined {
-  return getRepositoryTree(slug)?.treeName ?? getCertification(slug)?.name;
+  return getRepositoryTree(slug)?.treeName ?? getCertification(slug)?.name ?? getKnowledgeNote(slug)?.title;
 }
 
 /** Shared with routed pages (Gate today) via <Outlet context>. */

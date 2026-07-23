@@ -16,6 +16,7 @@ import { ENTITY_REGISTRY, findRegistryEntry } from "./world-compiler/registry.js
 import { loadSchemas, formatAjvErrors } from "./world-compiler/validate.js";
 import { findRefFields, resolveReferences } from "./world-compiler/resolve.js";
 import { checkSingletonCollections, isSingletonSchema } from "./world-compiler/singleton.js";
+import { isPublishGatedSchema } from "./world-compiler/publish-gate.js";
 import { assembleWorld } from "./world-compiler/assemble.js";
 import { reportErrors, reportSuccess } from "./world-compiler/report.js";
 import type { CompilerError, EntityType, RawEntity, ValidatedEntity } from "./world-compiler/types.js";
@@ -56,6 +57,7 @@ function compile(options: CliOptions): { errors: CompilerError[]; world?: Return
 
   const validated: ValidatedEntity[] = [];
   const seenIds = new Map<string, string>(); // "type:id" -> file that first defined it
+  const seenSlugs = new Map<string, string>(); // "type:slug:<value>" -> file that first defined it
 
   for (const file of files) {
     const entry = findRegistryEntry(file.folder);
@@ -103,16 +105,37 @@ function compile(options: CliOptions): { errors: CompilerError[]; world?: Return
     }
     seenIds.set(dedupeKey, file.relPath);
 
+    // Generic slug-uniqueness check: any entity type may declare a "slug"
+    // field (districts already have one; notes now do too) — scoped per
+    // type, same as id dedup, so different types may share a slug value
+    // without conflict.
+    const slug = (raw as { slug?: unknown }).slug;
+    if (typeof slug === "string") {
+      const slugKey = `${entry.type}:slug:${slug}`;
+      const existingSlugFile = seenSlugs.get(slugKey);
+      if (existingSlugFile) {
+        errors.push({
+          kind: "duplicate-slug",
+          file: file.relPath,
+          message: `Duplicate ${entry.type} slug "${slug}" — already defined in ${existingSlugFile}`,
+        });
+        continue;
+      }
+      seenSlugs.set(slugKey, file.relPath);
+    }
+
     validated.push({ type: entry.type, id, file: file.relPath, data: raw as Record<string, unknown> });
   }
 
   const refFieldsByType = new Map<EntityType, ReturnType<typeof findRefFields>>();
   const singletonTypes = new Set<EntityType>();
+  const publishGatedTypes = new Set<EntityType>();
   for (const entry of ENTITY_REGISTRY) {
     const rawSchema = schemas.rawSchemas.get(entry.schemaFile);
     if (!rawSchema) continue;
     refFieldsByType.set(entry.type, findRefFields(rawSchema));
     if (isSingletonSchema(rawSchema)) singletonTypes.add(entry.type);
+    if (isPublishGatedSchema(rawSchema)) publishGatedTypes.add(entry.type);
   }
 
   errors.push(...resolveReferences(validated, refFieldsByType));
@@ -122,7 +145,7 @@ function compile(options: CliOptions): { errors: CompilerError[]; world?: Return
     return { errors };
   }
 
-  const world = assembleWorld(validated, files.length);
+  const world = assembleWorld(validated, files.length, publishGatedTypes);
 
   const worldValidator = schemas.validators.get("world")!;
   if (!worldValidator(world)) {

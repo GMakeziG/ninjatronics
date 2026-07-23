@@ -11,7 +11,7 @@ export const ENTITY_REGISTRY: RegistryEntry[] = [
   { folder: "repositories", type: "repository", collection: "repositories", schemaFile: "repository.schema.json" },
   { folder: "projects", type: "project", collection: "projects", schemaFile: "project.schema.json" },
   { folder: "quests", type: "quest", collection: "quests", schemaFile: "quest.schema.json" },
-  { folder: "notes", type: "note", collection: "notes", schemaFile: "note.schema.json" },
+  { folder: "knowledge", type: "note", collection: "notes", schemaFile: "note.schema.json" },
   { folder: "skills", type: "skill", collection: "skills", schemaFile: "skill.schema.json" },
   { folder: "certifications", type: "certification", collection: "certifications", schemaFile: "certification.schema.json" },
   { folder: "profile", type: "profile", collection: "profiles", schemaFile: "profile.schema.json" },

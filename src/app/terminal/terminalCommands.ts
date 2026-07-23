@@ -9,8 +9,15 @@ import { getMissionBrief } from "../../lib/mission-brief.js";
 import { getGitForest, getRepositoryTree, getRepositoryArtifactPath } from "../../lib/git-forest.js";
 import type { RepositoryTree } from "../../lib/git-forest.js";
 import { getCertificationArtifactPath } from "../../lib/floating-citadel.js";
+import {
+  listPublishedNotes,
+  getKnowledgeNote,
+  getKnowledgeCategories,
+  categoryLabel,
+  getKnowledgeNoteArtifactPath,
+} from "../../lib/knowledge.js";
 import { world, getCertification } from "../../lib/world.js";
-import type { Certification } from "../../lib/world.js";
+import type { Certification, Note } from "../../lib/world.js";
 import { groupSkillsByCategory } from "../../lib/skills-overview.js";
 
 export interface TerminalCommandContext {
@@ -126,6 +133,33 @@ function findCertification(args: string[]): Certification | undefined {
   );
 }
 
+function knowledgeListHint(): string {
+  return `Notes: ${listPublishedNotes()
+    .map((note) => note.slug)
+    .join(", ")}`;
+}
+
+/**
+ * Resolves user input to a real published note: the real slug directly, or
+ * a normalized substring match against the slug/title — same pattern as
+ * findCertification. Only ever searches `listPublishedNotes()`, so an
+ * unpublished note (which by construction never reaches the compiled
+ * world anyway) could never be exposed here even in principle.
+ */
+function findNote(args: string[]): Note | undefined {
+  if (args.length === 0) return undefined;
+
+  const direct = getKnowledgeNote(args[0].toLowerCase());
+  if (direct) return direct;
+
+  const needle = normalize(args.join(" "));
+  if (!needle) return undefined;
+
+  return listPublishedNotes().find(
+    (note) => normalize(note.slug).includes(needle) || normalize(note.title).includes(needle),
+  );
+}
+
 function runRepo(args: string[], context: TerminalCommandContext): string[] {
   if (args.length === 0) {
     return ["Usage: repo <name>", repositoryListHint()];
@@ -161,15 +195,15 @@ function runCert(args: string[], context: TerminalCommandContext): string[] {
 
 /**
  * "open" tries a district destination first (the same GOTO_ALIASES map
- * "goto" uses), then a repository, then a certification — one verb for
- * "open <anything real>," without teaching "goto" itself about
- * repositories/certifications or duplicating any of the three resolution
- * paths (each already exists as its own function above).
+ * "goto" uses), then a repository, then a certification, then a knowledge
+ * note — one verb for "open <anything real>," without teaching "goto"
+ * itself about any of them or duplicating a resolution path (each already
+ * exists as its own function above).
  */
 function runOpen(args: string[], context: TerminalCommandContext): string[] {
   const target = args[0]?.toLowerCase();
   if (!target) {
-    return ["Usage: open <destination-or-repository-or-certification>", DESTINATION_HINT];
+    return ["Usage: open <destination-or-repository-or-certification-or-note>", DESTINATION_HINT];
   }
 
   const commandId = GOTO_ALIASES[target];
@@ -194,12 +228,79 @@ function runOpen(args: string[], context: TerminalCommandContext): string[] {
     }
   }
 
+  const note = findNote(args);
+  if (note) {
+    const path = getKnowledgeNoteArtifactPath(note);
+    if (path) {
+      context.navigate(path);
+      return [`Opening ${note.title}...`];
+    }
+  }
+
   return [
-    `Unknown destination, repository, or certification "${args.join(" ")}".`,
+    `Unknown destination, repository, certification, or note "${args.join(" ")}".`,
     DESTINATION_HINT,
     repositoryListHint(),
     certificationListHint(),
+    knowledgeListHint(),
   ];
+}
+
+function runNote(args: string[], context: TerminalCommandContext): string[] {
+  if (args.length === 0) {
+    return ["Usage: note <slug>", knowledgeListHint()];
+  }
+
+  const note = findNote(args);
+  if (!note) {
+    return [`Unknown note "${args.join(" ")}".`, knowledgeListHint()];
+  }
+
+  const path = getKnowledgeNoteArtifactPath(note);
+  if (!path) {
+    return [`"${note.title}" has no district assigned yet — nowhere to open.`];
+  }
+
+  context.navigate(path);
+  return [`Opening ${note.title}...`];
+}
+
+function runKnowledge(): string[] {
+  const categories = getKnowledgeCategories();
+  if (categories.length === 0) return ["No notes published yet."];
+
+  return categories.map((group) => `${categoryLabel(group.category)} (${group.count})`);
+}
+
+function runNotes(): string[] {
+  const notes = listPublishedNotes();
+  if (notes.length === 0) return ["No notes published yet."];
+
+  return notes.map((note) => `${note.title} — ${categoryLabel(note.category)} (${note.slug})`);
+}
+
+/**
+ * "tree knowledge" only, for now — "Do not implement Unix-like cd/ls/cat
+ * semantics broadly yet" means this isn't a general-purpose `tree <any
+ * collection>` command, just the one target explicitly asked for.
+ */
+function runTree(args: string[]): string[] {
+  const target = args[0]?.toLowerCase();
+  if (target !== "knowledge") {
+    return ["Usage: tree knowledge", 'Only "tree knowledge" is supported today.'];
+  }
+
+  const categories = getKnowledgeCategories();
+  if (categories.length === 0) return ["No notes published yet."];
+
+  const lines: string[] = [];
+  for (const group of categories) {
+    lines.push(`${categoryLabel(group.category)}/`);
+    for (const note of listPublishedNotes().filter((candidate) => candidate.category === group.category)) {
+      lines.push(`  ${note.slug}`);
+    }
+  }
+  return lines;
 }
 
 function runProfile(): string[] {
@@ -273,6 +374,26 @@ export const TERMINAL_COMMANDS: TerminalCommand[] = [
     name: "cert",
     summary: 'Open a certification\'s page, e.g. "cert az-104".',
     run: runCert,
+  },
+  {
+    name: "note",
+    summary: 'Open a knowledge note\'s page, e.g. "note systemd-service-troubleshooting".',
+    run: runNote,
+  },
+  {
+    name: "knowledge",
+    summary: "Show knowledge categories and note counts.",
+    run: runKnowledge,
+  },
+  {
+    name: "notes",
+    summary: "List published knowledge notes.",
+    run: runNotes,
+  },
+  {
+    name: "tree",
+    summary: 'Show a tree view, e.g. "tree knowledge".',
+    run: runTree,
   },
   {
     name: "profile",

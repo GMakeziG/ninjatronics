@@ -37,6 +37,7 @@ export type CompilerErrorKind =
   | "parse"
   | "schema"
   | "duplicate-id"
+  | "duplicate-slug"
   | "unresolved-reference"
   | "singleton-violation";
 

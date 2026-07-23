@@ -2,19 +2,50 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "note.schema.json",
   "title": "Note",
+  "description": "A published knowledge-note entity for Hall of Knowledge. Canonical public source lives under content/knowledge/**/*.json — see docs/design/Hall of Knowledge — Publishing Boundary & Privacy Checklist.md for the authoring/privacy rules this schema enforces structurally.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "title"],
+  "x-requires-published": true,
+  "required": ["id", "slug", "title", "summary", "category", "body", "published", "updatedAt"],
   "properties": {
     "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
     "type": { "const": "note" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
     "title": { "type": "string", "minLength": 1 },
-    "summary": { "type": "string" },
-    "districtId": { "type": "string", "x-ref": "district" },
+    "summary": { "type": "string", "minLength": 1 },
+    "category": {
+      "type": "string",
+      "enum": ["linux", "networking", "cloud", "automation", "security", "kubernetes", "projects", "career"]
+    },
+    "body": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Markdown-formatted text. A plain string field today (no frontmatter/file parsing) — see the publishing-boundary doc for why, and for how a future Markdown importer is expected to produce this same field without changing the schema."
+    },
+    "published": { "type": "boolean" },
+    "updatedAt": { "type": "string", "format": "date" },
     "tags": {
       "type": "array",
       "items": { "type": "string" }
     },
-    "obsidianPath": { "type": "string" }
+    "relatedSkillIds": {
+      "type": "array",
+      "items": { "type": "string", "x-ref": "skill" }
+    },
+    "relatedRepositoryIds": {
+      "type": "array",
+      "items": { "type": "string", "x-ref": "repository" }
+    },
+    "relatedNoteIds": {
+      "type": "array",
+      "items": { "type": "string", "x-ref": "note" }
+    },
+    "districtId": { "type": "string", "x-ref": "district" },
+    "source": {
+      "type": "string",
+      "description": "Free-text provenance note (e.g. \"adapted from personal lab notes\") — never a filesystem path.",
+      "pattern": "^(?!/|~).*$"
+    },
+    "order": { "type": "number" }
   }
 }

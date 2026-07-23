@@ -1,0 +1,14 @@
+// content/knowledge/kubernetes/gitops-homelab-lessons.json
+{
+  "id": "kubernetes-gitops-homelab-lessons",
+  "slug": "gitops-homelab-lessons",
+  "title": "Lessons from Running a GitOps Homelab",
+  "summary": "What running a Kubernetes homelab reconciled entirely from Git actually teaches you, beyond the YAML.",
+  "category": "kubernetes",
+  "published": true,
+  "updatedAt": "2026-07-22",
+  "tags": ["kubernetes", "gitops", "homelab"],
+  "relatedRepositoryIds": ["lab"],
+  "districtId": "hall-of-knowledge",
+  "body": "## Git as the single source of truth changes how you think about mistakes\n\nOnce cluster state is reconciled from a Git repository rather than applied by hand, a bad change becomes a revert instead of a scramble. That shift alone is worth the upfront setup cost — the safety net changes how confidently you're willing to experiment.\n\n## Secrets are the hard part, not the manifests\n\nWriting Kubernetes YAML is the easy 80%. Deciding how secrets get into a GitOps-reconciled cluster without ending up in Git history is the harder 20% — worth solving properly, with a real secrets backend, before the homelab has anything worth protecting.\n\n## Reconciliation drift will happen — plan for detecting it, not preventing it\n\nA manual `kubectl edit` during a late-night fix is inevitable. The goal isn't to prevent every manual change, it's to make sure the GitOps controller reliably reports and reverts drift so a manual fix doesn't silently become permanent, undocumented configuration.\n\n## Small, incremental migrations beat a big-bang cutover\n\nMigrating a homelab to GitOps one application at a time — proving the pattern on something low-stakes first — surfaces problems (ingress quirks, storage class mismatches, ordering dependencies) while the blast radius of a mistake is still small.\n\n## The real value is the audit trail, not the automation\n\nThe most useful part of running a homelab this way isn't that changes apply automatically — it's that every change to the running state has a commit, an author, and a timestamp. That habit of \"every change is a diff\" is the part worth carrying into any environment, homelab or not."
+}

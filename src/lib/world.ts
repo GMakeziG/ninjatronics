@@ -67,11 +67,20 @@ export interface Quest {
 export interface Note {
   id: string;
   type: "note";
+  slug: string;
   title: string;
-  summary?: string;
-  districtId?: string;
+  summary: string;
+  category: "linux" | "networking" | "cloud" | "automation" | "security" | "kubernetes" | "projects" | "career";
+  body: string;
+  published: boolean;
+  updatedAt: string;
   tags?: string[];
-  obsidianPath?: string;
+  relatedSkillIds?: string[];
+  relatedRepositoryIds?: string[];
+  relatedNoteIds?: string[];
+  districtId?: string;
+  source?: string;
+  order?: number;
 }
 
 export interface Skill {

@@ -1,0 +1,414 @@
+/*
+ * Shared stylesheet for the Hall of Knowledge page and its sub-components
+ * (HallOfKnowledgeHeader, KnowledgeTree) plus the knowledge-note artifact
+ * page — one file per this project's "avoid fragmentation" convention
+ * (see GitForest.css, FloatingCitadel.css).
+ *
+ * Accent: --accent-knowledge (violet/mind) — Design Tokens.md §1.2
+ * explicitly names this token for "Hall of Knowledge, note-related UI —
+ * used sparingly, never as a 'fun' purple." Status badges still use the
+ * site-wide green-means-open convention.
+ */
+
+.hall-of-knowledge {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-14);
+  max-width: var(--grid-max-width);
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-6) var(--space-24);
+}
+
+.knowledge-note {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-6) var(--space-10);
+}
+
+/* ---------- HallOfKnowledgeHeader ---------- */
+
+.hall-of-knowledge__back-link,
+.knowledge-note__back-link {
+  align-self: flex-start;
+  margin-bottom: var(--space-6);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--text-tertiary);
+  transition: color var(--duration-feedback) var(--easing-standard);
+}
+
+.hall-of-knowledge__back-link:hover,
+.hall-of-knowledge__back-link:focus-visible,
+.knowledge-note__back-link:hover,
+.knowledge-note__back-link:focus-visible {
+  color: var(--accent-knowledge);
+}
+
+.hall-of-knowledge__title-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.hall-of-knowledge__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-display-lg-size);
+  line-height: var(--type-display-lg-line);
+  font-weight: var(--weight-display-strong);
+  color: var(--text-primary);
+}
+
+.hall-of-knowledge__status {
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-width-hairline) solid var(--status-success);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--status-success);
+}
+
+.hall-of-knowledge__subtitle {
+  margin: 0 0 var(--space-3);
+  max-width: 70ch;
+  font-size: var(--type-body-lg-size);
+  line-height: var(--type-body-lg-line);
+  color: var(--text-secondary);
+}
+
+.hall-of-knowledge__description {
+  margin: 0 0 var(--space-5);
+  max-width: 70ch;
+  font-size: var(--type-body-md-size);
+  line-height: var(--type-body-md-line);
+  color: var(--text-tertiary);
+}
+
+.hall-of-knowledge__summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: var(--surface-panel);
+  border: var(--border-width-hairline) solid var(--border-default);
+}
+
+.hall-of-knowledge__stats {
+  display: flex;
+  gap: var(--space-6);
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.hall-of-knowledge__stat dt {
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.hall-of-knowledge__stat dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--type-display-md-size);
+  font-weight: var(--weight-mono-emphasis);
+  color: var(--accent-knowledge);
+}
+
+.hall-of-knowledge__guardian {
+  padding-top: var(--space-4);
+  border-top: var(--border-width-hairline) solid var(--border-default);
+}
+
+@media (min-width: 768px) {
+  .hall-of-knowledge__summary {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-8);
+  }
+
+  .hall-of-knowledge__guardian {
+    flex: 1;
+    padding-top: 0;
+    padding-left: var(--space-8);
+    border-top: none;
+    border-left: var(--border-width-hairline) solid var(--border-default);
+  }
+}
+
+.hall-of-knowledge__guardian-name {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-md-size);
+  color: var(--accent-knowledge);
+}
+
+.hall-of-knowledge__guardian-title {
+  color: var(--text-muted);
+}
+
+.hall-of-knowledge__guardian-quote {
+  margin: var(--space-1) 0 0;
+  max-width: 60ch;
+  font-size: var(--type-body-sm-size);
+  line-height: var(--type-body-sm-line);
+  color: var(--text-tertiary);
+}
+
+/* ---------- KnowledgeTree ---------- */
+
+.knowledge-tree__heading {
+  margin: 0 0 var(--space-5);
+  font-family: var(--font-display);
+  font-size: var(--type-display-md-size);
+  line-height: var(--type-display-md-line);
+  font-weight: var(--weight-body-medium);
+  color: var(--text-primary);
+}
+
+.knowledge-tree__empty {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.knowledge-tree__categories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.knowledge-tree__category {
+  padding: var(--space-5);
+  background: var(--surface-panel);
+  border: var(--border-width-hairline) solid var(--border-default);
+  border-left-width: var(--border-width-emphasis);
+  border-left-color: var(--accent-knowledge);
+}
+
+.knowledge-tree__category-name {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-md-size);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.knowledge-tree__category-count {
+  color: var(--text-muted);
+}
+
+.knowledge-tree__notes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.knowledge-tree__note-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-body-lg-size);
+  font-weight: var(--weight-body-medium);
+}
+
+.knowledge-tree__note-title a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color var(--duration-feedback) var(--easing-standard);
+}
+
+.knowledge-tree__note-title a:hover,
+.knowledge-tree__note-title a:focus-visible {
+  color: var(--accent-knowledge);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.knowledge-tree__note-summary {
+  margin: var(--space-1) 0 0;
+  font-size: var(--type-body-sm-size);
+  line-height: var(--type-body-sm-line);
+  color: var(--text-tertiary);
+}
+
+/* ---------- KnowledgeNoteArtifact (src/pages/KnowledgeNoteArtifact.tsx) ---------- */
+
+.knowledge-note__identity {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.knowledge-note__eyebrow {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-knowledge);
+}
+
+.knowledge-note__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-display-lg-size);
+  line-height: var(--type-display-lg-line);
+  font-weight: var(--weight-display-strong);
+  color: var(--text-primary);
+}
+
+.knowledge-note__summary {
+  margin: 0;
+  max-width: 65ch;
+  font-size: var(--type-body-lg-size);
+  line-height: var(--type-body-lg-line);
+  color: var(--text-secondary);
+}
+
+.knowledge-note__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  margin: 0;
+}
+
+.knowledge-note__meta-item dt {
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.knowledge-note__meta-item dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  color: var(--text-secondary);
+}
+
+.knowledge-note__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.knowledge-note__tags li {
+  padding: var(--space-1) var(--space-2);
+  background: var(--surface-panel-hover);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  color: var(--text-secondary);
+}
+
+.knowledge-note__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-top: var(--space-6);
+  border-top: var(--border-width-hairline) solid var(--border-default);
+}
+
+.knowledge-note__body-heading {
+  margin: var(--space-2) 0 0;
+  font-family: var(--font-display);
+  font-size: var(--type-body-lg-size);
+  font-weight: var(--weight-body-medium);
+  color: var(--text-primary);
+}
+
+.knowledge-note__body-paragraph {
+  margin: 0;
+  max-width: 65ch;
+  font-size: var(--type-body-md-size);
+  line-height: var(--type-body-md-line);
+  color: var(--text-tertiary);
+}
+
+.knowledge-note__body-code {
+  margin: 0;
+  padding: var(--space-3);
+  background: var(--surface-panel);
+  border: var(--border-width-hairline) solid var(--border-default);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  color: var(--text-secondary);
+  overflow-x: auto;
+}
+
+.knowledge-note__section {
+  padding-top: var(--space-4);
+  border-top: var(--border-width-hairline) solid var(--border-default);
+}
+
+.knowledge-note__section-heading {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--type-display-md-size);
+  line-height: var(--type-display-md-line);
+  font-weight: var(--weight-body-medium);
+  color: var(--text-primary);
+}
+
+.knowledge-note__repos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.knowledge-note__repos a {
+  display: inline-block;
+  padding: var(--space-1) var(--space-2);
+  background: var(--surface-panel-hover);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.knowledge-note__repos a:hover,
+.knowledge-note__repos a:focus-visible {
+  text-decoration: underline;
+}
+
+.knowledge-note__related-notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: var(--border-width-hairline) solid var(--border-default);
+}
+
+.knowledge-note__related-link {
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: color var(--duration-feedback) var(--easing-standard);
+}
+
+.knowledge-note__related-link:hover,
+.knowledge-note__related-link:focus-visible {
+  color: var(--accent-knowledge);
+}
