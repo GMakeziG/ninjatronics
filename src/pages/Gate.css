@@ -1,0 +1,20 @@
+.gate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  min-height: calc(100vh - var(--space-14));
+  padding: var(--space-10) var(--space-6);
+}
+
+/*
+ * The brief brightness/saturate surge on entering is the Gate's own effect
+ * (Motion Specification.md §1.2 — "a separate, component-owned effect...
+ * not part of CameraController's transform"), not a stand-in for the real
+ * camera pan into the Valley, which CameraController doesn't implement yet.
+ */
+.gate--entering {
+  transition: filter var(--duration-overlay) var(--easing-standard);
+  filter: brightness(1.15) saturate(1.1);
+}

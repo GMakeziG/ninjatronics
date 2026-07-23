@@ -1,0 +1,44 @@
+.gate-hero {
+  text-align: center;
+}
+
+.gate-hero__eyebrow {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
+  line-height: var(--type-mono-sm-line);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+}
+
+.gate-hero__wordmark {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--type-display-xl-size);
+  line-height: var(--type-display-xl-line);
+  font-weight: var(--weight-display-hero);
+  color: var(--text-primary);
+}
+
+.gate-hero__wordmark-accent {
+  font-weight: var(--weight-body-medium);
+  color: var(--accent-primary);
+}
+
+.gate-hero__tagline {
+  margin: 0 auto;
+  max-width: 46ch;
+  font-size: var(--type-body-lg-size);
+  line-height: var(--type-body-lg-line);
+  color: var(--text-secondary);
+}
+
+/* Falls back to the next display tier down rather than a bespoke value,
+   keeping the wordmark from overflowing narrow viewports. */
+@media (max-width: 639px) {
+  .gate-hero__wordmark {
+    font-size: var(--type-display-lg-size);
+    line-height: var(--type-display-lg-line);
+  }
+}

@@ -1,0 +1,29 @@
+.enter-button {
+  padding: var(--space-3) var(--space-6);
+  background: var(--accent-primary);
+  color: var(--color-void-900);
+  border: none;
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-lg-size);
+  line-height: var(--type-mono-lg-line);
+  font-weight: var(--weight-mono-emphasis);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    box-shadow var(--duration-feedback) var(--easing-standard),
+    transform var(--duration-feedback) var(--easing-standard),
+    opacity var(--duration-feedback) var(--easing-standard);
+}
+
+.enter-button:hover:not(:disabled),
+.enter-button:focus-visible:not(:disabled) {
+  box-shadow: var(--glow-ki-md);
+  transform: translateY(-1px);
+}
+
+.enter-button:disabled {
+  background: var(--surface-panel-hover);
+  color: var(--text-disabled);
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
