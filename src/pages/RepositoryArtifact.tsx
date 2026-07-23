@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import "../components/GitForest/GitForest.css";
 import { getRepositoryTree, getTreesForDistrict, getRepositoryArtifactPath } from "../lib/git-forest.js";
+import { getDistrictPath } from "../lib/world.js";
 import { NotFound } from "./NotFound.js";
 
 export function RepositoryArtifact() {
@@ -11,8 +12,6 @@ export function RepositoryArtifact() {
     return <NotFound message={`No repository named "${repositorySlug}" was found in the Git Forest.`} />;
   }
 
-  const districtPath = `/valley/${tree.district.slug}`;
-
   // Same district, id-sorted order (git-forest.ts's own sort) — previous/
   // next are derived from that real ordering, not decorative filler.
   const siblings = getTreesForDistrict(tree.district.id);
@@ -22,18 +21,19 @@ export function RepositoryArtifact() {
 
   return (
     <main className="repository-artifact">
-      <Link to={districtPath} className="git-forest__back-link">
+      <Link to={getDistrictPath(tree.district)} className="git-forest__back-link">
         <span aria-hidden="true">←</span> Back to {tree.district.name}
       </Link>
 
       <header className="repository-artifact__identity">
         <h1 className="repository-artifact__name">{tree.treeName}</h1>
-        <p className="repository-artifact__repo-name">
-          Repository: <span className="repo-tree-card__repo-slug">{tree.githubRepository}</span>
-        </p>
 
-        <dl className="repository-artifact__meta">
-          <div className="repository-artifact__meta-item">
+        <dl className="repo-tree-card__meta">
+          <div className="repo-tree-card__meta-item">
+            <dt>Repository</dt>
+            <dd>{tree.githubRepository}</dd>
+          </div>
+          <div className="repo-tree-card__meta-item">
             <dt>District</dt>
             <dd>{tree.district.name}</dd>
           </div>
@@ -53,7 +53,7 @@ export function RepositoryArtifact() {
       {tree.story && (
         <section className="repository-artifact__section" aria-labelledby="repository-story-heading">
           <h2 id="repository-story-heading" className="repository-artifact__section-heading">
-            Story
+            Field Notes
           </h2>
           <p className="repository-artifact__story">{tree.story}</p>
         </section>
@@ -62,7 +62,7 @@ export function RepositoryArtifact() {
       {tree.technologies.length > 0 && (
         <section className="repository-artifact__section" aria-labelledby="technical-profile-heading">
           <h2 id="technical-profile-heading" className="repository-artifact__section-heading">
-            Technical Profile
+            Observed Technologies
           </h2>
           <ul className="repo-tree-card__tech">
             {tree.technologies.map((tech) => (
@@ -72,7 +72,7 @@ export function RepositoryArtifact() {
         </section>
       )}
 
-      <nav className="repository-artifact__related" aria-label="Related repositories">
+      <nav className="repository-artifact__related" aria-label="Adjacent trees">
         {previous && (
           <Link to={getRepositoryArtifactPath(previous)} className="repository-artifact__related-link">
             <span aria-hidden="true">←</span> {previous.treeName}

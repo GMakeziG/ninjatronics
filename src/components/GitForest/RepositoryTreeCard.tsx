@@ -27,9 +27,12 @@ export function RepositoryTreeCard({ tree, featured = false }: RepositoryTreeCar
         {/* Owner is real data not shown anywhere else on the card, so this
             renders unconditionally rather than only when the lore name
             differs from the repo name — it's never purely redundant. */}
-        <p className="repo-tree-card__repo-name">
-          Repository: <span className="repo-tree-card__repo-slug">{tree.githubRepository}</span>
-        </p>
+        <dl className="repo-tree-card__meta">
+          <div className="repo-tree-card__meta-item">
+            <dt>Repository</dt>
+            <dd>{tree.githubRepository}</dd>
+          </div>
+        </dl>
 
         <a
           className="repo-tree-card__link"

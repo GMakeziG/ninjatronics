@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./DistrictCard.css";
-import type { District, Guardian } from "../../lib/world.js";
+import { getDistrictPath, type District, type Guardian } from "../../lib/world.js";
 
 export interface DistrictCardProps {
   district: District;
@@ -80,7 +80,7 @@ export function DistrictCard({ district, guardian, connectionCount, repositoryCo
     // ...) would otherwise become this link's accessible name verbatim —
     // an explicit aria-label keeps what's announced concise instead.
     return (
-      <Link to={`/valley/${district.slug}`} className={className} aria-label={`Enter ${district.name}`}>
+      <Link to={getDistrictPath(district)} className={className} aria-label={`Enter ${district.name}`}>
         {content}
       </Link>
     );

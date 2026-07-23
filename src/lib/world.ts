@@ -174,6 +174,11 @@ export const getRepositoriesForDistrict = (districtId: string): Repository[] =>
 export const getConnectedDistricts = (districtId: string): District[] =>
   (getDistrict(districtId)?.connections ?? []).map(getDistrict).filter((d): d is District => d !== undefined);
 
+/** The single place a district's Valley URL is built — DistrictCard and
+ * Mission Brief's "Explore the World" handoff both call this rather than
+ * each constructing "/valley/..." themselves. */
+export const getDistrictPath = (district: Pick<District, "slug">): string => `/valley/${district.slug}`;
+
 export const getProfile = (): Profile | undefined => world.profiles[0];
 
 export const getExperiencesForSkill = (skillId: string): Experience[] =>

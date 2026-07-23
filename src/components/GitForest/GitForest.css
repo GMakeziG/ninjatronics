@@ -268,14 +268,29 @@
   color: var(--color-accent-ki);
 }
 
-.repo-tree-card__repo-name {
+/* Metadata block ("REPOSITORY" label / value, stacked) — replaces the old
+   sentence-style "Repository: owner/repo" line. Applied identically here
+   and on the repository artifact page (RepositoryArtifact.tsx reuses these
+   same classes) so the treatment is consistent everywhere it appears. */
+.repo-tree-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
   margin: 0;
+}
+
+.repo-tree-card__meta-item dt {
   font-family: var(--font-mono);
   font-size: var(--type-mono-sm-size);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--text-muted);
 }
 
-.repo-tree-card__repo-slug {
+.repo-tree-card__meta-item dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm-size);
   color: var(--text-secondary);
 }
 
@@ -383,30 +398,8 @@
   color: var(--text-primary);
 }
 
-.repository-artifact__repo-name {
-  margin: 0;
-  font-family: var(--font-mono);
-  font-size: var(--type-mono-md-size);
-  color: var(--text-muted);
-}
-
-.repository-artifact__meta {
-  margin: 0;
-}
-
-.repository-artifact__meta-item dt {
-  font-family: var(--font-mono);
-  font-size: var(--type-mono-sm-size);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.repository-artifact__meta-item dd {
-  margin: 0;
-  font-size: var(--type-body-md-size);
-  color: var(--text-secondary);
-}
+/* Repository/District metadata block on this page reuses
+   .repo-tree-card__meta — see that rule for the shared styling. */
 
 .repository-artifact__github-link {
   align-self: flex-start;

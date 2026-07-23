@@ -1,15 +1,22 @@
 import { Link } from "react-router-dom";
 import "../components/MissionBrief/MissionBrief.css";
 import { getMissionBrief } from "../lib/mission-brief.js";
-import { getGitForest, getFeaturedTrees } from "../lib/git-forest.js";
+import { getGitForest } from "../lib/git-forest.js";
 import { getSkill, listDistricts } from "../lib/world.js";
 import { MissionHeader } from "../components/MissionBrief/MissionHeader.js";
 import { WorldSummary } from "../components/MissionBrief/WorldSummary.js";
 import { CurrentMission } from "../components/MissionBrief/CurrentMission.js";
 import { ExperienceTimeline } from "../components/MissionBrief/ExperienceTimeline.js";
 import { SkillsOverview } from "../components/MissionBrief/SkillsOverview.js";
+// Certification ownership: Mission Brief is the recruiter-facing credential
+// summary today. Floating Citadel (content/districts/floating-citadel.json)
+// is the intended long-term authoritative certification district — once it
+// has a real page, reduce CertificationGrid here to a compact summary that
+// links out to it, the same handoff pattern ExploreWorld now uses for
+// Git Forest/repositories. Not done in this milestone: Floating Citadel
+// isn't built yet, so there's nowhere real to hand off to.
 import { CertificationGrid } from "../components/MissionBrief/CertificationGrid.js";
-import { RepositorySummary } from "../components/MissionBrief/RepositorySummary.js";
+import { ExploreWorld } from "../components/MissionBrief/ExploreWorld.js";
 
 export function MissionBrief() {
   const brief = getMissionBrief();
@@ -48,11 +55,7 @@ export function MissionBrief() {
 
       <CertificationGrid certifications={brief.certifications} />
 
-      <RepositorySummary
-        featuredTrees={getFeaturedTrees()}
-        totalCount={getGitForest().trees.length}
-        githubUrl={brief.githubUrl}
-      />
+      <ExploreWorld districts={districts} />
     </main>
   );
 }

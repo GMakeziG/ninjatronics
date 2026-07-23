@@ -267,7 +267,7 @@
 .experience-timeline__heading,
 .skills-overview__heading,
 .certification-grid__heading,
-.repository-summary__heading {
+.explore-world__heading {
   margin: 0 0 var(--space-5);
   font-family: var(--font-display);
   font-size: var(--type-display-md-size);
@@ -466,99 +466,81 @@
   }
 }
 
-/* ---------- RepositorySummary ---------- */
+/* ---------- ExploreWorld ---------- */
 
-.repository-summary__header {
+.explore-world__list {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
+  flex-direction: column;
   gap: var(--space-3);
-  margin-bottom: var(--space-5);
-}
-
-.repository-summary__count {
   margin: 0;
-  font-family: var(--font-mono);
-  font-size: var(--type-mono-sm-size);
-  color: var(--text-muted);
-}
-
-.repository-summary__list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
-  margin: 0 0 var(--space-4);
   padding: 0;
   list-style: none;
 }
 
-.repository-summary__card {
+.explore-world__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-3);
   padding: var(--space-4);
   background: var(--surface-panel);
   border: var(--border-width-hairline) solid var(--border-default);
+  text-decoration: none;
+  color: inherit;
 }
 
-.repository-summary__tree-name {
-  margin: 0 0 var(--space-2);
+.explore-world__row--open {
+  border-left-width: var(--border-width-emphasis);
+  border-left-color: var(--status-success);
+  transition:
+    border-color var(--duration-feedback) var(--easing-standard),
+    background var(--duration-feedback) var(--easing-standard);
+}
+
+.explore-world__row--open:hover,
+.explore-world__row--open:focus-visible {
+  background: var(--surface-panel-hover);
+  border-color: var(--accent-primary);
+}
+
+/* Locked rows are deliberately plain, non-interactive text — no border
+   accent, no hover feedback, no cursor change — so they never read as a
+   dead link. */
+.explore-world__row--locked {
+  border-left-width: var(--border-width-emphasis);
+  border-left-style: var(--border-style-locked);
+  border-left-color: var(--accent-locked);
+  opacity: var(--opacity-muted);
+}
+
+.explore-world__name {
   font-family: var(--font-display);
   font-size: var(--type-body-lg-size);
   font-weight: var(--weight-body-medium);
   color: var(--text-primary);
 }
 
-.repository-summary__story {
-  margin: 0 0 var(--space-3);
+.explore-world__subtitle {
+  flex: 1;
+  min-width: 0;
   font-size: var(--type-body-sm-size);
-  line-height: var(--type-body-sm-line);
   color: var(--text-tertiary);
 }
 
-.repository-summary__tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin: 0 0 var(--space-3);
-  padding: 0;
-  list-style: none;
-}
-
-.repository-summary__tech li {
+.explore-world__status {
+  flex-shrink: 0;
+  margin-left: auto;
   padding: var(--space-1) var(--space-2);
-  background: var(--surface-panel-hover);
+  border: var(--border-width-hairline) solid var(--border-emphasis);
   border-radius: var(--radius-sm);
   font-family: var(--font-mono);
   font-size: var(--type-mono-sm-size);
-  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
-.repository-summary__link,
-.repository-summary__all-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-1);
-  font-family: var(--font-mono);
-  font-size: var(--type-mono-sm-size);
-  text-decoration: none;
-  color: var(--accent-primary);
-  transition: color var(--duration-feedback) var(--easing-standard);
-}
-
-.repository-summary__link:hover,
-.repository-summary__link:focus-visible,
-.repository-summary__all-link:hover,
-.repository-summary__all-link:focus-visible {
-  color: var(--text-primary);
-}
-
-@media (min-width: 640px) {
-  .repository-summary__list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .repository-summary__list {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.explore-world__row--open .explore-world__status {
+  color: var(--status-success);
+  border-color: var(--status-success);
 }
