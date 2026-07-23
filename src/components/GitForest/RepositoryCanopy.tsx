@@ -18,6 +18,11 @@ export function RepositoryCanopy({ trees, featured }: RepositoryCanopyProps) {
     );
   }
 
+  // The featured tree gets its own section above — excluded here by id so
+  // it never renders twice. Featured (0 or 1) + supportingTrees always add
+  // back up to the district's full repository count.
+  const supportingTrees = featured ? trees.filter((tree) => tree.id !== featured.id) : trees;
+
   return (
     <>
       {featured && (
@@ -33,11 +38,15 @@ export function RepositoryCanopy({ trees, featured }: RepositoryCanopyProps) {
         <h2 id="repository-canopy-heading" className="repository-canopy__heading">
           Repository Canopy
         </h2>
-        <div className="repository-canopy__grid">
-          {trees.map((tree) => (
-            <RepositoryTreeCard key={tree.id} tree={tree} featured={tree.id === featured?.id} />
-          ))}
-        </div>
+        {supportingTrees.length > 0 ? (
+          <div className="repository-canopy__grid">
+            {supportingTrees.map((tree) => (
+              <RepositoryTreeCard key={tree.id} tree={tree} />
+            ))}
+          </div>
+        ) : (
+          <p className="repository-canopy__empty">The featured repository above is the only one synced so far.</p>
+        )}
       </section>
     </>
   );

@@ -22,22 +22,27 @@ export function GitForestHeader({ district, guardian, repositoryCount }: GitFore
       {district.subtitle && <p className="git-forest__subtitle">{district.subtitle}</p>}
       {district.description && <p className="git-forest__description">{district.description}</p>}
 
-      <dl className="git-forest__stats">
-        <div className="git-forest__stat">
-          <dt>Repositories</dt>
-          <dd>{repositoryCount}</dd>
-        </div>
-      </dl>
+      {/* Repository count and guardian info grouped into one summary panel
+          — same content as before, just visually distinguished from the
+          free-flowing name/subtitle/description prose above it. */}
+      <div className="git-forest__summary">
+        <dl className="git-forest__stats">
+          <div className="git-forest__stat">
+            <dt>Repositories</dt>
+            <dd>{repositoryCount}</dd>
+          </div>
+        </dl>
 
-      {guardian && (
-        <div className="git-forest__guardian">
-          <p className="git-forest__guardian-name">
-            {guardian.name}
-            {guardian.title && <span className="git-forest__guardian-title"> — {guardian.title}</span>}
-          </p>
-          {guardian.quote && <p className="git-forest__guardian-quote">&ldquo;{guardian.quote}&rdquo;</p>}
-        </div>
-      )}
+        {guardian && (
+          <div className="git-forest__guardian">
+            <p className="git-forest__guardian-name">
+              {guardian.name}
+              {guardian.title && <span className="git-forest__guardian-title"> — {guardian.title}</span>}
+            </p>
+            {guardian.quote && <p className="git-forest__guardian-quote">&ldquo;{guardian.quote}&rdquo;</p>}
+          </div>
+        )}
+      </div>
     </header>
   );
 }
